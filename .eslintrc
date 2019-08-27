@@ -5,6 +5,11 @@
     "browser": true,
     "node": true
   },
+  "globals": {
+    "cy": true,
+    "describe": true,
+    "it": true
+  },
   "extends": ["airbnb"],
   "rules": {
     "quotes": [2, "single"],
