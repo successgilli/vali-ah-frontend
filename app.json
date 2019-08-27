@@ -1,14 +1,17 @@
 {
-  "addons": [
-
-  ],
+  "addons": [],
   "buildpacks": [
-
+    {
+      "url": "heroku/nodejs"
+    }
   ],
   "description": "1kbIdeas: The one-stop shop for all the self-help ideas you need",
   "env": {
   },
   "formation": {
+    "web": {
+      "quantity": 1
+    }
   },
   "name": "vali-ah-frontend",
   "scripts": {
