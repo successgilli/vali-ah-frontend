@@ -8,19 +8,35 @@
   "globals": {
     "cy": true,
     "describe": true,
-    "it": true
+    "it": true,
+    "shallow": true,
+    "mount": true,
+    "expect": true,
+    "render": true,
+    "toJson": true,
   },
   "extends": ["airbnb"],
   "rules": {
     "quotes": [2, "single"],
     "comma-dangle": 0,
-    "indent": [2, 2]
+    "indent": [2, 2],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": [
+      "**/*.test.{js,jsx}",
+      "**/*.spec.{js,jsx}",
+      "**/*.stories.{js,jsx}",
+      "config/**/*.js",
+      "tests/**/*.js",
+    ]}]
   },
   "settings": {
     "import/resolver": {
       "node": {},
       "webpack": {
-        "config": "config/webpack.dev.js"
+        "config": "config/webpack.dev.js",
+        "components": "src/components",
+        "pages": "src/pages",
+        "modules": "src/store/modules",
+        "utils": "src/utils"
       }
     }
   }

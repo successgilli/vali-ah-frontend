@@ -1,5 +1,5 @@
 const path = require('path');
-const { htmlWebpackPlugin, cleanWebpackPlugin } = require('./webpack.plugins.js');
+const { htmlWebpackPlugin } = require('./webpack.plugins.js');
 
 module.exports = {
   entry: ['react-hot-loader/patch', './src/index.jsx'],
@@ -12,6 +12,9 @@ module.exports = {
   resolve: {
     alias: {
       components: path.resolve(__dirname, '../src/components'),
+      pages: path.resolve(__dirname, '../src/pages'),
+      modules: path.resolve(__dirname, '../src/store/modules'),
+      utils: path.resolve(__dirname, '../src/utils'),
       'react-dom': '@hot-loader/react-dom',
     },
     extensions: ['.js', '.jsx']
@@ -35,7 +38,6 @@ module.exports = {
     ]
   },
   plugins: [
-    htmlWebpackPlugin,
-    cleanWebpackPlugin
+    htmlWebpackPlugin
   ],
 };

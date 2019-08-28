@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');

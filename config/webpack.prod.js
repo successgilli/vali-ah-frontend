@@ -1,7 +1,6 @@
-/* eslint-disable import/no-extraneous-dependencies */
 const merge = require('webpack-merge');
 
-const { terserPlugin, optimizeCSSAssetsPlugin } = require('./webpack.plugins.js');
+const { cleanWebpackPlugin, terserPlugin, optimizeCSSAssetsPlugin } = require('./webpack.plugins.js');
 const common = require('./webpack.common.js');
 
 
@@ -19,4 +18,7 @@ module.exports = merge(common, {
       chunks: 'all'
     }
   },
+  plugins: [
+    cleanWebpackPlugin
+  ],
 });
