@@ -6,5 +6,8 @@ module.exports = {
   ],
   setupFilesAfterEnv: ['<rootDir>/tests/setupUnitTests.js'],
   collectCoverage: true,
-  snapshotSerializers: ['enzyme-to-json/serializer']
+  snapshotSerializers: ['enzyme-to-json/serializer'],
+  moduleNameMapper: {
+    '\\.(css|less|sass|scss)$': '<rootDir>/tests/__mocks__/style.js',
+  }
 };
