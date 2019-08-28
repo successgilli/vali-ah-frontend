@@ -5,5 +5,6 @@ module.exports = {
     '<rootDir>/tests/storybook.test.js',
   ],
   setupFilesAfterEnv: ['<rootDir>/tests/setupUnitTests.js'],
-  collectCoverage: true
+  collectCoverage: true,
+  snapshotSerializers: ['enzyme-to-json/serializer']
 };

@@ -5,6 +5,14 @@
   ],
   "plugins": [
     "react-hot-loader/babel",
-    "macros"
+    "macros",
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "components": "./src/components/",
+        "pages": "./src/pages/",
+        "modules": "./src/store/modules/"
+      }
+    }]
   ]
 }

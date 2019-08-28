@@ -1,4 +1,7 @@
+// react libraries
 import React from 'react';
+
+// components
 import Button from './index';
 
 it('renders properly', () => {

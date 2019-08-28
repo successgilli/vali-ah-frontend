@@ -35,8 +35,7 @@
         "config": "config/webpack.dev.js",
         "components": "src/components",
         "pages": "src/pages",
-        "modules": "src/store/modules",
-        "utils": "src/utils"
+        "modules": "src/store/modules"
       }
     }
   }

@@ -1,4 +1,4 @@
-# 1kbIdeas - The one-stop shop for all the self-help ideas you need.
+# 1kbIdeas - The one-stop shop for all the self-help ideas you need
 
 =======
 

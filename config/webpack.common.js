@@ -10,14 +10,14 @@ module.exports = {
     publicPath: '/',
   },
   resolve: {
+    extensions: ['.js', '.jsx'],
     alias: {
       components: path.resolve(__dirname, '../src/components'),
       pages: path.resolve(__dirname, '../src/pages'),
       modules: path.resolve(__dirname, '../src/store/modules'),
-      utils: path.resolve(__dirname, '../src/utils'),
       'react-dom': '@hot-loader/react-dom',
     },
-    extensions: ['.js', '.jsx']
+    modules: [path.resolve(__dirname, 'src'), 'node_modules']
   },
   devtool: 'source-map',
   module: {
