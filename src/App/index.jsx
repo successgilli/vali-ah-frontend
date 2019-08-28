@@ -1,18 +1,23 @@
 // react libraries
+import 'babel-polyfill';
 import React from 'react';
 
 // third-party libraries
 import { hot } from 'react-hot-loader/root';
+import { Provider } from 'react-redux';
 
 // components
 import Header from 'components/Header';
 import Routes from './Routes';
 
+// store
+import store from '../store';
+
 const App = () => (
-  <div>
+  <Provider store={store}>
     <Header />
     <Routes />
-  </div>
+  </Provider>
 );
 
 export default hot(App);

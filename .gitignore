@@ -1,5 +1,4 @@
 # generated folders
-node_modules/
 public/
 build/
 cypress/
@@ -47,3 +46,17 @@ db.json
 
 # jest junit reporter
 junit.xml
+# Coverage directory used by tools like istanbul
+coverage
+
+# nyc test coverage
+.nyc_output
+
+# Dependency directories
+node_modules/
+
+# Optional eslint cache
+.eslintcache
+
+# dotenv environment variables file
+.env
