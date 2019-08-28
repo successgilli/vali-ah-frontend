@@ -6,13 +6,19 @@
     "node": true
   },
   "globals": {
+    "after": true,
+    "afterEach": true,
+    "before": true,
+    "beforeEach": true,
     "cy": true,
     "describe": true,
     "it": true,
     "shallow": true,
     "mount": true,
     "expect": true,
+    "jest": true,
     "render": true,
+    "sinon": true,
     "toJson": true
   },
   "extends": ["airbnb"],
@@ -37,7 +43,8 @@
         "components": "src/components",
         "pages": "src/pages",
         "modules": "src/store/modules",
-        "utils": "src/utils"
+        "utils": "src/utils",
+        "fixtures": "src/tests/fixtures"
       }
     }
   }

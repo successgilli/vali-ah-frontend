@@ -1,0 +1,29 @@
+@import 'scss/variables';
+@import 'scss/functions';
+@import 'scss/mixins';
+
+.icon {
+  @include icon;
+
+  &--upvote { 
+    background-image: icon(upvote);
+
+    &:hover {
+      background-image: icon(upvote, $activeiconfill);
+      cursor: pointer;
+    }
+
+    &.active { background-image: icon(upvote, $activeiconfill); }
+  }
+
+  &--downvote { 
+    background-image: icon(downvote);
+
+    &:hover {
+      background-image: icon(downvote, $activeiconfill);
+      cursor: pointer;
+    }
+
+    &.active { background-image: icon(downvote, $activeiconfill); }
+  }
+}

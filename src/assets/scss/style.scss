@@ -1,5 +1,17 @@
 @import '~sass-rem';
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap');
+@import 'variables';
+@import 'mixins';
 
-.text {
-  color: #F00;
+body {
+  @include body-reset();
+  font-family: 'Rubik', sans-serif;
+}
+
+.active {
+  color: $activecolor;
+}
+
+.hover {
+  color: $hovercolor;
 }

@@ -20,3 +20,140 @@ exports[`Storyshots Button with text 1`] = `
   Hello Button
 </button>
 `;
+
+exports[`Storyshots Icon downvote Icon 1`] = `
+<button
+  aria-label="downvote"
+  className="icon icon--downvote false"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  type="button"
+/>
+`;
+
+exports[`Storyshots Icon upvote Icon 1`] = `
+<button
+  aria-label="upvote"
+  className="icon icon--upvote false"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  type="button"
+/>
+`;
+
+exports[`Storyshots Vote downvoted 1`] = `
+<div
+  className="vote"
+>
+  <div
+    className="vote__wrapper"
+  >
+    <button
+      aria-label="upvote"
+      className="icon icon--upvote false"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    />
+    <span
+      className="false"
+    >
+      30
+    </span>
+  </div>
+  <div
+    className="vote__wrapper"
+  >
+    <button
+      aria-label="downvote"
+      className="icon icon--downvote active"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    />
+    <span
+      className="active"
+    >
+      0
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Vote nullvote 1`] = `
+<div
+  className="vote"
+>
+  <div
+    className="vote__wrapper"
+  >
+    <button
+      aria-label="upvote"
+      className="icon icon--upvote false"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    />
+    <span
+      className="false"
+    >
+      30
+    </span>
+  </div>
+  <div
+    className="vote__wrapper"
+  >
+    <button
+      aria-label="downvote"
+      className="icon icon--downvote false"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    />
+    <span
+      className=""
+    >
+      0
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Vote upvoted 1`] = `
+<div
+  className="vote"
+>
+  <div
+    className="vote__wrapper"
+  >
+    <button
+      aria-label="upvote"
+      className="icon icon--upvote active"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    />
+    <span
+      className="active"
+    >
+      30
+    </span>
+  </div>
+  <div
+    className="vote__wrapper"
+  >
+    <button
+      aria-label="downvote"
+      className="icon icon--downvote false"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    />
+    <span
+      className=""
+    >
+      0
+    </span>
+  </div>
+</div>
+`;

@@ -1,12 +1,9 @@
-<<<<<<< HEAD
 # generated folders
 public/
 build/
 cypress/
 storybook-static
 
-=======
->>>>>>> chore(testing): setup circle ci
 # Logs
 logs
 *.log
