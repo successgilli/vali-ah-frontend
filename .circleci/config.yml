@@ -1,32 +1,36 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
 version: 2.1
 working_directory: ~/repo
 jobs:
   build:
     docker:
-    - image: cypress/base:10
+      - image: cypress/base:10
+      - image: circleci/node:11.10.1
     parallelism: 2
     steps:
-    - checkout
-    - restore_cache:
-        keys:
-        - cache-{{ .Branch }}-{{ checksum "package.json" }}
-    - save_cache:
-        key: cache-{{ .Branch }}-{{ checksum "package.json" }}
-        paths:
-        - ~/.npm
-        - ~/.cache
-    - attach_workspace:
-        at: ~/
-    - run:
-        name: Install packages
-        command: npm install
-    - run:
-        name: Build app
-        command: npm run build
-    - run:
-        name: Run Cypress tests
-        command: npm run test:e2e:ci
+      - checkout
+      - restore_cache:
+          keys:
+            - cache-{{ .Branch }}-{{ checksum "package.json" }}
+      - save_cache:
+          key: cache-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - ~/.npm
+            - ~/.cache
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Install packages
+          command: npm install
+      - run:
+          name: Build app
+          command: npm run build
+      - run:
+          name: Run e2e tests with Cypress
+          command: npm run test:e2e:ci
+      - run:
+          name: Run unit tests with JUnit as reporter
+          command: npm run test:unit:ci
+          environment:
+            JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
+      - store_test_results:
+          path: "reports/junit"
