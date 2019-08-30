@@ -10,6 +10,18 @@ import store from '../../store/index';
 // components
 import Modal from './index';
 
+global.FB = {};
+global.gapi = {};
+global.FB.login = jest.fn();
+global.FB.getLoginStatus = (cb) => {
+  const res = {
+    status: 'connected',
+    authResponse: { access_token: 'theAccessToken' }
+  };
+  cb(res);
+};
+global.gapi.load = () => {};
+
 storiesOf('Modal', module)
   .add('default signup view', () => (
     <Provider store={store}>
@@ -21,4 +33,4 @@ storiesOf('Modal', module)
       <Modal show formType />
     </Provider>
   ))
-  .add('click closed modal button', () => <Modal show={false} />);
+  .add('click closed modal button', () => <Provider store={store}><Modal show={false} /></Provider>);

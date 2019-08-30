@@ -1,0 +1,33 @@
+@import '~scss/mixins';
+@import '~scss/functions';
+
+.social-login-button {
+  @include button-reset;
+  background: #FFF;
+  width: 4.5rem;
+  height: 4.5rem;
+  padding: 1rem;
+  border-radius: 100%;
+  box-shadow: 0 0.25rem 1.75rem rgba(0, 0, 0, 0.17);
+  outline: none;
+
+  &:hover {
+    animation-name: move-up;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-out;
+  }
+
+  img {
+    background: #FFF;
+    width: 100%;
+  }
+}
+
+.social-login-button-row {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 1rem auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}

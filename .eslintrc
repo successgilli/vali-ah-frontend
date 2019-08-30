@@ -47,13 +47,14 @@
         "pages": "src/pages",
         "modules": "src/store/modules",
         "utils": "src/utils",
-        "fixtures": "src/tests/fixtures"
+        "fixtures": "src/tests/fixtures",
+        "assets": "src/assets"
       }
     }
   },
   "overrides": [
     {
-      "files": ["*.stories.jsx",],
+      "files": ["*.stories.jsx", "*.test.jsx", "*.spec.jsx"],
       "rules": {
         "react/jsx-props-no-spreading": "off"
       }
