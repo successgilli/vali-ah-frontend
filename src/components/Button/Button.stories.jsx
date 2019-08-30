@@ -9,11 +9,7 @@ import { action } from '@storybook/addon-actions';
 import Button from './index';
 
 storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ));
+  .add('with submit text', () => <Button text="Submit" onClick={action('submitted')} classname="primary" />)
+  .add('with Login text', () => <Button text="Sign In" onClick={action('Loggedin')} classname="primary" />)
+  .add('add custom class', () => <Button text="auth" onClick={action('do something')} classname="round" />)
+  .add('without classname prop', () => <Button text="no class" onClick={action('some action')} />);

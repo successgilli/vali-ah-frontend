@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap');
+@import 'scss/variables';
+
+.button {
+  &__primary {
+    background-color: $darkorangecolor;
+    width: 7.5rem;
+    height: 2.688rem;
+    padding: 0.625rem;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 0.4375rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: $white;
+    outline: 0;
+    transition: 0.5s ease;
+
+    @media (max-width:  63.94rem) {
+      height: 2rem;
+      padding: 0;
+      font-size: 0.9rem;
+    }
+
+    &:hover {
+      box-shadow: 0.5rem 0.4375rem 1.113rem 0.2rem rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+  }
+
+  &__round {
+    background-color: #55A6E7;
+    width: 4.5rem;
+    height: 4.5rem;
+    padding: 0.625rem;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: $white;
+    outline: 0;
+    transition: 0.5s ease;
+
+    @media (max-width:  63.94rem) {
+      height: 2rem;
+      padding: 0;
+      font-size: 0.9rem;
+    }
+
+    &:hover {
+      box-shadow: 0.5rem 0.4375rem 1.113rem 0.2rem rgba(67, 177, 192, 0.4);
+      cursor: pointer;
+    } 
+  }
+}

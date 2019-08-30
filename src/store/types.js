@@ -1,0 +1,4 @@
+const LOGIN_USER = 'LOGIN_USER';
+const RECEIVE_DEMO = 'RECEIVE_DEMO';
+
+export { LOGIN_USER, RECEIVE_DEMO };
