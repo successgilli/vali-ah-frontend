@@ -23,12 +23,16 @@ import request from 'modules/userSelection/requests';
  */
 class HomePage extends Component {
   static propTypes = {
-    userSelection: PropTypes.objectOf(PropTypes.object),
+    userSelection: PropTypes.shape({
+      userSelection: PropTypes.arrayOf(PropTypes.object)
+    }),
     header: PropTypes.func.isRequired
   }
 
   static defaultProps = {
-    userSelection: ''
+    userSelection: {
+      userSelection: null
+    }
   }
 
   constructor(props) {

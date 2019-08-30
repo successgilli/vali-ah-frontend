@@ -1,5 +1,5 @@
 // react libraries
-import * as React from 'react';
+import React from 'react';
 
 // third-party libraries
 import { storiesOf } from '@storybook/react';
@@ -9,7 +9,7 @@ import { action } from '@storybook/addon-actions';
 import Button from './index';
 
 storiesOf('Button', module)
-  .add('with submit text', () => <Button text="Submit" onClick={action('submitted')} classname="primary" />)
-  .add('with Login text', () => <Button text="Sign In" onClick={action('Loggedin')} classname="primary" />)
-  .add('add custom class', () => <Button text="auth" onClick={action('do something')} classname="round" />)
-  .add('without classname prop', () => <Button text="no class" onClick={action('some action')} />);
+  .add('with submit text', () => <Button onClick={action('submitted')} className="button__primary">Submit</Button>)
+  .add('with Login text', () => <Button onClick={action('Loggedin')} className="button__primary">Sign In</Button>)
+  .add('add custom class', () => <Button onClick={action('do something')} className="button__round">auth</Button>)
+  .add('without classname prop', () => <Button onClick={action('some action')}>no class</Button>);

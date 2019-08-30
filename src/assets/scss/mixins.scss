@@ -15,3 +15,12 @@
 @mixin body-reset {
   margin: 0;
 }
+
+@mixin button-reset {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+}

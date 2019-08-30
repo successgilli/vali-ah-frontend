@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 // components
 import Signin from 'components/Signin';
 import Signup from 'components/Signup';
+import SocialLoginButtons from 'components/SocialLoginButtonRow';
 
 import './Modal.scss';
 
@@ -87,7 +88,7 @@ export class ModalComponent extends React.Component {
           <div className="modal__right">
             <h4 className="modal__heading">Select one to get started</h4>
             <div className="modal__social-login">
-                IBUKUN COMPONENT
+              <SocialLoginButtons />
             </div>
             <div className="modal__seperator">
               <p>or</p>
@@ -104,8 +105,8 @@ export class ModalComponent extends React.Component {
               }
               <div className="modal__setup-tag">
                 <p>
-                  {(signin) && 'Don\'t have an account ? '}
-                  {(!signin) && 'Already have an account ? '}
+                  {(signin) && 'Don\'t have an account ?'}
+                  {(!signin) && 'Already have an account ?'}
                   <button type="button" className="modal__create-account" onClick={this.handleFormChange}>{(signin) ? 'Sign up' : 'Sign in'}</button>
                 </p>
                 { signin && (

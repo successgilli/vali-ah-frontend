@@ -2,6 +2,7 @@
 import React from 'react';
 
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import mockStore from 'fixtures/store';
 import articles from 'fixtures/articles';
@@ -21,12 +22,30 @@ const initialState = {
 
 const store = mockStore(initialState);
 
+global.FB = {};
+global.gapi = {};
+global.FB.login = jest.fn();
+global.FB.getLoginStatus = (cb) => {
+  const res = {
+    status: 'connected',
+    authResponse: { access_token: 'theAccessToken' }
+  };
+  cb(res);
+};
+global.gapi.load = () => {};
+
 describe('Home Page', () => {
   beforeAll(() => {
     request.fetchSelection = jest.fn(() => articles);
   });
-  it('should renders properly when is loading is false', () => {
-    const homePage = mount(<Provider store={store}><HomePage {...initialState} /></Provider>);
+  it('should render properly when is loading is false', () => {
+    const homePage = mount(
+      <Router>
+        <Provider store={store}>
+          <HomePage {...initialState} />
+        </Provider>
+      </Router>
+    );
 
     expect(homePage).toMatchSnapshot();
   });

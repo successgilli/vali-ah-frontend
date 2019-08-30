@@ -9,6 +9,6 @@ module.exports = merge(common, {
   devServer: {
     historyApiFallback: true,
     overlay: true,
-    stats: 'minimal',
+    stats: 'minimal'
   }
 });

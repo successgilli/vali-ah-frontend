@@ -28,13 +28,18 @@
     "quotes": [2, "single"],
     "comma-dangle": 0,
     "indent": [2, 2],
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": [
-      "**/*.test.{js,jsx}",
-      "**/*.spec.{js,jsx}",
-      "**/*.stories.{js,jsx}",
-      "config/**/*.js",
-      "tests/**/*.js"
-    ]}],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.test.{js,jsx}",
+          "**/*.spec.{js,jsx}",
+          "**/*.stories.{js,jsx}",
+          "config/**/*.js",
+          "tests/**/*.js"
+        ]
+      }
+    ],
     "react/static-property-placement": [1, "static public field"],
     "react/state-in-constructor": 0
   },
@@ -55,7 +60,7 @@
   },
   "overrides": [
     {
-      "files": ["*.stories.jsx"],
+      "files": ["*.stories.jsx", "*.test.jsx", "*.spec.jsx"],
       "rules": {
         "react/jsx-props-no-spreading": "off"
       }

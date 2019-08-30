@@ -1,20 +1,19 @@
-// react libraries
 import React from 'react';
+
 import PropTypes from 'prop-types';
 
 // styles
 import './Button.scss';
-
 
 const Button = ({
   children, id, className, onClick, type = 'button'
 }) => (
   // eslint-disable-next-line react/button-has-type
   <button
-    type={type}
     id={id}
-    className={className || 'button__primary'}
+    type={type}
     onClick={onClick}
+    className={className || 'button__primary'}
   >
     {children}
   </button>
