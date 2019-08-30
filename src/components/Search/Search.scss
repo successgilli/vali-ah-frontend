@@ -1,0 +1,12 @@
+.search {
+  align-items: center;
+  background: #FBFAFA;
+  width: 30rem;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: inset 5px 5px 4px rgba(0, 0, 0, 0.05);
+}
+
+.search input::placeholder {
+  font-size: 1.3rem !important;
+}

@@ -1,0 +1,44 @@
+.heroSection {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 6rem;
+}
+
+.leftHero {
+  padding-top: 10rem;
+}
+
+.leftHero,
+.rightHero {
+  width: 50%;
+}
+
+.leftHero h1 {
+  font-size: 3.2rem;
+  line-height: 5rem;
+}
+
+.leftHero p {
+  font-size: 2rem;
+}
+
+.rightHero {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.imageWidth {
+  width: 90%;
+}
+
+.buttonWrapper button {
+  padding: 1.5rem 4rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.buttonWrapper button:last-child {
+  margin-left: 2rem;
+  border: 1px solid red;
+  border-radius: 0.5rem;
+}

@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.homeNavLinks a {
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: black;
+}
+
+.homeNavLinks a:last-child {
+  padding-left: 3rem;
+}

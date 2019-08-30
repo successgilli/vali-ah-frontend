@@ -4,6 +4,9 @@ import React, { Component } from 'react';
 // utils
 import connect from 'utils/connect';
 
+import Header from '../components/Header';
+import HeroSection from '../components/HeroSection';
+
 /**
  * @exports
  * @class HomePage
@@ -13,13 +16,20 @@ import connect from 'utils/connect';
  * @returns {JSX} HomePage Component
  */
 class HomePage extends Component {
+  static propTypes = {
+    requestDemo: PropTypes.func.isRequired,
+  }
+
   componentDidMount() {
 
   }
 
   render() {
     return (
-      <h1>Welcome to 1kbIdeas</h1>
+      <>
+        <Header />
+        <HeroSection />
+      </>
     );
   }
 }
