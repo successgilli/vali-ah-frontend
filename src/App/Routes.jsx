@@ -12,7 +12,7 @@ const Routes = () => (
   <Switch>
     <Route exact path="/" component={HomePage} />
     <Route exact path="/login" component={UserFeedPage} />
-    <Route exact path="/password-reset" component={PasswordResetPage} />
+    <Route path="/password-reset" component={PasswordResetPage} />
     <Route component={NotFoundPage} />
   </Switch>
 );

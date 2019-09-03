@@ -36,6 +36,102 @@ exports[`Storyshots Button without classname prop 1`] = `
 </button>
 `;
 
+exports[`Storyshots Form With header 1`] = `
+Array [
+  <h5>
+    Form Header
+  </h5>,
+  <form
+    className="ui form "
+  >
+    <div
+      className="ui form"
+    >
+      <div
+        className="field class"
+      >
+        <label
+          htmlFor="email"
+        >
+          Email address
+          <input
+            id="email"
+            name="email"
+            onChange={[Function]}
+            placeholder="Email address"
+            type="text"
+            value=""
+          />
+          <i
+            className="form--error"
+          />
+        </label>
+      </div>
+      <div
+        className="ui button"
+        disabled={false}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="presentation"
+      >
+        Submit
+        <div
+          className="ui  loader"
+        />
+      </div>
+    </div>
+    
+  </form>,
+]
+`;
+
+exports[`Storyshots Form Without header 1`] = `
+Array [
+  "",
+  <form
+    className="ui form "
+  >
+    <div
+      className="ui form"
+    >
+      <div
+        className="field class"
+      >
+        <label
+          htmlFor="email"
+        >
+          Email address
+          <input
+            id="email"
+            name="email"
+            onChange={[Function]}
+            placeholder="Email address"
+            type="text"
+            value=""
+          />
+          <i
+            className="form--error"
+          />
+        </label>
+      </div>
+      <div
+        className="ui button"
+        disabled={false}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="presentation"
+      >
+        Submit
+        <div
+          className="ui  loader"
+        />
+      </div>
+    </div>
+    
+  </form>,
+]
+`;
+
 exports[`Storyshots Icon active 1`] = `
 <button
   aria-label="upvote"
@@ -437,6 +533,218 @@ exports[`Storyshots Signin sign in form 1`] = `
     </button>
   </section>
 </form>
+`;
+
+exports[`Storyshots Message Error 1`] = `
+<div
+  className="ui error message"
+>
+  <i
+    className="close icon"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="presentation"
+  />
+  <div
+    className="header"
+  >
+    There were some errors with your submission
+  </div>
+  <ul
+    className="list"
+  >
+    <li>
+      message 1
+    </li>
+    <li>
+      message 2
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Message With Heading 1`] = `
+<div
+  className="ui  message"
+>
+  <i
+    className="close icon"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="presentation"
+  />
+  <div
+    className="header"
+  >
+    There were some errors with your submission
+  </div>
+  <ul
+    className="list"
+  />
+</div>
+`;
+
+exports[`Storyshots Message With messages 1`] = `
+<div
+  className="ui  message"
+>
+  <i
+    className="close icon"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="presentation"
+  />
+  <div
+    className="header"
+  >
+    There were some errors with your submission
+  </div>
+  <ul
+    className="list"
+  >
+    <li>
+      message 1
+    </li>
+    <li>
+      message 2
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Message Without Heading 1`] = `null`;
+
+exports[`Storyshots Password Reset Password Reset Form 1`] = `
+<div
+  className="password-reset"
+>
+  <span>
+    Reset password
+  </span>
+  <span>
+    Enter your email address
+  </span>
+  <span>
+    We will send you a password reset link
+  </span>
+  
+  <form
+    className="ui form "
+  >
+    <div
+      className="ui form"
+    >
+      <div
+        className="field undefined"
+      >
+        <label
+          htmlFor="email"
+        >
+          
+          <input
+            id="email"
+            name="email"
+            onChange={[Function]}
+            placeholder="Email address"
+            type="text"
+            value=""
+          />
+          <i
+            className="form--error"
+          />
+        </label>
+      </div>
+      <div
+        className="ui button"
+        disabled={false}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="presentation"
+      >
+        Reset
+        <div
+          className="ui  loader"
+        />
+      </div>
+    </div>
+    
+  </form>
+</div>
+`;
+
+exports[`Storyshots Password Update Password update Form 1`] = `
+<div
+  className="password-reset"
+>
+  <span>
+    Update password
+  </span>
+  <span>
+    Enter your new password
+  </span>
+  
+  <form
+    className="ui form "
+  >
+    <div
+      className="ui form"
+    >
+      <div
+        className="field undefined"
+      >
+        <label
+          htmlFor="password"
+        >
+          
+          <input
+            id="password"
+            name="password"
+            onChange={[Function]}
+            placeholder="password"
+            type="password"
+            value=""
+          />
+          <i
+            className="form--error"
+          />
+        </label>
+      </div>
+      <div
+        className="field undefined"
+      >
+        <label
+          htmlFor="confirmPassword"
+        >
+          
+          <input
+            id="confirmPassword"
+            name="confirmPassword"
+            onChange={[Function]}
+            placeholder="confirm password"
+            type="password"
+            value=""
+          />
+          <i
+            className="form--error"
+          />
+        </label>
+      </div>
+      <div
+        className="ui button"
+        disabled={false}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="presentation"
+      >
+        Update
+        <div
+          className="ui  loader"
+        />
+      </div>
+    </div>
+    
+  </form>
+</div>
 `;
 
 exports[`Storyshots Vote downvoted 1`] = `

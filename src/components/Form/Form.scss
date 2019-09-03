@@ -1,0 +1,28 @@
+@import 'scss/style';
+
+.form {
+  .ui {
+    &.button {
+      position: relative;
+      background-color: $primarycolor;
+      color: $whitecolor;
+
+      &.loader {
+        position: absolute;
+        right: auto;
+        left: auto;
+      }
+    }
+
+    &.button:hover {
+      background-color: $primarycolor;
+      color: $whitecolor;
+    }
+  }
+
+  &--error {
+    font-size: 0.625rem;
+    text-align: left;
+    color: $alertcolor;
+  }
+}

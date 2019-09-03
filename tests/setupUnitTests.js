@@ -10,6 +10,7 @@ import {
 } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
+
 config();
 
 global.React = React;

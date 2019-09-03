@@ -31,16 +31,6 @@ it('should render not found for invalid route', () => {
   expect(wrapper.contains(<h3>This page is not found.</h3>)).toBe(true);
 });
 
-it('should visit the password reset page', () => {
-  const wrapper = mount(
-    <MemoryRouter initialEntries={['/password-reset']} initialIndex={0}>
-      <App />
-    </MemoryRouter>
-  );
-
-  expect(wrapper.contains(<div>This is the password reset page.</div>)).toBe(true);
-});
-
 it('should visit the user feed page', () => {
   const wrapper = mount(
     <MemoryRouter initialEntries={['/login']} initialIndex={0}>
