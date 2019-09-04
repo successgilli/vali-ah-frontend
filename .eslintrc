@@ -6,13 +6,21 @@
     "node": true
   },
   "globals": {
+    "after": true,
+    "afterAll": true,
+    "afterEach": true,
+    "before": true,
+    "beforeAll": true,
+    "beforeEach": true,
     "cy": true,
     "describe": true,
     "it": true,
     "shallow": true,
     "mount": true,
     "expect": true,
+    "jest": true,
     "render": true,
+    "sinon": true,
     "toJson": true
   },
   "extends": ["airbnb"],
@@ -27,7 +35,8 @@
       "config/**/*.js",
       "tests/**/*.js",
     ]}],
-    "react/static-property-placement": [1, "static public field"]
+    "react/static-property-placement": [1, "static public field"],
+    "react/state-in-constructor": 0
   },
   "settings": {
     "import/resolver": {
@@ -37,8 +46,17 @@
         "components": "src/components",
         "pages": "src/pages",
         "modules": "src/store/modules",
-        "utils": "src/utils"
+        "utils": "src/utils",
+        "fixtures": "src/tests/fixtures"
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.stories.jsx",],
+      "rules": {
+        "react/jsx-props-no-spreading": "off"
+      }
+    }
+  ]
 }

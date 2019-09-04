@@ -10,8 +10,10 @@
   "plugins": [
     "macros",
     "react-hot-loader/babel",
+    "@babel/plugin-transform-runtime",
     "@babel/plugin-transform-regenerator",
     "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-optional-chaining",
     ["module-resolver", {
       "root": ["./src"],
       "alias": {
@@ -21,5 +23,6 @@
         "utils": "./src/utils/"
       }
     }],
-  ]
+  ],
+  "sourceMap" : "inline"
 }

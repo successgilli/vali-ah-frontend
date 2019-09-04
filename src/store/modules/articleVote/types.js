@@ -1,0 +1,8 @@
+const VOTE_ARTICLE_REQUEST = 'vali-ah-frontend/articleVote/VOTE_ARTICLE_REQUEST';
+const VOTE_ARTICLE_SUCCESS = 'vali-ah-frontend/articleVote/VOTE_ARTICLE_SUCCESS';
+const VOTE_ARTICLE_FAILURE = 'vali-ah-frontend/articleVote/VOTE_ARTICLE_FAILURE';
+const INIT_ARTICLE_VOTE_COUNT = 'vali-ah-frontend/articleVote/INIT_ARTICLE_VOTE_COUNT';
+
+export {
+  VOTE_ARTICLE_REQUEST, VOTE_ARTICLE_SUCCESS, VOTE_ARTICLE_FAILURE, INIT_ARTICLE_VOTE_COUNT
+};

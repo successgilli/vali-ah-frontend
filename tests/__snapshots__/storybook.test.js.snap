@@ -20,3 +20,150 @@ exports[`Storyshots Button with text 1`] = `
   Hello Button
 </button>
 `;
+
+exports[`Storyshots Icon active 1`] = `
+<button
+  aria-label="upvote"
+  className="icon icon--upvote icon--active"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  type="button"
+/>
+`;
+
+exports[`Storyshots Icon downvote 1`] = `
+<button
+  aria-label="downvote"
+  className="icon icon--downvote"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  type="button"
+/>
+`;
+
+exports[`Storyshots Icon upvote 1`] = `
+<button
+  aria-label="upvote"
+  className="icon icon--upvote"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  type="button"
+/>
+`;
+
+exports[`Storyshots Vote downvoted 1`] = `
+<div
+  className="vote"
+>
+  <div
+    className="vote__wrapper"
+  >
+    <button
+      aria-label="upvote"
+      className="icon icon--upvote"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    />
+    <span
+      className=""
+    >
+      29
+    </span>
+  </div>
+  <div
+    className="vote__wrapper"
+  >
+    <button
+      aria-label="downvote"
+      className="icon icon--downvote icon--active"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    />
+    <span
+      className="active"
+    >
+      11
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Vote nullvote 1`] = `
+<div
+  className="vote"
+>
+  <div
+    className="vote__wrapper"
+  >
+    <button
+      aria-label="upvote"
+      className="icon icon--upvote"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    />
+    <span
+      className=""
+    >
+      29
+    </span>
+  </div>
+  <div
+    className="vote__wrapper"
+  >
+    <button
+      aria-label="downvote"
+      className="icon icon--downvote"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    />
+    <span
+      className=""
+    >
+      10
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Vote upvoted 1`] = `
+<div
+  className="vote"
+>
+  <div
+    className="vote__wrapper"
+  >
+    <button
+      aria-label="upvote"
+      className="icon icon--upvote icon--active"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    />
+    <span
+      className="active"
+    >
+      30
+    </span>
+  </div>
+  <div
+    className="vote__wrapper"
+  >
+    <button
+      aria-label="downvote"
+      className="icon icon--downvote"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    />
+    <span
+      className=""
+    >
+      10
+    </span>
+  </div>
+</div>
+`;
