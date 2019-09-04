@@ -2,10 +2,10 @@
 import { all } from 'redux-saga/effects';
 
 // modules
-import { watchDemoRequests } from 'modules/demo';
+import { watchVoteRequest } from 'modules/articleVote';
 
 export default function* rootSaga() {
   yield all([
-    watchDemoRequests()
+    watchVoteRequest()
   ]);
 }

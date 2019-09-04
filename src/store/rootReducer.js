@@ -2,8 +2,8 @@
 import { combineReducers } from 'redux';
 
 // modules
-import demo from 'modules/demo';
+import articleVote from 'modules/articleVote';
 
 export default combineReducers({
-  demo,
+  articleVote
 });

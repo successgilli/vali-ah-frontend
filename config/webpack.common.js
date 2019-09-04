@@ -1,5 +1,7 @@
 const path = require('path');
-const { htmlWebpackPlugin, extractTextPlugin, ExtractTextPlugin } = require('./webpack.plugins.js');
+const {
+  htmlWebpackPlugin, extractTextPlugin, ExtractTextPlugin, definePlugin
+} = require('./webpack.plugins.js');
 
 module.exports = {
   entry: ['react-hot-loader/patch', './src/index.jsx'],
@@ -15,9 +17,11 @@ module.exports = {
       components: path.resolve(__dirname, '../src/components'),
       pages: path.resolve(__dirname, '../src/pages'),
       modules: path.resolve(__dirname, '../src/store/modules'),
+      store: path.resolve(__dirname, '../src/store'),
       utils: path.resolve(__dirname, '../src/utils'),
       'react-dom': '@hot-loader/react-dom',
-      scss: path.resolve(__dirname, '../src/assets/scss')
+      scss: path.resolve(__dirname, '../src/assets/scss'),
+      fixtures: path.resolve(__dirname, '../tests/fixtures')
     },
     modules: [path.resolve(__dirname, 'src'), 'node_modules']
   },
@@ -48,6 +52,7 @@ module.exports = {
   },
   plugins: [
     htmlWebpackPlugin,
-    extractTextPlugin
+    extractTextPlugin,
+    definePlugin
   ],
 };
