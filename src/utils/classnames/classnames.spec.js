@@ -1,6 +1,6 @@
 import classNames from './index';
 
-describe('classnames module', () => {
+describe('classnames util', () => {
   it('should return empty string if no class is passed in', () => {
     const classname = classNames();
 

@@ -1,21 +1,19 @@
 // react libraries
 import * as React from 'react';
 
-import { Provider } from 'react-redux';
+// third-party libraries
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
-import Vote from 'components/Vote';
+// components
+import { Vote } from 'components/Vote';
 
-import store from 'store/';
-
-const withProvider = (story) => (
-  <Provider store={store}>
-    { story() }
-  </Provider>
-);
+const actions = {
+  initArticleVoteCount: action('initArticleVoteCount'),
+  voteArticle: action('voteArticle')
+};
 
 storiesOf('Vote', module)
-  .addDecorator(withProvider)
-  .add('upvoted', () => <Vote articleId="645a93d8-252a-4f5b-9a72-0a3af9323614" upVoteCount={30} activeVoteType="upVote" />)
-  .add('downvoted', () => <Vote articleId="645a93d8-252a-4f5b-9a72-0a3af9323614" upVoteCount={30} activeVoteType="downVote" />)
-  .add('nullvote', () => <Vote articleId="645a93d8-252a-4f5b-9a72-0a3af9323614" upVoteCount={30} activeVoteType="nullVote" />);
+  .add('nullvote', () => <Vote articleId="645a93d8" upVoteCount={29} downVoteCount={10} activeVoteType="nullVote" {...actions} />)
+  .add('upvoted', () => <Vote articleId="645a93d8" upVoteCount={30} downVoteCount={10} activeVoteType="upVote" {...actions} />)
+  .add('downvoted', () => <Vote articleId="645a93d8" upVoteCount={29} downVoteCount={11} activeVoteType="downVote" {...actions} />);

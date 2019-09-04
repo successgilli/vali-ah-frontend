@@ -1,14 +1,18 @@
-import React from 'react';
-
+// react libraries
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+// utils
+import classNames from 'utils/classnames';
+
+// styles
 import './Icon.scss';
 
 /**
  * Base component for individual Icon
  *
  */
-export default class Icon extends React.Component {
+export default class Icon extends Component {
   /**
     * @name Icon propTypes
     * @type {propTypes}
@@ -16,13 +20,13 @@ export default class Icon extends React.Component {
     * @param {Object} props - React PropTypes
     *
     * @property {string} icon - icon type to render based on the css
-    * @property {Function} clickHandler - handles icon click and keypress event
+    * @property {Function} onClick - handles icon click and keypress event
     * @property {Boolean} active - determines if icon is active
     *
     */
   static propTypes = {
     icon: PropTypes.string.isRequired,
-    clickHandler: PropTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired,
     active: PropTypes.bool
   }
 
@@ -31,21 +35,33 @@ export default class Icon extends React.Component {
   }
 
   /**
-    * Handles icon click event and calls the attach clicked handler
+    * Handles icon click event and calls the attached clicked handler
     * @method
     *
     * @return {void}
     */
-  onClickHandler = () => {
-    const { clickHandler, ...otherProps } = this.props;
+  clickHandler = () => {
+    const { onClick } = this.props;
 
-    clickHandler(otherProps);
+    onClick();
   };
 
   render() {
     const { icon, active } = this.props;
+    const classes = classNames({
+      icon: true,
+      [`icon--${icon}`]: true,
+      'icon--active': active
+    });
+
     return (
-      <button type="button" aria-label={icon} className={`icon icon--${icon} ${active && 'active'}`} onClick={this.onClickHandler} onKeyDown={this.onClickHandler} />
+      <button
+        type="button"
+        aria-label={icon}
+        className={classes}
+        onClick={this.clickHandler}
+        onKeyDown={this.clickHandler}
+      />
     );
   }
 }

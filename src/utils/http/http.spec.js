@@ -9,13 +9,12 @@ describe('HTTP client', () => {
     localStorage.setItem('token', 'token');
     http.interceptors.request.handlers[0].fulfilled(http.defaults);
 
-    expect(http.defaults.headers.Authorization).toBe('BEARER token');
+    expect(http.defaults.headers.Authorization).toBe('Bearer token');
   });
 
-  it('should attach response data to responseBody', () => {
-    http.data = { data: [] };
-    http.interceptors.response.handlers[0].fulfilled(http);
+  it('should return the axios response data', () => {
+    const response = http.interceptors.response.handlers[0].fulfilled({ data: { data: [] } });
 
-    expect(http.responseBody).toEqual([]);
+    expect(response).toEqual({ data: [] });
   });
 });

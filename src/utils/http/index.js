@@ -4,20 +4,16 @@
  */
 import axios from 'axios';
 
-const axiosInstance = axios.create({
+const http = axios.create({
   baseURL: process.env.API_ROUTE
 });
 
-axiosInstance.interceptors.request.use((config) => {
-  config.headers.Authorization = `BEARER ${localStorage.getItem('token')}`;
+http.interceptors.request.use((config) => {
+  config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
 
   return config;
 });
 
-axiosInstance.interceptors.response.use((config) => {
-  config.responseBody = config?.data?.data;
+http.interceptors.response.use((response) => response?.data);
 
-  return config;
-});
-
-export default axiosInstance;
+export default http;

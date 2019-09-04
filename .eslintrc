@@ -7,8 +7,10 @@
   },
   "globals": {
     "after": true,
+    "afterAll": true,
     "afterEach": true,
     "before": true,
+    "beforeAll": true,
     "beforeEach": true,
     "cy": true,
     "describe": true,
@@ -33,7 +35,8 @@
       "config/**/*.js",
       "tests/**/*.js",
     ]}],
-    "react/static-property-placement": [1, "static public field"]
+    "react/static-property-placement": [1, "static public field"],
+    "react/state-in-constructor": 0
   },
   "settings": {
     "import/resolver": {
@@ -47,5 +50,13 @@
         "fixtures": "src/tests/fixtures"
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.stories.jsx",],
+      "rules": {
+        "react/jsx-props-no-spreading": "off"
+      }
+    }
+  ]
 }

@@ -9,13 +9,13 @@
     display: flex;
     align-items: center;
     margin-right: 1.5rem;
-  }
 
-  span:not(.active) {
-    font-size: 1rem;
+    span:not(.active) {
+      font-size: 1rem;
 
-    &:not(.active) {
-      color: $graycolor;
+      &:not(.active) {
+        color: $graycolor;
+      }
     }
   }
 }

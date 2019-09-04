@@ -1,23 +1,27 @@
+// react libraries
 import React from 'react';
-
 import PropTypes from 'prop-types';
 
 // third-party libraries
+import { connect } from 'react-redux';
+
+// components
 import Icon from 'components/Icon';
 
 // sagas (action creators)
-import { voteOnArticle, initArticleVoteCount } from 'modules/articleVote';
+import { voteArticle, initArticleVoteCount } from 'modules/articleVote';
 
-import connect from 'utils/connect';
+// utils
 import classNames from 'utils/classnames';
 
+// styles
 import './Vote.scss';
 
 /**
  * Component for article vote
  * @summary composes the upvote and the downvote icons along with the vote count
  */
-class Vote extends React.Component {
+export class Vote extends React.Component {
   /**
     * @name Vote propTypes
     * @type {propTypes}
@@ -26,7 +30,7 @@ class Vote extends React.Component {
     *
     * @property {string} articleId - id of the article to vote on
     * @property {string} activeVoteType - article voteType by the current user
-    * @property {Function} voteOnArticle - action creator to vote on an article
+    * @property {Function} voteArticle - action creator to vote on an article
     * @property {Function} initArticleVoteCount - initialises the article vote count
     * @property {Function} articleVote - redux state map to props
     * @property {Function} upVoteCount - article's upvote count
@@ -36,17 +40,14 @@ class Vote extends React.Component {
   static propTypes = {
     articleId: PropTypes.string.isRequired,
     activeVoteType: PropTypes.string,
-    voteOnArticle: PropTypes.func.isRequired,
+    voteArticle: PropTypes.func.isRequired,
     initArticleVoteCount: PropTypes.func.isRequired,
-    articleVote: PropTypes.isRequired,
-    upVoteCount: PropTypes.number,
-    downVoteCount: PropTypes.number
+    upVoteCount: PropTypes.number.isRequired,
+    downVoteCount: PropTypes.number.isRequired
   }
 
   static defaultProps = {
-    activeVoteType: null,
-    upVoteCount: 0,
-    downVoteCount: 0
+    activeVoteType: null
   }
 
   constructor(props) {
@@ -55,13 +56,21 @@ class Vote extends React.Component {
   }
 
   componentDidMount() {
-    const { initArticleVoteCount: articleVoteCount, upVoteCount, downVoteCount } = this.props;
+    /*
+      This should be initialized anytime a new article is loaded
+      TODO(Miracle): Confirm if this should be removed from here after Articles page is complete
+    */
+    const {
+      initArticleVoteCount: initializeArticleVoteCount,
+      upVoteCount,
+      downVoteCount
+    } = this.props;
 
-    articleVoteCount({ upVoteCount, downVoteCount });
+    initializeArticleVoteCount({ upVoteCount, downVoteCount });
   }
 
   /**
-    * Handles vote action
+    * Handle vote action
     * @method
     *
     * @param {Object} payload
@@ -69,39 +78,42 @@ class Vote extends React.Component {
     *
     * @return {void}
     */
-  onVoteHandler = ({ voteType }) => {
-    const { voteOnArticle: voteOnArticleHandler, articleId } = this.props;
+  onVoteHandler = (voteType) => () => {
+    const { voteArticle: voteArticleHandler, articleId } = this.props;
     const { activeVoteType } = this.state;
-
     const vote = voteType === activeVoteType ? 'nullVote' : voteType;
 
-    voteOnArticleHandler({ articleId, voteType: vote, prevVote: activeVoteType });
+    voteArticleHandler({ articleId, voteType: vote, prevVote: activeVoteType });
 
     this.setState({ activeVoteType: vote });
   };
 
   render() {
-    const { articleVote: { upVoteCount, downVoteCount } } = this.props;
+    const { upVoteCount, downVoteCount } = this.props;
     const { activeVoteType } = this.state;
     const upVoteActive = activeVoteType === 'upVote';
-
-    const classList = classNames({
-      active: activeVoteType !== 'nullVote' && !upVoteActive
-    });
+    const downVoteActive = activeVoteType !== 'nullVote' && !upVoteActive;
+    const upVoteClassList = classNames({ active: upVoteActive });
+    const downVoteClassList = classNames({ active: downVoteActive });
 
     return (
       <div className="vote">
         <div className="vote__wrapper">
-          <Icon icon="upvote" voteType="upVote" clickHandler={this.onVoteHandler} active={upVoteActive} />
-          <span className={`${upVoteActive && 'active'}`}>{upVoteCount}</span>
+          <Icon icon="upvote" onClick={this.onVoteHandler('upVote')} active={upVoteActive} />
+          <span className={upVoteClassList}>{upVoteCount}</span>
         </div>
         <div className="vote__wrapper">
-          <Icon icon="downvote" voteType="downVote" clickHandler={this.onVoteHandler} active={activeVoteType !== 'nullVote' && !upVoteActive} />
-          <span className={classList}>{downVoteCount}</span>
+          <Icon icon="downvote" onClick={this.onVoteHandler('downVote')} active={downVoteActive} />
+          <span className={downVoteClassList}>{downVoteCount}</span>
         </div>
       </div>
     );
   }
 }
 
-export default connect({ voteOnArticle, initArticleVoteCount })(Vote);
+const mapStateToProps = (state) => ({
+  upVoteCount: state.articleVote.votes.upVoteCount,
+  downVoteCount: state.articleVote.votes.downVoteCount
+});
+
+export default connect(mapStateToProps, { voteArticle, initArticleVoteCount })(Vote);

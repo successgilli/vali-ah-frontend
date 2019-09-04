@@ -1,11 +1,10 @@
+// utils
 import http from 'utils/http';
 
+/* TODO(Miracle) Refactor this request to return
+  correct response when real implementation is ready  */
 export default {
-  voteArticle: async ({ articleId, voteType }) => {
-    const response = await http.post(`/articles/${articleId}/vote`, {
-      voteType
-    });
-
-    return response.responseBody;
-  }
+  voteArticle: async ({ articleId, voteType }) => http.post(`/articles/${articleId}/vote`, {
+    voteType
+  })
 };
