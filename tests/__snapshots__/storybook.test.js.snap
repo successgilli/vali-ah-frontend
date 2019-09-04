@@ -2,6 +2,8 @@
 
 exports[`Storyshots Button with some emoji 1`] = `
 <button
+  className=""
+  id=""
   type="button"
 >
   <span
@@ -15,6 +17,8 @@ exports[`Storyshots Button with some emoji 1`] = `
 
 exports[`Storyshots Button with text 1`] = `
 <button
+  className=""
+  id=""
   type="button"
 >
   Hello Button

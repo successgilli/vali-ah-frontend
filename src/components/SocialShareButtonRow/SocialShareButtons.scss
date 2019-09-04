@@ -1,0 +1,91 @@
+.social-share-buttons {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: auto;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  align-content: space-between;
+
+  &__twitter {
+
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #00ACED;
+    width: 3.125rem;
+    height: 3.125rem;
+    min-height: 2.5rem;
+    border: 0.125rem solid #00ACED;
+    border-radius: 50%;
+    text-align: center;
+    outline: none;
+  }
+
+  &__twitter:hover {
+    background: #00ACED;
+    cursor: pointer;
+  }
+
+  &__email {
+  
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #D7493C;
+    width: 3.125rem;
+    height: 3.125rem;
+    min-height: 2.5rem;
+    border: 0.125rem solid #D7493C;
+    border-radius: 50%;
+    text-align: center;
+    outline: none;
+  }
+
+  &__email:hover {
+    background: #D7493C;
+    cursor: pointer;
+  }
+
+  &__facebook {
+  
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #3B5998;
+    width: 3.125rem;
+    height: 3.125rem;
+    min-height: 2.5rem;
+    border: 0.125rem solid #3B5998;
+    border-radius: 50%;
+    text-align: center;
+    outline: none;
+  }
+
+  &__facebook:hover {
+    background: #3B5998;
+    cursor: pointer;
+  }
+
+  &__space {
+    background: #FFF;
+    width: 0.9375rem;
+    min-height: 2.5rem;
+  }
+
+  &__button-image {
+    height: 1.375rem;
+    margin: 0 0.3125rem;
+    color: #FFF;
+    fill: #FFF;
+  }
+
+  &__span {
+    vertical-align: top;
+    padding-right: 0.9375rem;
+    line-height: 3.625rem;
+  }
+}

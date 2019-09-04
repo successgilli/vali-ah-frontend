@@ -7,7 +7,7 @@ import { hot } from 'react-hot-loader/root';
 import { Provider } from 'react-redux';
 
 // components
-import Header from 'components/Header';
+// import Header from 'components/Header';
 import Routes from './Routes';
 
 // store
@@ -15,7 +15,6 @@ import store from '../store';
 
 const App = () => (
   <Provider store={store}>
-    <Header />
     <Routes />
   </Provider>
 );
