@@ -19,7 +19,9 @@ class HomePage extends Component {
 
   render() {
     return (
-      <h1>Welcome to 1kbIdeas</h1>
+      <>
+        <h1>Welcome to 1kbIdeas</h1>
+      </>
     );
   }
 }
