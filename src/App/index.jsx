@@ -7,7 +7,6 @@ import { Provider } from 'react-redux';
 import 'babel-polyfill';
 
 // components
-import Header from 'components/Header';
 import Routes from './Routes';
 
 // store
@@ -15,7 +14,6 @@ import store from '../store';
 
 const App = () => (
   <Provider store={store}>
-    <Header />
     <Routes />
   </Provider>
 );

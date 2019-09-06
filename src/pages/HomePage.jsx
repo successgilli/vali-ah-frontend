@@ -1,11 +1,9 @@
 // react libraries
 import React, { Component } from 'react';
-
 // utils
 import connect from 'utils/connect';
-
-import Header from '../components/Header';
-import HeroSection from '../components/HeroSection';
+// components
+import Navbar from 'components/Header';
 
 /**
  * @exports
@@ -16,22 +14,15 @@ import HeroSection from '../components/HeroSection';
  * @returns {JSX} HomePage Component
  */
 class HomePage extends Component {
-  static propTypes = {
-    requestDemo: PropTypes.func.isRequired,
-  }
-
-  componentDidMount() {
-
-  }
+  componentDidMount() {}
 
   render() {
     return (
       <>
-        <Header />
-        <HeroSection />
+        <Navbar />
+        <h1>Welcome to 1kbIdeas</h1>
       </>
     );
   }
 }
-
-export default connect({ })(HomePage);
+export default connect({})(HomePage);

@@ -36,6 +36,87 @@ exports[`Storyshots Button without classname prop 1`] = `
 </button>
 `;
 
+exports[`Storyshots Card with text 1`] = `
+<div
+  className="ui card "
+>
+  <div
+    className="image card-thumbnail "
+  >
+    <img
+      alt="loading"
+      src="img"
+    />
+  </div>
+  <div
+    className="content"
+  >
+    <p
+      className="header card-category"
+    >
+      tag
+    </p>
+    <p
+      className="header"
+    >
+      title
+    </p>
+    <div
+      className="description"
+    >
+      <p>
+        summary
+      </p>
+    </div>
+    <div
+      className="meta card-author"
+    >
+      author
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Header The full navbar 1`] = `
+<header
+  className="header"
+>
+  <a
+    href="/#"
+  >
+    <img
+      alt="1kbIdeas logo"
+      className="header_logo"
+      src="test-file-stub"
+    />
+  </a>
+  <div>
+    <input
+      className="header_search"
+      onChange={[Function]}
+      onKeyUp={[Function]}
+      placeholder="Search for articles"
+      type="text"
+      value=""
+    />
+  </div>
+  <nav>
+    <a
+      className="header__homeNavLinks header__homeNavLinks--right-margin"
+      href="/#"
+    >
+      Sign in
+    </a>
+    <a
+      className="header__homeNavLinks"
+      href="/#"
+    >
+      Sign up
+    </a>
+  </nav>
+</header>
+`;
+
 exports[`Storyshots Icon active 1`] = `
 <button
   aria-label="upvote"

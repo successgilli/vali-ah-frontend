@@ -45,8 +45,13 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'postcss-loader']
       },
       {
-        test: /\.(png|jpg|gif|jpeg)$/,
-        loader: 'file-loader',
+        test: /\.(eot|woff|woff2|ttf|png|jpg|gif|jpeg|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: { useRelativePath: true }
+          }
+        ]
       }
     ]
   },

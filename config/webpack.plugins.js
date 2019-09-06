@@ -5,6 +5,9 @@ const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Dotenv = require('dotenv');
+
+Dotenv.config();
 
 dotenv.config();
 
@@ -26,7 +29,7 @@ const cleanWebpackPlugin = new CleanWebpackPlugin();
 const extractTextPlugin = new ExtractTextPlugin('bundle.min.css');
 
 const definePlugin = new webpack.DefinePlugin({
-  'process.env': JSON.stringify(process.env)
+  'process.env': JSON.stringify(process.env),
 });
 
 module.exports = {

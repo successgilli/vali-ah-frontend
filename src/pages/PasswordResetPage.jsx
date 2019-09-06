@@ -7,5 +7,4 @@ const PasswordResetPage = () => (
   </div>
 );
 
-
 export default PasswordResetPage;

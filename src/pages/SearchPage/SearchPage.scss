@@ -1,0 +1,27 @@
+.search-container {
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.search-container__query-button .query-button__tag,
+.search-container__query-button .query-button__author,
+.search-container__query-button .query-button__title,
+.search-container__query-button .query-button__keyword {
+  background: #FFF;
+  margin: 1rem;
+  border: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.card-display {
+  display: inline-block;
+  text-align: left;
+}
+
+.search-container__query-button .query-button__tag:hover,
+.search-container__query-button .query-button__author:hover,
+.search-container__query-button .query-button__title:hover,
+.search-container__query-button .query-button__keyword:hover {
+  color: rgb(248, 120, 41);
+}
