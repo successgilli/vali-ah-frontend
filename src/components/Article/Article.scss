@@ -1,0 +1,57 @@
+@import '~scss/style';
+@import 'scss/mixins';
+
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+
+  &__img-cover {
+    width: 100%;
+    height: 30rem;
+  }
+
+  &__info {
+    width: 65%;
+    margin-top: 2.5rem;
+  }
+
+  &__title {
+    display: block;
+    margin-top: 0;
+    font-family: 'Rubik', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 500;
+    line-height: 4.7rem;
+    text-align: justify;
+    font-style: normal;
+    text-justify: auto;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+    
+    &__img {
+      vertical-align: middle;
+      width: 6.2rem;
+      height: 6.2rem;
+      border-radius: 50%;
+    }
+
+    &__name {
+      margin-left: 1.9rem;
+      font-size: 1.5rem;
+      font-weight: 450;
+      text-transform: capitalize;
+    }
+  }
+	
+}
+
+.loader {
+  margin-top: 15rem;
+}
