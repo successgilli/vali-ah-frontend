@@ -2,13 +2,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({ children }) => (<button type="button">{children}</button>);
+// styles
+import './Button.scss';
+
+
+const Button = ({
+  text,
+  type,
+  onClick,
+  classname
+}) => (
+  // eslint-disable-next-line react/button-has-type
+  <button
+    type={type}
+    onClick={onClick}
+    className={classname ? `button__${classname}` : 'button__primary'}
+  >
+    {text}
+  </button>
+);
 
 Button.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]).isRequired
+  type: PropTypes.string.isRequired,
+  classname: PropTypes.isRequired,
+  onClick: PropTypes.func.isRequired,
+  text: PropTypes.string.isRequired
 };
 
 export default Button;

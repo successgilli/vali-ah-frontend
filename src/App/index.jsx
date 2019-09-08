@@ -1,10 +1,10 @@
 // react libraries
-import 'babel-polyfill';
 import React from 'react';
 
 // third-party libraries
 import { hot } from 'react-hot-loader/root';
 import { Provider } from 'react-redux';
+import 'babel-polyfill';
 
 // components
 import Header from 'components/Header';
