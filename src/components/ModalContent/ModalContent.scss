@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap');
+@import 'scss/variables';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', sans-serif;
+}
+
+.modal-content {
+  position: relative;
+  z-index: 500;
+  display: flex;
+  background-color: $white;
+  min-width: 30%;
+  max-width: 80%;
+  min-height: 10.5rem;
+  box-sizing: border-box;
+
+  @media (max-width: 63.94rem) {
+    width: 90%;
+    min-height: 10.5rem;
+  }
+
+  &__wrapper {
+    width: 100%;
+  }
+
+  &__close {
+    position: absolute;
+    z-index: 1000;
+    top: -1.25rem;
+    right: -1.125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFF;
+    width: 2.813rem;
+    height: 2.813rem;
+    padding: 0;
+    border: 0.125rem solid #FFF;
+    border-radius: 50%;
+    font-size: 1.563rem;
+    font-weight: 100;
+    box-shadow: 0 0.4375rem 1.813rem rgba(0, 0, 0, 0.16);
+    cursor: pointer;
+    outline: 0;
+    transition: 0.5s ease;
+
+    @media (max-width: 26.56rem) {
+      top: -0.7rem;
+      right: -0.7rem;
+      width: 2rem;
+      height: 2rem;
+      font-size: 1rem;
+      font-weight: 0;
+    }
+
+    &:hover {
+      border: 0.125rem solid rgba(253, 130, 52, 0.6);
+      box-shadow: 0 0.4375rem 1.813rem rgba(0, 0, 0, 0.5);
+      color: rgba(253, 130, 52, 0.6);
+    }
+  }
+}

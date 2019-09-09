@@ -1,5 +1,153 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots AuthDisplay Auth content proposed in midal 1`] = `
+<div
+  className="auth-display"
+>
+  <div
+    className="auth-display__left"
+  >
+    <div>
+      <h2
+        className="auth-display__head"
+      >
+        Share your stories
+      </h2>
+      <h1
+        className="auth-display__welcome"
+      >
+        Create your free account
+      </h1>
+      <p
+        className="auth-display__text"
+      >
+        We’ll need your details for setting up your account to serve you more personalized stories from creatives.
+      </p>
+    </div>
+  </div>
+  <div
+    className="auth-display__right"
+  >
+    <h4
+      className="auth-display__heading"
+    >
+      Select one to get started
+    </h4>
+    <div
+      className="auth-display__social-login"
+    >
+      IBUKUN COMPONENT
+    </div>
+    <div
+      className="auth-display__seperator"
+    >
+      <p>
+        or
+      </p>
+    </div>
+    <div
+      className="auth-display__auth-component"
+    >
+      <div
+        className="auth-display__social-login"
+      >
+        JONATUS COMPONENT
+      </div>
+      <div
+        className="auth-display__setup-tag"
+      >
+        <p>
+          <p>
+            Already have an account ? 
+          </p>
+          <button
+            className="auth-display__create-account"
+            onClick={[Function]}
+            type="button"
+          >
+            signin
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots AuthDisplay Auth signin content 1`] = `
+<div
+  className="auth-display"
+>
+  <div
+    className="auth-display__left"
+  >
+    <div>
+      <h2
+        className="auth-display__head"
+      >
+        Share your stories
+      </h2>
+      <h1
+        className="auth-display__welcome"
+      >
+        Create your free account
+      </h1>
+      <p
+        className="auth-display__text"
+      >
+        We’ll need your details for setting up your account to serve you more personalized stories from creatives.
+      </p>
+    </div>
+  </div>
+  <div
+    className="auth-display__right"
+  >
+    <h4
+      className="auth-display__heading"
+    >
+      Select one to get started
+    </h4>
+    <div
+      className="auth-display__social-login"
+    >
+      IBUKUN COMPONENT
+    </div>
+    <div
+      className="auth-display__seperator"
+    >
+      <p>
+        or
+      </p>
+    </div>
+    <div
+      className="auth-display__auth-component"
+    >
+      <div
+        className="auth-display__social-login"
+      >
+        JONATUS COMPONENT
+      </div>
+      <div
+        className="auth-display__setup-tag"
+      >
+        <p>
+          <p>
+            Already have an account ? 
+          </p>
+          <button
+            className="auth-display__create-account"
+            onClick={[Function]}
+            type="button"
+          >
+            signin
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Button add custom class 1`] = `
 <button
   className="button__round"
@@ -101,209 +249,18 @@ exports[`Storyshots Modal click closed modal button 1`] = `
   className="modal modal--hide"
 >
   <div
-    className="modal__modal-content"
+    className="modal-content"
   >
     <button
-      className="modal__close"
+      className="modal-content__close"
       onClick={[Function]}
       type="button"
     >
       ✕
     </button>
     <div
-      className="modal__left"
-    >
-      <h2
-        className="modal__head"
-      >
-        Share your stories
-      </h2>
-      <h1
-        className="modal__welcome"
-      >
-        Create your free account
-      </h1>
-      <p
-        className="modal__text"
-      >
-        Sign into your account to serve you more personalised stories from creatives
-      </p>
-    </div>
-    <div
-      className="modal__right"
-    >
-      <h4
-        className="modal__heading"
-      >
-        Select one to get started
-      </h4>
-      <div
-        className="modal__social-login"
-      >
-        IBUKUN COMPONENT
-      </div>
-      <div
-        className="modal__seperator"
-      >
-        <p>
-          or
-        </p>
-      </div>
-      <div
-        className="modal__auth-component"
-      >
-        <div
-          className="modal__social-login"
-        >
-          JONATUS COMPONENT
-        </div>
-        <div
-          className="modal__setup-tag"
-        >
-          <p>
-            Already have an account ? 
-            <button
-              className="modal__create-account"
-              onClick={[Function]}
-              type="button"
-            >
-              Sign in
-            </button>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Modal click sign in 1`] = `
-<div
-  className="modal modal--show"
->
-  <div
-    className="modal__modal-content"
-  >
-    <button
-      className="modal__close"
-      onClick={[Function]}
-      type="button"
-    >
-      ✕
-    </button>
-    <div
-      className="modal__left"
-    >
-      <h2
-        className="modal__head"
-      >
-        Share your stories
-      </h2>
-      <h1
-        className="modal__welcome"
-      >
-        Welcome back
-      </h1>
-      <p
-        className="modal__text"
-      >
-        Sign into your account to serve you more personalised stories from creatives
-      </p>
-    </div>
-    <div
-      className="modal__right"
-    >
-      <h4
-        className="modal__heading"
-      >
-        Select one to get started
-      </h4>
-      <div
-        className="modal__social-login"
-      >
-        IBUKUN COMPONENT
-      </div>
-      <div
-        className="modal__seperator"
-      >
-        <p>
-          or
-        </p>
-      </div>
-      <div
-        className="modal__auth-component"
-      >
-        <form
-          className="login-form"
-          onSubmit={[Function]}
-        >
-          <div
-            className="login-form__success login-form__success--hide"
-          >
-            SIGNIN SUCCESSFUL !
-          </div>
-          <label
-            className="input__label"
-            htmlFor="email"
-          >
-            <input
-              className="input__field"
-              name="email"
-              onChange={[Function]}
-              placeholder="Email Address"
-              type="text"
-            />
-          </label>
-          <label
-            className="input__label"
-            htmlFor="password"
-          >
-            <input
-              className="input__field"
-              name="password"
-              onChange={[Function]}
-              placeholder="Password"
-              type="password"
-            />
-          </label>
-          <section
-            className="login-form__errors"
-          />
-          <section
-            className="login-form__submit-btn"
-          >
-            <button
-              className="button__primary"
-              type="submit"
-            >
-              Sign in
-            </button>
-          </section>
-        </form>
-        <div
-          className="modal__setup-tag"
-        >
-          <p>
-            Don't have an account ? 
-            <button
-              className="modal__create-account"
-              onClick={[Function]}
-              type="button"
-            >
-              Sign up
-            </button>
-          </p>
-          <p>
-            Forgot your password ?  
-            <span
-              className="modal__create-account"
-            >
-              Reset password
-            </span>
-          </p>
-        </div>
-      </div>
-    </div>
+      className="modal-content__wrapper"
+    />
   </div>
 </div>
 `;
@@ -313,79 +270,35 @@ exports[`Storyshots Modal default signup view 1`] = `
   className="modal modal--show"
 >
   <div
-    className="modal__modal-content"
+    className="modal-content"
   >
     <button
-      className="modal__close"
+      className="modal-content__close"
       onClick={[Function]}
       type="button"
     >
       ✕
     </button>
     <div
-      className="modal__left"
-    >
-      <h2
-        className="modal__head"
-      >
-        Share your stories
-      </h2>
-      <h1
-        className="modal__welcome"
-      >
-        Create your free account
-      </h1>
-      <p
-        className="modal__text"
-      >
-        Sign into your account to serve you more personalised stories from creatives
-      </p>
-    </div>
-    <div
-      className="modal__right"
-    >
-      <h4
-        className="modal__heading"
-      >
-        Select one to get started
-      </h4>
-      <div
-        className="modal__social-login"
-      >
-        IBUKUN COMPONENT
-      </div>
-      <div
-        className="modal__seperator"
-      >
-        <p>
-          or
-        </p>
-      </div>
-      <div
-        className="modal__auth-component"
-      >
-        <div
-          className="modal__social-login"
-        >
-          JONATUS COMPONENT
-        </div>
-        <div
-          className="modal__setup-tag"
-        >
-          <p>
-            Already have an account ? 
-            <button
-              className="modal__create-account"
-              onClick={[Function]}
-              type="button"
-            >
-              Sign in
-            </button>
-          </p>
-        </div>
-      </div>
-    </div>
+      className="modal-content__wrapper"
+    />
   </div>
+</div>
+`;
+
+exports[`Storyshots ModalContent click closed modal button 1`] = `
+<div
+  className="modal-content"
+>
+  <button
+    className="modal-content__close"
+    type="button"
+  >
+    ✕
+  </button>
+  <div
+    className="modal-content__wrapper"
+  />
 </div>
 `;
 
