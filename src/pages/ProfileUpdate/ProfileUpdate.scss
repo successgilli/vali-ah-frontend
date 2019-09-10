@@ -1,0 +1,124 @@
+@import '~scss/style';
+@import 'scss/mixins';
+@import 'scss/variables';
+
+.profile-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.profile-container 
+.profile-container__header {
+  min-height: 50%;
+  -webkit-box-shadow: 0 2rem 1rem -1rem rgb(125, 181, 181);
+  -moz-box-shadow: 0 2rem 1rem -1rem rgb(185, 181, 181);
+  box-shadow: 0 2rem 1rem -1rem rgb(185, 181, 181);
+}
+
+.profile-container 
+.profile-container__mini-header {
+  background: $primarycolor;
+  height: 20rem;
+}
+
+.profile-container .profile-container__image {
+  margin: -12rem auto;
+}
+
+.profile-container__image-placeholder {
+  width: 20rem;
+  margin: auto;
+}
+
+.profile-container 
+.profile-container__name {
+  @include profile-margin;
+}
+
+.profile-container 
+.profile-container__bio {
+  @include bio;
+}
+
+.profile-container__name {
+  @include profile-margin;
+}
+
+.profile-container__details {
+  width: 30%;
+  margin: 4rem auto;
+}
+
+.profile-container__bio-update {
+  @include bio;
+}
+
+.profile-container__bad-request {
+  border: $redcolor;
+  color: $redcolor;
+}
+
+.profile-container__image-update {
+  position: relative;
+  background: $lightblackcolor;
+  max-width: 17rem;
+  margin: 5rem auto;
+  border-radius: 30rem;
+}
+
+.profile-container__image-cover {
+  position: absolute;
+  z-index: 1;
+  top: 4.4rem;
+  right: 11rem;
+}
+
+.profile-container__image-cover input {
+  display: none;
+
+  + label {
+    display: inline-block;
+    background: $whitecolor;
+    width: 0.1rem;
+    height: 0.1rem;
+    margin-bottom: 0;
+    border: 1px solid transparent;
+    border-radius: 100%;
+    font-weight: normal;
+    box-shadow: $blackboxshadow;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.profile-container__image-preview {
+  position: relative;
+  width: 17rem;
+  height: 17rem;
+  border: 0.7rem solid $lightblackcolor;
+  border-radius: 100%;
+  box-shadow: $blackboxshadow;
+
+  > div {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+  }
+}
+
+@media (min-width: 20rem) and (max-width: 44rem) {
+  .profile-container-link 
+  .profile-container-link__published,
+  .profile-container-link 
+  .profile-container-link__bookmark,
+  .profile-container-link 
+  .profile-container-link__drafts {
+    margin: 3rem 1rem;
+    font-size: 1rem;
+  }
+}

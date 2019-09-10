@@ -5,6 +5,7 @@ module.exports = {
     '<rootDir>/tests/storybook.test.js',
   ],
   setupFilesAfterEnv: ['<rootDir>/tests/setupUnitTests.js'],
+  setupFiles: ['jest-localstorage-mock'],
   collectCoverage: true,
   snapshotSerializers: ['enzyme-to-json/serializer'],
   moduleNameMapper: {

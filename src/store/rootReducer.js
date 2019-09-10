@@ -8,11 +8,13 @@ import login from 'modules/login';
 import articleVote from 'modules/articleVote';
 import signup from 'modules/signUp';
 import header from 'modules/header';
+import profile from 'modules/profile';
 
 export default combineReducers({
   login,
   articleVote,
   signup,
   header,
-  userSelection
+  userSelection,
+  profile
 });

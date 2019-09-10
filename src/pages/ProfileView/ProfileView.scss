@@ -1,0 +1,75 @@
+@import '~scss/style';
+@import 'scss/mixins';
+@import 'scss/variables';
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container .container__header {
+  min-height: 50%;
+  -webkit-box-shadow: 0 2rem 1rem -1rem rgb(125, 181, 181);
+  -moz-box-shadow: 0 2rem 1rem -1rem rgb(185, 181, 181);
+  box-shadow: 0 2rem 1rem -1rem rgb(185, 181, 181);
+}
+
+.container .container__mini-header {
+  background: $primarycolor;
+  height: 20rem;
+}
+
+.container .container__image {
+  margin: -12rem auto;
+}
+
+.container__image-placeholder {
+  width: 20rem;
+  margin: auto;
+}
+
+.container .container__name {
+  @include profile-margin;
+}
+
+.container .container__bio {
+  @include bio;
+}
+
+.container .container__social-detail {
+  width: 45%;
+  margin: 1rem auto;
+  padding: 0;
+}
+
+.container__link {
+  text-align: center;
+}
+
+.container__link .container-link__published {
+  margin: 3rem 15rem 0.8rem 0;
+}
+
+.container__link .container-link__bookmark {
+  margin: 3rem 0 0.8rem;
+}
+
+.container__link .container-link__drafts {
+  margin: 3rem 0 0.8rem 15rem;
+}
+
+.container-link__published,
+.container-link__bookmark,
+.container-link__drafts {
+  background-color: transparent;
+  border: 0;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.container .container__response {
+  width: 100%;
+  margin: 1rem auto;
+}

@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
-import 'scss/style';
+import 'scss/style.scss';
 
 // pages
 import App from './App';

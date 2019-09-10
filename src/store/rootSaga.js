@@ -6,6 +6,10 @@ import { watchVoteRequest } from 'modules/articleVote';
 import { watchLoginRequests } from 'modules/login';
 import { watchSignupRequest } from 'modules/signUp';
 import { watchSelectionRequest } from 'modules/userSelection';
+import {
+  watchProfileRequests,
+  watchProfileUpdateRequests,
+} from 'modules/profile';
 
 export default function* rootSaga() {
   yield all([
@@ -14,6 +18,8 @@ export default function* rootSaga() {
     watchVoteRequest(),
     watchLoginRequests(),
     watchSelectionRequest(),
-    watchVoteRequest()
+    watchVoteRequest(),
+    watchProfileRequests(),
+    watchProfileUpdateRequests(),
   ]);
 }
