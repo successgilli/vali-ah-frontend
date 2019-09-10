@@ -1,9 +1,9 @@
-// react libraries
+// react library
 import React, { Component } from 'react';
-// utils
-import connect from 'utils/connect';
+
 // components
 import Navbar from 'components/Header';
+
 
 /**
  * @exports
@@ -18,11 +18,11 @@ class HomePage extends Component {
 
   render() {
     return (
-      <>
+      <div>
         <Navbar />
         <h1>Welcome to 1kbIdeas</h1>
-      </>
+      </div>
     );
   }
 }
-export default connect({})(HomePage);
+export default HomePage;

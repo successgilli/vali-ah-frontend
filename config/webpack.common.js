@@ -21,7 +21,8 @@ module.exports = {
       utils: path.resolve(__dirname, '../src/utils'),
       'react-dom': '@hot-loader/react-dom',
       scss: path.resolve(__dirname, '../src/assets/scss'),
-      fixtures: path.resolve(__dirname, '../tests/fixtures')
+      fixtures: path.resolve(__dirname, '../tests/fixtures'),
+      images: path.resolve(__dirname, '../src/assets/images'),
     },
     modules: [path.resolve(__dirname, 'src'), 'node_modules']
   },

@@ -32,7 +32,7 @@ describe('Redux-saga generator', () => {
       searchArticlesRequest({ term: 'title', query: 'living my life' }),
     ).toPromise();
     expect(postStub.calledOnce).toEqual(true);
-    expect(dispatched[0].type).toEqual('SEARCH_ARTICLES_SUCCESS');
+    expect(dispatched[0].type).toEqual('vali-ah-frontend/search/SEARCH_ARTICLES_SUCCESS');
     expect(dispatched[0].payload).toEqual('living my life');
   });
 
@@ -51,7 +51,7 @@ describe('Redux-saga generator', () => {
       searchArticlesRequest({ term: 'tag', query: 'health' }),
     ).toPromise();
     expect(postStub.calledOnce).toEqual(true);
-    expect(dispatched[0].type).toEqual('SEARCH_ARTICLES_SUCCESS');
+    expect(dispatched[0].type).toEqual('vali-ah-frontend/search/SEARCH_ARTICLES_SUCCESS');
     expect(dispatched[0].payload).toEqual('health');
   });
 
@@ -70,7 +70,7 @@ describe('Redux-saga generator', () => {
       searchArticlesRequest({ term: 'author', query: 'leo' }),
     ).toPromise();
     expect(postStub.calledOnce).toEqual(true);
-    expect(dispatched[0].type).toEqual('SEARCH_ARTICLES_SUCCESS');
+    expect(dispatched[0].type).toEqual('vali-ah-frontend/search/SEARCH_ARTICLES_SUCCESS');
     expect(dispatched[0].payload).toEqual('leo is still the best');
   });
 
@@ -89,7 +89,7 @@ describe('Redux-saga generator', () => {
       searchArticlesRequest({ term: 'keyword', query: 'l' }),
     ).toPromise();
     expect(postStub.calledOnce).toEqual(true);
-    expect(dispatched[0].type).toEqual('SEARCH_ARTICLES_SUCCESS');
+    expect(dispatched[0].type).toEqual('vali-ah-frontend/search/SEARCH_ARTICLES_SUCCESS');
     expect(dispatched[0].payload).toEqual('Is still leo your best writer');
   });
 
@@ -107,7 +107,7 @@ describe('Redux-saga generator', () => {
     ).toPromise();
 
     expect(postStub.calledOnce).toEqual(true);
-    expect(dispatched[0].type).toEqual('SEARCH_ARTICLES_FAILURE');
+    expect(dispatched[0].type).toEqual('vali-ah-frontend/search/SEARCH_ARTICLES_ERROR');
     expect(dispatched[0].payload).toEqual(
       'Request failed with status code 400',
     );
@@ -116,14 +116,14 @@ describe('Redux-saga generator', () => {
     const payload = { query: 'tag', queryText: 'health' };
     const newAction = searchArticlesRequest(payload);
 
-    expect(newAction.type).toEqual('SEARCH_ARTICLES_REQUEST');
+    expect(newAction.type).toEqual('vali-ah-frontend/search/SEARCH_ARTICLES_REQUEST');
   });
 
   it('should check if receive search action is been dispatched', async () => {
     const payload = { query: 'tag', queryText: 'health' };
     const newAction = searchArticlesSuccess(payload);
 
-    expect(newAction.type).toEqual('SEARCH_ARTICLES_SUCCESS');
+    expect(newAction.type).toEqual('vali-ah-frontend/search/SEARCH_ARTICLES_SUCCESS');
     expect(newAction.payload.query).toEqual('tag');
     expect(newAction.payload.queryText).toEqual('health');
   });
@@ -132,7 +132,7 @@ describe('Redux-saga generator', () => {
     const payload = { query: 'tag', queryText: 'faking it all' };
     const newAction = searchArticlesFailure(payload);
 
-    expect(newAction.type).toEqual('SEARCH_ARTICLES_FAILURE');
+    expect(newAction.type).toEqual('vali-ah-frontend/search/SEARCH_ARTICLES_ERROR');
     expect(newAction.payload.query).toEqual('tag');
     expect(newAction.payload.queryText).toEqual('faking it all');
   });

@@ -41,18 +41,19 @@ exports[`Storyshots Card with text 1`] = `
   className="ui card "
 >
   <div
-    className="image card-thumbnail "
+    className="image"
   >
     <img
       alt="loading"
-      src="img"
+      className="card__card-image"
+      src="https://picsum.photos/300/200"
     />
   </div>
   <div
     className="content"
   >
     <p
-      className="header card-category"
+      className="header card__card-category"
     >
       tag
     </p>
@@ -69,52 +70,12 @@ exports[`Storyshots Card with text 1`] = `
       </p>
     </div>
     <div
-      className="meta card-author"
+      className="meta card__card-author"
     >
       author
     </div>
   </div>
 </div>
-`;
-
-exports[`Storyshots Header The full navbar 1`] = `
-<header
-  className="header"
->
-  <a
-    href="/#"
-  >
-    <img
-      alt="1kbIdeas logo"
-      className="header_logo"
-      src="test-file-stub"
-    />
-  </a>
-  <div>
-    <input
-      className="header_search"
-      onChange={[Function]}
-      onKeyUp={[Function]}
-      placeholder="Search for articles"
-      type="text"
-      value=""
-    />
-  </div>
-  <nav>
-    <a
-      className="header__homeNavLinks header__homeNavLinks--right-margin"
-      href="/#"
-    >
-      Sign in
-    </a>
-    <a
-      className="header__homeNavLinks"
-      href="/#"
-    >
-      Sign up
-    </a>
-  </nav>
-</header>
 `;
 
 exports[`Storyshots Icon active 1`] = `
@@ -175,6 +136,60 @@ exports[`Storyshots Input password field 1`] = `
     type="password"
   />
 </label>
+`;
+
+exports[`Storyshots LinkButton with author text 1`] = `
+<button
+  className="search-container__query-button-author"
+  onClick={[Function]}
+  type="button"
+  value="author"
+>
+  author
+</button>
+`;
+
+exports[`Storyshots LinkButton with keyword text 1`] = `
+<button
+  className="search-container__query-button-keyword"
+  onClick={[Function]}
+  type="button"
+  value="keyword"
+>
+  keyword
+</button>
+`;
+
+exports[`Storyshots LinkButton with tag text 1`] = `
+<button
+  className="search-container__query-button-tag"
+  onClick={[Function]}
+  type="button"
+  value="tag"
+>
+  tag
+</button>
+`;
+
+exports[`Storyshots LinkButton with title text 1`] = `
+<button
+  className="search-container__query-button-title"
+  onClick={[Function]}
+  type="button"
+  value="title"
+>
+  title
+</button>
+`;
+
+exports[`Storyshots LinkButton without classname prop 1`] = `
+<button
+  onClick={[Function]}
+  type="button"
+  value="no class"
+>
+  no class
+</button>
 `;
 
 exports[`Storyshots Modal click closed modal button 1`] = `

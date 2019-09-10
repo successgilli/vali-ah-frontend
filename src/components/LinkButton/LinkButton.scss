@@ -1,0 +1,35 @@
+.search-container {
+  margin: 1rem auto;
+  text-align: center;
+
+  &__query-button-tag,
+  &__query-button-author,
+  &__query-button-title,
+  &__query-button-keyword {
+    background: #FFF;
+    margin: 1rem;
+    border: 0;
+    font-size: 1.3rem;
+    font-weight: 500;
+    outline: none;
+  }
+
+  &__query-button-tag:hover,
+  &__query-button-author:hover,
+  &__query-button-title:hover,
+  &__query-button-keyword:hover,
+  &__query-button-tag:focus,
+  &__query-button-author:focus,
+  &__query-button-title:focus,
+  &__query-button-keyword:focus {
+    cursor: pointer;
+    color: rgb(248, 120, 41);
+  }
+
+  &__query-button-tag:active,
+  &__query-button-author:active,
+  &__query-button-title:active,
+  &__query-button-keyword:active {
+    transform: scale(0.99);
+  }
+}

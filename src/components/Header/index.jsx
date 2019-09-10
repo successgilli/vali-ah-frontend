@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-// scss
+// styles
 import './Header.scss';
 
 // asset
-import logo from '../../assets/images/1KbIdeas.svg';
+import logo from 'images/1KbIdeas.svg';
 
 
 /**
@@ -20,12 +20,8 @@ import logo from '../../assets/images/1KbIdeas.svg';
  */
 export class Header extends Component {
     static propTypes = {
-      history: PropTypes.instanceOf(Object),
+      history: PropTypes.instanceOf(Object).isRequired,
     };
-
-    static defaultProps = {
-      history: {}
-    }
 
     constructor(props) {
       super(props);
@@ -33,8 +29,6 @@ export class Header extends Component {
         searchValue: '',
       };
     }
-
-    componentDidMount() {}
 
   handleInputChange = ({ target: { value } }) => {
     this.setState({ searchValue: value });
@@ -69,11 +63,11 @@ export class Header extends Component {
         <nav>
           <a
             href="/#"
-            className="header__homeNavLinks header__homeNavLinks--right-margin"
+            className="header__navlink header__navlink--right"
           >
             Sign in
           </a>
-          <a href="/#" className="header__homeNavLinks">
+          <a href="/#" className="header__navlink">
             Sign up
           </a>
         </nav>

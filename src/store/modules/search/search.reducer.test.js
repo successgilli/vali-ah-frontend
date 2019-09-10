@@ -33,6 +33,7 @@ describe('Reducers', () => {
     const initialState = {
       data: [],
       loading: false,
+      error: null
     };
     const errorPayload = {
       article: [],
@@ -42,8 +43,8 @@ describe('Reducers', () => {
       initialState,
       searchArticlesFailure(errorPayload),
     );
-    expect(newState.data.article).toEqual([]);
-    expect(newState.data.status).toEqual(404);
+    expect(newState.error.article).toEqual([]);
+    expect(newState.error.status).toEqual(404);
     expect(newState.loading).toEqual(false);
   });
 });

@@ -6,6 +6,6 @@ describe('App test', () => {
   it('get results', () => {
     cy.visit('/search');
     cy.get('input[type="text"]').type('Health {enter}');
-    cy.get('.card-display').should('exist');
+    cy.get('.search-container').should('exist');
   });
 });

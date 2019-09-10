@@ -4,16 +4,6 @@
 @import 'mixins';
 @import '~semantic-ui-css/semantic.min.css';
 
-$primarycolor: #FD8234;
-$whitecolor: #FFF;
-$activecolor: $primarycolor;
-$hovercolor: rgb(248, 120, 41);
-$blackcolor: #000;
-
-@mixin body-reset {
-  margin: 0;
-}
-
 body {
   @include body-reset();
   font-family: 'Rubik', sans-serif;

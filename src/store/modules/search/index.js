@@ -4,7 +4,7 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 // types
 import {
   SEARCH_ARTICLES_SUCCESS,
-  SEARCH_ARTICLES_FAILURE,
+  SEARCH_ARTICLES_ERROR,
   SEARCH_ARTICLES_REQUEST,
 } from 'modules/search/types';
 
@@ -21,7 +21,7 @@ export const searchArticlesSuccess = (payload) => ({
   payload,
 });
 export const searchArticlesFailure = (payload) => ({
-  type: SEARCH_ARTICLES_FAILURE,
+  type: SEARCH_ARTICLES_ERROR,
   payload,
 });
 
@@ -41,6 +41,7 @@ export function* watchSearchRequests() {
 const initialState = {
   data: [],
   loading: false,
+  error: null
 };
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -48,6 +49,7 @@ export default (state = initialState, action) => {
     return {
       ...state,
       loading: true,
+      error: null
     };
   case SEARCH_ARTICLES_SUCCESS:
     return {
@@ -55,11 +57,12 @@ export default (state = initialState, action) => {
       data: action.payload,
       loading: false,
     };
-  case SEARCH_ARTICLES_FAILURE:
+  case SEARCH_ARTICLES_ERROR:
     return {
       ...state,
-      data: action.payload,
+      data: [],
       loading: false,
+      error: action.payload
     };
   default:
     return state;

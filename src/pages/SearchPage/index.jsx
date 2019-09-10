@@ -1,5 +1,7 @@
-// third-party libraries
+// react library
 import React, { Component } from 'react';
+
+// third-party libraries
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -9,10 +11,13 @@ import './SearchPage.scss';
 // components
 import Spinner from 'components/Spinner';
 import Card from 'components/Card';
+import LinkButton from 'components/LinkButton';
 import Search from 'components/Search';
 
 // utils
 import connect from 'utils/connect';
+
+// modules
 import { searchArticlesRequest } from 'modules/search';
 
 /**
@@ -37,9 +42,16 @@ import { searchArticlesRequest } from 'modules/search';
    *
    */
   static propTypes = {
-    search: PropTypes.instanceOf(Object).isRequired,
+    search: PropTypes.shape({
+      loading: PropTypes.bool,
+      data: PropTypes.arrayOf(Object)
+    }).isRequired,
     searchArticlesRequest: PropTypes.func.isRequired,
-    history: PropTypes.instanceOf(Object).isRequired,
+    history: PropTypes.shape({
+      location: PropTypes.shape({
+        search: PropTypes.string
+      })
+    }).isRequired
   };
 
   constructor(props) {
@@ -75,32 +87,19 @@ import { searchArticlesRequest } from 'modules/search';
   };
 
   handleTermChange = ({ target: { value } }) => {
-    this.setState(() => ({
-      term: value,
-    }));
-
-    this.submitForm(value);
+    this.setState({ term: value }, this.submitForm(value));
   };
 
   handleSearch = ({ keyCode }) => {
     const { term } = this.state;
     if (keyCode === 13) {
-      this.setState(() => ({
-        searched: true,
-      }));
-
-      return this.submitForm(term);
+      this.setState({ searched: true }, this.submitForm(term));
     }
-    return null;
   };
 
   handleIncomingSearch = () => {
     const { term } = this.state;
-    this.setState(() => ({
-      searched: true,
-    }));
-
-    this.submitForm(term);
+    this.setState({ searched: true }, this.submitForm(term));
   };
 
   renderList = () => {
@@ -108,23 +107,21 @@ import { searchArticlesRequest } from 'modules/search';
       search: { data }
     } = this.props;
 
-    return (data)
-      ? data.map((article) => (
-        <Link
-          to={`/articles/${article.slug}`}
-          key={article.title}
-          className="card-display"
-        >
-          <Card
-            img={article.coverImageUrl}
-            tag={article.category}
-            title={article.title}
-            summary={article.summary}
-            author={article.author.name}
-          />
-        </Link>
-      ))
-      : [];
+    return data.map((article) => (
+      <Link
+        to={`/articles/${article.slug}`}
+        key={article.articleId}
+        className="card-display"
+      >
+        <Card
+          img={article.coverImageUrl}
+          tag={article.category}
+          title={article.title}
+          summary={article.summary}
+          author={article.author.name}
+        />
+      </Link>
+    ));
   };
 
   render() {
@@ -137,9 +134,6 @@ import { searchArticlesRequest } from 'modules/search';
       <div className="search-container">
         <div>
           <Search
-            className="search-container__search"
-            type="text"
-            placeholder="Search for articles"
             searchkeyUp={this.handleSearch}
             changeValue={this.handleInputChange}
             searchValue={query}
@@ -148,42 +142,30 @@ import { searchArticlesRequest } from 'modules/search';
         </div>
         {loading && <Spinner caption="Searching" />}
         {searched && (
-          <div className="search-container__query-button">
-            <button
-              className="query-button__tag"
-              type="button"
+          <div>
+            <LinkButton
+              text="tag"
+              className="search-container__query-button-tag"
               onClick={this.handleTermChange}
-              value="tag"
-            >
-              tag
-            </button>
-            <button
-              className="query-button__author"
-              type="button"
+            />
+            <LinkButton
+              text="author"
+              className="search-container__query-button-author"
               onClick={this.handleTermChange}
-              value="author"
-            >
-              author
-            </button>
-            <button
-              className="query-button__title"
-              type="button"
+            />
+            <LinkButton
+              text="title"
+              className="search-container__query-button-title"
               onClick={this.handleTermChange}
-              value="title"
-            >
-              title
-            </button>
-            <button
-              className="query-button__keyword"
-              type="button"
+            />
+            <LinkButton
+              text="keyword"
+              className="search-container__query-button-keyword"
               onClick={this.handleTermChange}
-              value="keyword"
-            >
-              keyword
-            </button>
+            />
           </div>
         )}
-        <div className="search-container__card-grid">{this.renderList()}</div>
+        <div>{this.renderList()}</div>
       </div>
     );
   }
