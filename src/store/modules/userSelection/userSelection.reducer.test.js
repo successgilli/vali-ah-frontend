@@ -42,11 +42,14 @@ describe('Default Reducer', () => {
 
 describe('Get selection worker saga', () => {
   it('should get selection', async () => {
+    sinon.stub(API, 'fetchSelection').resolves([]);
     const dispatched = [];
     const initialAction = getSelectionRequest('management');
     const saga = await runSaga({
       dispatch: (action) => dispatched.push(action)
     }, getSelection, initialAction).toPromise();
+
+    API.fetchSelection.restore();
 
     expect(saga).toBeUndefined();
     expect(dispatched[0].type).toBe(getSelectionSuccess().type);
@@ -56,11 +59,14 @@ describe('Get selection worker saga', () => {
 
 describe('Get selection worker saga', () => {
   it('should get selection', async () => {
+    sinon.stub(API, 'fetchSelection').resolves([]);
     const dispatched = [];
     const initialAction = getSelectionRequest('management');
     const saga = await runSaga({
       dispatch: (action) => dispatched.push(action)
     }, getSelection, initialAction).toPromise();
+
+    API.fetchSelection.restore();
 
     expect(saga).toBeUndefined();
     expect(dispatched[0].type).toBe(getSelectionSuccess().type);

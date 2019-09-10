@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap');
+@import 'scss/variables';
+
+.feed-page {
+  &__main-content {
+    flex-basis: 75%;
+    height: 100%;
+
+    @media (max-width: 48rem) {
+      flex-basis: 100%;
+    }
+  }
+
+  &__suggested {
+    position: fixed;
+    right: 0;
+    width: 25%;
+    height: 100%;
+
+    @media (max-width: 48rem) {
+      display: none;
+    }
+  }
+
+  &__feed {
+    position: relative;
+    top: 1.25rem;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 3.75rem;
+    font-family: Rubik;
+    font-size: 1.5rem;
+    font-weight: normal;
+    line-height: 1.75rem;
+    color: #000;
+    font-style: normal;
+  }
+
+  &__share-div {
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+    width: 100%;
+    height: 6.25rem;
+    padding-bottom: 0.625rem;
+
+    &--sticky {
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $white;
+      width: 100%;
+      height: 6.25rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 1.25rem;
+    }
+  }
+
+  &__share-container {
+    flex-basis: 75%;
+
+    @media (max-width: 48rem) {
+      flex-basis: 100%;
+    }
+  }
+
+  &__aside-offset {
+    flex-basis: 25%;
+    width: 30%;
+
+    @media (max-width: 48rem) {
+      display: none;
+    }
+  }
+
+  &__suggested-stories {
+    position: relative;
+    top: 1.25rem;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 1.563rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 0.0625rem solid #C4C4C4;
+    font-family: Rubik;
+    font-size: 1.5rem;
+    font-weight: normal;
+    line-height: 1.75rem;
+    color: #000;
+    font-style: normal;
+  }
+
+  &__top-stories {
+    max-height: 100%;
+    margin: auto;
+    overflow-y: scroll;
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    min-height: 70vh;
+    margin-top: 1.875rem;
+  }
+
+  &__bottom-offset {
+    width: 100%;
+    height: 15.63rem;
+  }
+
+  &__no-feed {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+.feed-page__share-div--sticky + .feed-page__content {
+  padding-top: 5.188rem;
+}
