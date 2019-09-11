@@ -1,0 +1,18 @@
+@import '~scss/style';
+
+.comment-form {
+  display:inline-block;
+  position:relative;
+
+  textarea {
+    resize: none !important;
+    width: 30rem !important;
+    display: block !important;
+  }
+
+  button{
+    position:absolute;
+    bottom:10px;
+    right:10px;
+  }
+}

@@ -36,6 +36,17 @@ exports[`Storyshots Button without classname prop 1`] = `
 </button>
 `;
 
+exports[`Storyshots CreateInlineComment createInlineComment 1`] = `
+<div
+  className="ui orange labeled icon button"
+>
+  Add Comment
+  <i
+    className="add icon"
+  />
+</div>
+`;
+
 exports[`Storyshots Icon active 1`] = `
 <button
   aria-label="upvote"
