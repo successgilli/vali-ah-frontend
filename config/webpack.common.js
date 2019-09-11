@@ -22,7 +22,7 @@ module.exports = {
       'react-dom': '@hot-loader/react-dom',
       scss: path.resolve(__dirname, '../src/assets/scss'),
       fixtures: path.resolve(__dirname, '../tests/fixtures'),
-      validations: path.resolve(__dirname, '../src/validations')
+      assets: path.resolve(__dirname, '../src/assets')
     },
     modules: [path.resolve(__dirname, 'src'), 'node_modules']
   },
@@ -46,8 +46,18 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'postcss-loader']
       },
       {
+<<<<<<< HEAD
         test: /\.(png|jpg|gif|jpeg|svg|ttf|eot|woff2?)$/,
         loader: 'file-loader',
+=======
+        test: /\.(png|jpg|gif|jpeg|eps|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: { useRelativePath: true }
+          }
+        ]
+>>>>>>> 3de3566546da2f954f99b7679885363da5953277
       }
     ]
   },

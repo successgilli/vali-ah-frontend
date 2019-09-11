@@ -3,7 +3,9 @@
 exports[`Storyshots Button add custom class 1`] = `
 <button
   className="button__round"
+  id=""
   onClick={[Function]}
+  type="button"
 >
   auth
 </button>
@@ -12,7 +14,9 @@ exports[`Storyshots Button add custom class 1`] = `
 exports[`Storyshots Button with Login text 1`] = `
 <button
   className="button__primary"
+  id=""
   onClick={[Function]}
+  type="button"
 >
   Sign In
 </button>
@@ -21,7 +25,9 @@ exports[`Storyshots Button with Login text 1`] = `
 exports[`Storyshots Button with submit text 1`] = `
 <button
   className="button__primary"
+  id=""
   onClick={[Function]}
+  type="button"
 >
   Submit
 </button>
@@ -30,12 +36,15 @@ exports[`Storyshots Button with submit text 1`] = `
 exports[`Storyshots Button without classname prop 1`] = `
 <button
   className="button__primary"
+  id=""
   onClick={[Function]}
+  type="button"
 >
   no class
 </button>
 `;
 
+<<<<<<< HEAD
 exports[`Storyshots CreateInlineComment createInlineComment 1`] = `
 <div
   className="ui orange labeled icon button"
@@ -45,6 +54,20 @@ exports[`Storyshots CreateInlineComment createInlineComment 1`] = `
     className="add icon"
   />
 </div>
+=======
+exports[`Storyshots FacebookLoginButton default 1`] = `
+<button
+  className="social-login-button"
+  id=""
+  onClick={[Function]}
+  type="button"
+>
+  <img
+    alt="facebook Logo"
+    src="test-file-stub"
+  />
+</button>
+>>>>>>> 3de3566546da2f954f99b7679885363da5953277
 `;
 
 exports[`Storyshots Icon active 1`] = `
@@ -151,7 +174,32 @@ exports[`Storyshots Modal click closed modal button 1`] = `
       <div
         className="modal__social-login"
       >
-        IBUKUN COMPONENT
+        <div
+          className="social-login-button-row"
+        >
+          <button
+            className="social-login-button"
+            id="custom-btn"
+            onClick={[Function]}
+            type="button"
+          >
+            <img
+              alt="google Logo"
+              src="test-file-stub"
+            />
+          </button>
+          <button
+            className="social-login-button"
+            id=""
+            onClick={[Function]}
+            type="button"
+          >
+            <img
+              alt="facebook Logo"
+              src="test-file-stub"
+            />
+          </button>
+        </div>
       </div>
       <div
         className="modal__seperator"
@@ -172,7 +220,7 @@ exports[`Storyshots Modal click closed modal button 1`] = `
           className="modal__setup-tag"
         >
           <p>
-            Already have an account ? 
+            Already have an account ?
             <button
               className="modal__create-account"
               onClick={[Function]}
@@ -232,7 +280,32 @@ exports[`Storyshots Modal click sign in 1`] = `
       <div
         className="modal__social-login"
       >
-        IBUKUN COMPONENT
+        <div
+          className="social-login-button-row"
+        >
+          <button
+            className="social-login-button"
+            id="custom-btn"
+            onClick={[Function]}
+            type="button"
+          >
+            <img
+              alt="google Logo"
+              src="test-file-stub"
+            />
+          </button>
+          <button
+            className="social-login-button"
+            id=""
+            onClick={[Function]}
+            type="button"
+          >
+            <img
+              alt="facebook Logo"
+              src="test-file-stub"
+            />
+          </button>
+        </div>
       </div>
       <div
         className="modal__seperator"
@@ -285,9 +358,10 @@ exports[`Storyshots Modal click sign in 1`] = `
           >
             <button
               className="button__primary"
+              id=""
               type="submit"
             >
-              Sign in
+              Sign In
             </button>
           </section>
         </form>
@@ -295,7 +369,7 @@ exports[`Storyshots Modal click sign in 1`] = `
           className="modal__setup-tag"
         >
           <p>
-            Don't have an account ? 
+            Don't have an account ?
             <button
               className="modal__create-account"
               onClick={[Function]}
@@ -363,7 +437,32 @@ exports[`Storyshots Modal default signup view 1`] = `
       <div
         className="modal__social-login"
       >
-        IBUKUN COMPONENT
+        <div
+          className="social-login-button-row"
+        >
+          <button
+            className="social-login-button"
+            id="custom-btn"
+            onClick={[Function]}
+            type="button"
+          >
+            <img
+              alt="google Logo"
+              src="test-file-stub"
+            />
+          </button>
+          <button
+            className="social-login-button"
+            id=""
+            onClick={[Function]}
+            type="button"
+          >
+            <img
+              alt="facebook Logo"
+              src="test-file-stub"
+            />
+          </button>
+        </div>
       </div>
       <div
         className="modal__seperator"
@@ -384,7 +483,7 @@ exports[`Storyshots Modal default signup view 1`] = `
           className="modal__setup-tag"
         >
           <p>
-            Already have an account ? 
+            Already have an account ?
             <button
               className="modal__create-account"
               onClick={[Function]}
@@ -442,9 +541,10 @@ exports[`Storyshots Signin sign in form 1`] = `
   >
     <button
       className="button__primary"
+      id=""
       type="submit"
     >
-      Sign in
+      Sign In
     </button>
   </section>
 </form>

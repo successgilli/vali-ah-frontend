@@ -89,7 +89,7 @@ export class SigninComponent extends React.Component {
             (login.isLoggedIn === 'loading') && <div className="login-form__loader-div"><div className="login-form__loader" /></div>
           }
           {
-            (login.isLoggedIn !== 'loading') && <Button text="Sign in" type="submit" />
+            (login.isLoggedIn !== 'loading') && <Button type="submit">Sign In</Button>
           }
         </section>
       </form>
