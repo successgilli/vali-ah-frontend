@@ -21,7 +21,9 @@ module.exports = {
       utils: path.resolve(__dirname, '../src/utils'),
       'react-dom': '@hot-loader/react-dom',
       scss: path.resolve(__dirname, '../src/assets/scss'),
-      fixtures: path.resolve(__dirname, '../tests/fixtures')
+      fixtures: path.resolve(__dirname, '../tests/fixtures'),
+      validations: path.resolve(__dirname, '../src/validations'),
+      assets: path.resolve(__dirname, '../src/assets')
     },
     modules: [path.resolve(__dirname, 'src'), 'node_modules']
   },
@@ -31,7 +33,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
-        use: ['babel-loader', 'eslint-loader']
+        use: ['babel-loader']
       },
       {
         test: /\.s?css$/i,
@@ -45,7 +47,7 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'postcss-loader']
       },
       {
-        test: /\.(png|jpg|gif|jpeg)$/,
+        test: /\.(png|jpg|gif|jpeg|svg|ttf|eot|woff2?)$/,
         loader: 'file-loader',
       }
     ]

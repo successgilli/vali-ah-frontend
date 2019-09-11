@@ -17,4 +17,10 @@ describe('HTTP client', () => {
 
     expect(response).toEqual({ data: [] });
   });
+
+  it('should return the axios error data', async () => {
+    expect(http.interceptors.response.handlers[0].rejected({
+      response: { status: 404, data: { error: 'message' } }
+    })).rejects.toMatchObject({ status: 404, data: { error: 'message' } });
+  });
 });

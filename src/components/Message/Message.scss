@@ -1,0 +1,13 @@
+@import 'scss/style';
+
+.ui {
+  &.message {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: $primarycolor;
+    text-align: center;
+    color: $whitecolor;
+  }
+}

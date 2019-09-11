@@ -1,8 +1,39 @@
 // react libraries
-import React, { Component } from 'react';
+import React, {
+  Component, useRef, useEffect, useState
+} from 'react';
 
 // utils
 import connect from 'utils/connect';
+
+
+import ParentComponent from 'fixtures/inlineCommentParent';
+// component
+import InlineCommentConnected from 'components/InlineComment';
+
+const BaseComponent = () => {
+  const parentRef = useRef();
+  const [isMounted, setIsMounted] = useState(false);
+  const [ArticleComponent, setArticleContent] = useState(<ParentComponent />);
+
+  const updateArticleContent = (Article) => setArticleContent(Article);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  return (
+    <>
+      <h4>Hi</h4>
+      <div ref={parentRef}>
+        {ArticleComponent}
+      </div>
+      {isMounted && (
+        <InlineCommentConnected parentRef={parentRef} updateArticle={updateArticleContent} />)}
+    </>
+  );
+};
+
 
 /**
  * @exports
@@ -19,7 +50,7 @@ class HomePage extends Component {
 
   render() {
     return (
-      <h1>Welcome to 1kbIdeas</h1>
+      <BaseComponent />
     );
   }
 }

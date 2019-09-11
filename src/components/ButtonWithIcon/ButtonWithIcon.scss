@@ -1,0 +1,16 @@
+@import '~scss/style';
+
+.orange {
+  background-color: $primarycolor;
+}
+
+.ui.labeled.icon.button,
+.ui.labeled.icon.buttons .button {
+  padding-right: 0.5rem !important;
+  padding-left: 3.011429rem !important;
+}
+
+.ui.icon.button,
+.ui.icon.buttons .button {
+  padding: 0.485714rem 0.48571429rem 0.48571429rem;
+}

@@ -1,0 +1,29 @@
+@import '~scss/style';
+
+.inline-comment {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  position: absolute;
+  right: 4rem;
+  &__status {
+    &.green {
+      color: green;
+    }
+    &.red {
+      color: red;
+    }
+  }
+  .extra {
+    .content {
+      margin: auto;
+      padding: .3rem;
+    }
+  }
+  .content {
+    padding: .4rem
+  }
+  .card {
+    width: 100% !important;
+  }
+}
