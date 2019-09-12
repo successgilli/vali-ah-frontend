@@ -28,3 +28,9 @@
   margin: 12rem auto 1rem;
   font-size: 2rem;
 }
+
+@mixin profile-boxshadow {
+  -webkit-box-shadow: $webkit-box-shadow;
+  -moz-box-shadow: $moz-box-shadow;
+  box-shadow: $box-shadow;
+}

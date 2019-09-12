@@ -1,7 +1,6 @@
 # generated folders
 public/
 build/
-cypress/
 storybook-static
 
 # Logs

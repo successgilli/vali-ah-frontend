@@ -1,21 +1,28 @@
 // react libraries
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
-// jwt third party library
-import jwt from 'jsonwebtoken';
+import { Redirect } from 'react-router-dom';
 
 // request
 import ProfileHelper from 'modules/profile/request';
 
 // actions
-import { requestProfileUpdateSuccess } from 'modules/profile';
+import { getProfileRequestUpdateSuccess } from 'modules/profile';
 import connect from 'utils/connect';
 
+// utils
+import Validator from 'utils/validator';
+import isAuthenticated from 'utils/auth';
+
+// validation rules
+import profileValidation from '../../validations/updateValidator';
+
 // assets
-import imagePlaceholder from '../../assets/images/imagePlaceholder.svg';
+import imageplaceholder from '../../assets/images/image-placeholder.svg';
 import imageCamera from '../../assets/images/camera.svg';
 import './ProfileUpdate.scss';
+
+const { updateProfileValidation } = profileValidation;
 
 /**
  * update profile page for individual Icon
@@ -33,7 +40,7 @@ export class ProfileUpdate extends Component {
    *
    */
   static propTypes = {
-    requestProfileUpdateSuccess: PropTypes.func.isRequired,
+    getProfileRequestUpdateSuccess: PropTypes.func.isRequired,
     profile: PropTypes.instanceOf(Object).isRequired,
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,
@@ -52,12 +59,14 @@ export class ProfileUpdate extends Component {
         userName: '',
         bio: '',
       },
+      errors: '',
     };
   }
 
   componentDidMount() {
-    const data = jwt.decode(localStorage.getItem('token'));
-    this.loadProfile(data.id);
+    const { id } = isAuthenticated();
+
+    this.loadProfile(id);
   }
 
   /**
@@ -69,8 +78,7 @@ export class ProfileUpdate extends Component {
   loadProfile = async (id) => {
     const user = await ProfileHelper.viewProfile(id);
 
-    this.setState((prevState) => ({
-      ...prevState,
+    this.setState(() => ({
       id,
       data: {
         firstName: user.data.firstName,
@@ -89,7 +97,6 @@ export class ProfileUpdate extends Component {
    */
   fileSelectorHandler = ({ target: { files } }) => {
     this.setState((prevState) => ({
-      // ...prevState,
       displayImg: URL.createObjectURL(files[0]),
       data: {
         ...prevState.data,
@@ -107,11 +114,23 @@ export class ProfileUpdate extends Component {
   onChangeHandler = ({ target }) => {
     const { name, value } = target;
     this.setState((prevState) => ({
-      ...prevState,
       data: {
         ...prevState.data,
         [name]: value,
       },
+    }));
+  };
+
+  /**
+   * Handles input onFocus
+   * @method
+   *
+   * @return {void}
+   */
+  onFocus = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      errors: '',
     }));
   };
 
@@ -124,32 +143,43 @@ export class ProfileUpdate extends Component {
   handleUserUpdate = async (event) => {
     event.preventDefault();
 
+    const profileValidator = new Validator(updateProfileValidation);
+
     const { data, id } = this.state;
+
+    const { isValid, ...errors } = profileValidator.validate(data);
+
+    this.setState({ errors });
+
+    if (!isValid) return null;
+
     const {
-      requestProfileUpdateSuccess: requestUpdate,
+      getProfileRequestUpdateSuccess: requestUpdate,
       history,
       profile,
     } = this.props;
     const formData = new FormData();
-    Object.keys(data).forEach((value) => {
-      if (value !== 'id') {
-        formData.append([value], data[value]);
+
+    Object.keys(data).forEach((field) => {
+      if (field !== 'id') {
+        formData.append(field, data[field]);
       }
     });
+
     await requestUpdate({ formData, id });
     if (profile.errors === null) {
       return history.push('/profile/view');
     }
-    return false;
+    return null;
   };
 
   render() {
-    const { data, displayImg } = this.state;
+    const { data, displayImg, errors } = this.state;
     const {
-      profile: { loading, errors },
+      profile: { loading },
     } = this.props;
-
-    return (
+    const { isExpired } = isAuthenticated();
+    const page = !isExpired ? (
       <div className="profile-container">
         <div className="profile-container__header">
           <div className="profile-container__mini-header" />
@@ -174,7 +204,7 @@ export class ProfileUpdate extends Component {
               <img
                 id="profileImg"
                 className="profile-container__image-preview"
-                src={displayImg || imagePlaceholder}
+                src={displayImg || imageplaceholder}
                 alt={`Profile avatar of ${data.firstName}`}
               />
             </div>
@@ -185,7 +215,7 @@ export class ProfileUpdate extends Component {
             )}
           </div>
           <div className="profile-container__name">
-            <p className="userName">{`${data.firstName}  ${data.lastName}`}</p>
+            <p className="username">{`${data.firstName}  ${data.lastName}`}</p>
           </div>
           <div className="profile-container__bio-update">
             <p id="bio">{data.bio}</p>
@@ -193,21 +223,22 @@ export class ProfileUpdate extends Component {
         </div>
         <div className="profile-container__details">
           <form
-            id="updateForm"
+            id="updateform"
             className="ui form"
             onSubmit={this.handleUserUpdate}
           >
             <div className="field">
-              <label htmlFor="firstName">
+              <label htmlFor="firstname">
                 First Name
                 <input
                   type="text"
                   name="firstName"
                   placeholder="First Name"
-                  id="firstName"
+                  id="firstname"
                   className="firstName"
                   value={data.firstName}
                   onChange={this.onChangeHandler}
+                  onFocus={this.onFocus}
                 />
               </label>
               {errors && errors.firstName && (
@@ -227,6 +258,7 @@ export class ProfileUpdate extends Component {
                   className="lastname"
                   value={data.lastName}
                   onChange={this.onChangeHandler}
+                  onFocus={this.onFocus}
                 />
               </label>
               {errors && errors.lastName && (
@@ -246,6 +278,7 @@ export class ProfileUpdate extends Component {
                   className="username"
                   value={data.userName}
                   onChange={this.onChangeHandler}
+                  onFocus={this.onFocus}
                 />
               </label>
               {errors && errors.userName && (
@@ -261,9 +294,10 @@ export class ProfileUpdate extends Component {
                   rows="2"
                   name="bio"
                   id="bio"
-                  className="updateBio"
+                  className="update-bio"
                   value={data.bio ? data.bio : ''}
                   onChange={this.onChangeHandler}
+                  onFocus={this.onFocus}
                 />
               </label>
               {errors && errors.bio && (
@@ -283,7 +317,10 @@ export class ProfileUpdate extends Component {
           </form>
         </div>
       </div>
+    ) : (
+      <Redirect to="/" />
     );
+    return <div>{page}</div>;
   }
 }
-export default connect({ requestProfileUpdateSuccess })(ProfileUpdate);
+export default connect({ getProfileRequestUpdateSuccess })(ProfileUpdate);

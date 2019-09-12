@@ -7,24 +7,24 @@ import http from 'utils/http';
 
 // actions
 import {
-  profileIsloading,
-  requestProfileSuccess,
+  getProfileRequest,
+  getProfileRequestSuccess,
   profileFailure,
-  requestProfileUpdateSuccess,
-  profileIsUpdating,
-  profileUpdateFailure,
-  requestProfile,
+  getProfileRequestUpdate,
+  getProfileRequestUpdateSuccess,
+  updateProfileFailure,
+  getProfile,
   updateProfile,
 } from './index';
 
 //  types
 import {
-  REQUEST_PROFILE_SUCCESS,
-  PROFILE_FAILURE,
-  PROFILE_ISLOADING,
-  REQUEST_PROFILE_UPDATE_SUCCESS,
-  PROFILE_IS_UPDATING,
-  PROFILE_UPDATE_FAILURE,
+  GET_PROFILE_REQUEST_SUCCESS,
+  GET_PROFILE_REQUEST,
+  GET_PROFILE_FAILURE,
+  GET_PROFILE_REQUEST_UPDATE_SUCCESS,
+  GET_PROFILE_REQUEST_UPDATE,
+  GET_PROFILE_UPDATE_FAILURE,
 } from './types';
 
 describe('Get profile action', () => {
@@ -45,15 +45,15 @@ describe('Get profile action', () => {
       {
         dispatch: (action) => dispatched.push(action),
       },
-      requestProfile,
-      requestProfileSuccess({
+      getProfile,
+      getProfileRequestSuccess({
         token: 'u9809090then8',
         id: '8572-23455-494994--978hu9-4499',
       }),
     ).toPromise();
 
     expect(postStub.calledOnce).toEqual(true);
-    expect(dispatched[0].type).toEqual(REQUEST_PROFILE_SUCCESS);
+    expect(dispatched[0].type).toEqual(GET_PROFILE_REQUEST_SUCCESS);
     expect(dispatched[0].payload).toEqual('just getting data');
   });
 
@@ -66,12 +66,12 @@ describe('Get profile action', () => {
       {
         dispatch: (action) => dispatched.push(action),
       },
-      requestProfile,
+      getProfile,
       profileFailure({ token: 'u9809090then8', id: 0 }),
     ).toPromise();
 
     expect(postStub.calledOnce).toEqual(true);
-    expect(dispatched[0].type).toEqual(PROFILE_FAILURE);
+    expect(dispatched[0].type).toEqual(GET_PROFILE_FAILURE);
     expect(dispatched[0].payload).toEqual(
       'Request failed with status code 400',
     );
@@ -79,16 +79,23 @@ describe('Get profile action', () => {
 
   it('should check if the profile loading action is been dispatched', async () => {
     const payload = { id: '8572-23455-494994-4499' };
-    const newAction = profileIsloading(payload);
+    const newAction = getProfileRequest(payload);
 
-    expect(newAction.type).toEqual(PROFILE_ISLOADING);
+    expect(newAction.type).toEqual(GET_PROFILE_REQUEST);
+  });
+
+  it('should check if the profile is request action to been dispatched', async () => {
+    const payload = { id: '8572-23455-494994-4499' };
+    const newAction = getProfileRequest(payload);
+
+    expect(newAction.type).toEqual(GET_PROFILE_REQUEST);
   });
 
   it('should check if receive profile action is been dispatched', async () => {
     const payload = { id: '8572-23455-494994-4499' };
-    const newAction = requestProfileSuccess(payload);
+    const newAction = getProfileRequestSuccess(payload);
 
-    expect(newAction.type).toEqual(REQUEST_PROFILE_SUCCESS);
+    expect(newAction.type).toEqual(GET_PROFILE_REQUEST_SUCCESS);
     expect(newAction.payload.id).toEqual('8572-23455-494994-4499');
   });
 
@@ -96,7 +103,7 @@ describe('Get profile action', () => {
     const payload = { id: '8572-23455-494994-4499' };
     const newAction = profileFailure(payload);
 
-    expect(newAction.type).toEqual(PROFILE_FAILURE);
+    expect(newAction.type).toEqual(GET_PROFILE_FAILURE);
     expect(newAction.payload.id).toEqual('8572-23455-494994-4499');
   });
 });
@@ -120,14 +127,14 @@ describe('Update profile action', () => {
         dispatch: (action) => dispatched.push(action),
       },
       updateProfile,
-      requestProfileUpdateSuccess({
+      getProfileRequestUpdateSuccess({
         token: 'u9809090then8',
         id: '8572-23455-494994--978hu9-4499',
       }),
     ).toPromise();
 
     expect(postStub.calledOnce).toEqual(true);
-    expect(dispatched[0].type).toEqual(REQUEST_PROFILE_UPDATE_SUCCESS);
+    expect(dispatched[0].type).toEqual(GET_PROFILE_REQUEST_UPDATE_SUCCESS);
     expect(dispatched[0].payload.status).toEqual(200);
     expect(dispatched[0].payload.statusText).toEqual('OK');
     expect(dispatched[0].payload.data).toEqual('just updating my data');
@@ -152,11 +159,11 @@ describe('Update profile action', () => {
         dispatch: (action) => dispatched.push(action),
       },
       updateProfile,
-      profileUpdateFailure({ token: 'u9809090then8', id: 0 }),
+      updateProfileFailure({ token: 'u9809090then8', id: 0 }),
     ).toPromise();
 
     expect(postStub.calledOnce).toEqual(true);
-    expect(dispatched[0].type).toEqual(PROFILE_UPDATE_FAILURE);
+    expect(dispatched[0].type).toEqual(GET_PROFILE_UPDATE_FAILURE);
     expect(dispatched[0].payload).toEqual(
       'Request failed with status code 400',
     );
@@ -164,24 +171,24 @@ describe('Update profile action', () => {
 
   it('should check if the profile update action is been dispatched', async () => {
     const payload = { id: '8572-23455-494994-4499' };
-    const newAction = requestProfileUpdateSuccess(payload);
+    const newAction = getProfileRequestUpdate(payload);
 
-    expect(newAction.type).toEqual(REQUEST_PROFILE_UPDATE_SUCCESS);
+    expect(newAction.type).toEqual(GET_PROFILE_REQUEST_UPDATE);
   });
 
   it('should check if profile is updating action is been dispatched', async () => {
     const payload = { id: '8572-23455-494994-4499' };
-    const newAction = profileIsUpdating(payload);
+    const newAction = getProfileRequestUpdateSuccess(payload);
 
-    expect(newAction.type).toEqual(PROFILE_IS_UPDATING);
+    expect(newAction.type).toEqual(GET_PROFILE_REQUEST_UPDATE_SUCCESS);
     expect(newAction.payload.id).toEqual('8572-23455-494994-4499');
   });
 
   it('should check if receive error action is been dispatched', async () => {
     const payload = { id: '8572-23455-494994-4499' };
-    const newAction = profileUpdateFailure(payload);
+    const newAction = updateProfileFailure(payload);
 
-    expect(newAction.type).toEqual(PROFILE_UPDATE_FAILURE);
+    expect(newAction.type).toEqual(GET_PROFILE_UPDATE_FAILURE);
     expect(newAction.payload.id).toEqual('8572-23455-494994-4499');
   });
 });

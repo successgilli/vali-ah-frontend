@@ -6,19 +6,15 @@
   width: 100%;
   margin: 0;
   padding: 0;
-  text-align: center;
+  // text-align: center;
 }
 
-.profile-container 
-.profile-container__header {
+.profile-container .profile-container__header {
+  @include profile-boxshadow;
   min-height: 50%;
-  -webkit-box-shadow: 0 2rem 1rem -1rem rgb(125, 181, 181);
-  -moz-box-shadow: 0 2rem 1rem -1rem rgb(185, 181, 181);
-  box-shadow: 0 2rem 1rem -1rem rgb(185, 181, 181);
 }
 
-.profile-container 
-.profile-container__mini-header {
+.profile-container .profile-container__mini-header {
   background: $primarycolor;
   height: 20rem;
 }
@@ -32,13 +28,7 @@
   margin: auto;
 }
 
-.profile-container 
-.profile-container__name {
-  @include profile-margin;
-}
-
-.profile-container 
-.profile-container__bio {
+.profile-container .profile-container__bio {
   @include bio;
 }
 
@@ -79,6 +69,7 @@
   display: none;
 
   + label {
+    @include profile-boxshadow;
     display: inline-block;
     background: $whitecolor;
     width: 0.1rem;
@@ -87,19 +78,18 @@
     border: 1px solid transparent;
     border-radius: 100%;
     font-weight: normal;
-    box-shadow: $blackboxshadow;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
   }
 }
 
 .profile-container__image-preview {
+  @include profile-boxshadow;
   position: relative;
   width: 17rem;
   height: 17rem;
   border: 0.7rem solid $lightblackcolor;
   border-radius: 100%;
-  box-shadow: $blackboxshadow;
 
   > div {
     background-size: cover;
@@ -108,17 +98,5 @@
     width: 100%;
     height: 100%;
     border-radius: 100%;
-  }
-}
-
-@media (min-width: 20rem) and (max-width: 44rem) {
-  .profile-container-link 
-  .profile-container-link__published,
-  .profile-container-link 
-  .profile-container-link__bookmark,
-  .profile-container-link 
-  .profile-container-link__drafts {
-    margin: 3rem 1rem;
-    font-size: 1rem;
   }
 }

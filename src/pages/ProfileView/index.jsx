@@ -1,102 +1,91 @@
 // react libraries
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
-// jwt third party library
-import jwt from 'jsonwebtoken';
+import { Redirect } from 'react-router-dom';
 
 // utils
 import connect from 'utils/connect';
+import isAuthenticated from 'utils/auth';
 
 // actions
-import { requestProfileSuccess } from 'modules/profile';
+import { getProfileRequest } from 'modules/profile';
 
 // assets
 import './ProfileView.scss';
-import imagePlaceholder from '../../assets/images/imagePlaceholder.svg';
+import imageplaceholder from '../../assets/images/image-placeholder.svg';
 
 /**
  * View profile page for individual Icon
  *
  */
 export class ViewProfile extends Component {
-/**
-* @name ViewProfile propTypes
-* @type {propTypes}
-*
-* @param {Object} props - React PropTypes
-*
-* @property {Function} onSubmit - handles form submit
-* @property {Function} onchange - handles input changes
-* @property {Function} onclick - handles input submit
-*
-*/
+  /**
+   * @name ViewProfile propTypes
+   * @type {propTypes}
+   *
+   * @param {Object} props - React PropTypes
+   *
+   * @property {Function} onSubmit - handles form submit
+   * @property {Function} onchange - handles input changes
+   * @property {Function} onclick - handles input submit
+   *
+   */
   static propTypes = {
-    requestProfileSuccess: PropTypes.func.isRequired,
+    getProfileRequest: PropTypes.func.isRequired,
     profile: PropTypes.instanceOf(Object).isRequired,
     history: PropTypes.shape({
       push: PropTypes.func.isRequired,
     }).isRequired,
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      active: 'published',
+    };
+  }
+
   componentDidMount() {
-    const { id } = jwt.decode(localStorage.getItem('token'));
-    const { requestProfileSuccess: requestProfile } = this.props;
-    requestProfile(id);
+    const { id } = isAuthenticated();
+    const { getProfileRequest: getgetProfileRequest } = this.props;
+    getgetProfileRequest(id);
   }
 
   /**
-  * Navigates the view profile to edit profile
-  * @method
-  *
-  * @return {void}
-  */
+   * Navigates the view profile to edit profile
+   * @method
+   *
+   * @return {void}
+   */
   editPage = () => {
     const { history } = this.props;
     history.push('/profile/update');
   };
 
   /**
-  * get the Published component
-  * @method
-  *
-  * @return {void}
-  */
-  getPublished = () => {
-    // render the getPublished  component
-  };
-
-  /**
-  * get the users bookmark
-  * @method
-  *
-  * @return {void}
-  */
-  getBookmark = () => {
-    // render the bookmark  component
-  };
-
-  /**
-   * get the users draft
+   * get the response component
    * @method
    *
    * @return {void}
    */
-  getDraft = () => {
-    // render the draft  component
+  getResponse = (response) => {
+    this.setState({
+      active: response,
+    });
   };
 
   render() {
     const { profile } = this.props;
-
-    return (
+    const { active } = this.state;
+    const { isExpired } = isAuthenticated();
+    const page = !isExpired ? (
       <div className="profile-container">
         <div className="profile-container__header">
           <div className="profile-container__mini-header" />
           <div className="profile-container__image ">
             <img
-              src={profile.data.avatarUrl || imagePlaceholder}
-              className="profile-container__image-preview"
+              src={profile.data.avatarUrl || imageplaceholder}
+              className="profile-container__image-preview-view"
               id="profileImg"
               alt=""
             />
@@ -124,22 +113,25 @@ export class ViewProfile extends Component {
           <div className="profile-container-link">
             <button
               type="submit"
-              onClick={this.getPublished}
-              className="profile-container-link__published"
+              onClick={() => this.getResponse('published')}
+              className={`profile-container-link__published ${active
+                === 'published' && ' profile-active'}`}
             >
               Published
             </button>
             <button
               type="submit"
-              onClick={this.getBookmark}
-              className="profile-container-link__bookmark"
+              onClick={() => this.getResponse('bookmark')}
+              className={`profile-container-link__bookmark ${active
+                === 'bookmark' && ' profile-active'}`}
             >
               Bookmarks
             </button>
             <button
               type="submit"
-              onClick={this.getDraft}
-              className="profile-container-link__drafts"
+              onClick={() => this.getResponse('drafts')}
+              className={`profile-container-link__drafts ${active
+                === 'drafts' && ' profile-active'}`}
             >
               Drafts
             </button>
@@ -149,8 +141,11 @@ export class ViewProfile extends Component {
           Response from Bookmarks,
         </div>
       </div>
+    ) : (
+      <Redirect to="/" />
     );
+    return <div>{page}</div>;
   }
 }
 
-export default connect({ requestProfileSuccess })(ViewProfile);
+export default connect({ getProfileRequest })(ViewProfile);

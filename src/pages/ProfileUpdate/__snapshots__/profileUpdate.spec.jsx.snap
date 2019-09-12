@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile update should render properly 1`] = `
+<ProfileUpdate
+  getProfileRequestUpdateSuccess={[MockFunction]}
+  history={
+    Object {
+      "push": [MockFunction],
+    }
+  }
+  profile={
+    Object {
+      "data": Array [],
+      "errors": null,
+      "loading": false,
+    }
+  }
+>
+  <div>
+    <div
+      className="profile-container"
+    >
+      <div
+        className="profile-container__header"
+      >
+        <div
+          className="profile-container__mini-header"
+        />
+        <div
+          className="profile-container__image profile-container__image-update"
+        >
+          <div
+            className="profile-container__image-cover"
+          >
+            <input
+              accept=".png, .jpg, .jpeg"
+              id="image-upload"
+              onChange={[Function]}
+              type="file"
+            />
+            <label
+              htmlFor="image-upload"
+            >
+               
+              <img
+                alt=""
+                className="profile-container__image-camera"
+                src="test-file-stub"
+              />
+            </label>
+          </div>
+          <div
+            className="profile-container__image-placeholder-update"
+          >
+            <img
+              alt="Profile avatar of "
+              className="profile-container__image-preview"
+              id="profileImg"
+              src="test-file-stub"
+            />
+          </div>
+        </div>
+        <div
+          className="profile-container__name"
+        >
+          <p
+            className="username"
+          >
+              
+          </p>
+        </div>
+        <div
+          className="profile-container__bio-update"
+        >
+          <p
+            id="bio"
+          />
+        </div>
+      </div>
+      <div
+        className="profile-container__details"
+      >
+        <form
+          className="ui form"
+          id="updateform"
+          onSubmit={[Function]}
+        >
+          <div
+            className="field"
+          >
+            <label
+              htmlFor="firstname"
+            >
+              First Name
+              <input
+                className="firstName"
+                id="firstname"
+                name="firstName"
+                onChange={[Function]}
+                onFocus={[Function]}
+                placeholder="First Name"
+                type="text"
+                value=""
+              />
+            </label>
+          </div>
+          <div
+            className="field"
+          >
+            <label
+              htmlFor="lastName"
+            >
+              Last Name
+              <input
+                className="lastname"
+                id="lastname"
+                name="lastName"
+                onChange={[Function]}
+                onFocus={[Function]}
+                placeholder="Last Name"
+                type="text"
+                value=""
+              />
+            </label>
+          </div>
+          <div
+            className="field"
+          >
+            <label
+              htmlFor="username"
+            >
+              Username
+              <input
+                className="username"
+                id="username"
+                name="userName"
+                onChange={[Function]}
+                onFocus={[Function]}
+                placeholder="Username"
+                type="text"
+                value=""
+              />
+            </label>
+          </div>
+          <div
+            className="field"
+          >
+            <label
+              htmlFor="bio"
+            >
+              Short Bio
+              <textarea
+                className="update-bio"
+                id="bio"
+                name="bio"
+                onChange={[Function]}
+                onFocus={[Function]}
+                rows="2"
+                value=""
+              />
+            </label>
+          </div>
+          <button
+            className="ui right floated button orange button"
+            disabled={false}
+            type="submit"
+          >
+            Update
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</ProfileUpdate>
+`;

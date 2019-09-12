@@ -1,56 +1,56 @@
 // third-party libraries
 import {
-  call,
-  put,
-  takeLatest,
+  call, put, takeLeading, takeLatest
 } from 'redux-saga/effects';
 
 // types
 import {
-  REQUEST_PROFILE_SUCCESS,
-  PROFILE_FAILURE,
-  PROFILE_ISLOADING,
-  REQUEST_PROFILE_UPDATE_SUCCESS,
-  PROFILE_IS_UPDATING,
-  PROFILE_UPDATE_FAILURE,
+  GET_PROFILE_REQUEST,
+  GET_PROFILE_REQUEST_SUCCESS,
+  GET_PROFILE_FAILURE,
+  GET_PROFILE_REQUEST_UPDATE,
+  GET_PROFILE_REQUEST_UPDATE_SUCCESS,
+  GET_PROFILE_UPDATE_FAILURE,
 } from 'modules/profile/types';
 
 // requests
 import API from './request';
 
 // get profile actions
-export const profileIsloading = (payload) => ({
-  type: PROFILE_ISLOADING,
+export const getProfileRequest = (payload) => ({
+  type: GET_PROFILE_REQUEST,
   payload,
 });
-export const requestProfileSuccess = (payload) => ({
-  type: REQUEST_PROFILE_SUCCESS,
+export const getProfileRequestSuccess = (payload) => ({
+  type: GET_PROFILE_REQUEST_SUCCESS,
   payload,
 });
 export const profileFailure = (payload) => ({
-  type: PROFILE_FAILURE,
+  type: GET_PROFILE_FAILURE,
   payload,
 });
 
 // update profile actions
-export const requestProfileUpdateSuccess = (payload) => ({
-  type: REQUEST_PROFILE_UPDATE_SUCCESS,
+export const getProfileRequestUpdate = (payload) => ({
+  type: GET_PROFILE_REQUEST_UPDATE,
   payload,
 });
-export const profileIsUpdating = (payload) => ({
-  type: PROFILE_IS_UPDATING,
+
+export const getProfileRequestUpdateSuccess = (payload) => ({
+  type: GET_PROFILE_REQUEST_UPDATE_SUCCESS,
   payload,
 });
-export const profileUpdateFailure = (payload) => ({
-  type: PROFILE_UPDATE_FAILURE,
+
+export const updateProfileFailure = (payload) => ({
+  type: GET_PROFILE_UPDATE_FAILURE,
   payload,
 });
 
 // get profile walker
-export function* requestProfile(action) {
+export function* getProfile(action) {
   try {
     const profileViewResult = yield call(API.viewProfile, action.payload);
-    yield put(requestProfileSuccess(profileViewResult.data));
+    yield put(getProfileRequestSuccess(profileViewResult.data));
   } catch (error) {
     yield put(profileFailure(error.message));
   }
@@ -58,22 +58,22 @@ export function* requestProfile(action) {
 
 // get profile watcher
 export function* watchProfileRequests() {
-  yield takeLatest(REQUEST_PROFILE_SUCCESS, requestProfile);
+  yield takeLatest(GET_PROFILE_REQUEST, getProfile);
 }
 
 // update profile walker
 export function* updateProfile(action) {
   try {
     const profileUpdateResult = yield call(API.updateProfile, action.payload);
-    yield put(requestProfileUpdateSuccess(profileUpdateResult));
+    yield put(getProfileRequestUpdateSuccess(profileUpdateResult));
   } catch (error) {
-    yield put(profileUpdateFailure(error.response.data.error.errors));
+    yield put(updateProfileFailure(error.response.data.error.errors));
   }
 }
 
 // update profile watcher
 export function* watchProfileUpdateRequests() {
-  yield takeLatest(REQUEST_PROFILE_UPDATE_SUCCESS, updateProfile);
+  yield takeLeading(GET_PROFILE_REQUEST_UPDATE, updateProfile);
 }
 
 const initialState = {
@@ -84,39 +84,39 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-  case PROFILE_ISLOADING:
+  case GET_PROFILE_REQUEST:
     return {
       ...state,
       loading: true,
-      errors: false,
+      errors: null,
     };
-  case REQUEST_PROFILE_SUCCESS:
+  case GET_PROFILE_REQUEST_SUCCESS:
     return {
       ...state,
       data: action.payload,
       loading: false,
       errors: null,
     };
-  case PROFILE_FAILURE:
+  case GET_PROFILE_FAILURE:
     return {
       ...state,
       loading: false,
       errors: action.payload,
     };
-  case PROFILE_IS_UPDATING:
+  case GET_PROFILE_REQUEST_UPDATE:
     return {
       ...state,
       loading: true,
-      errors: false,
+      errors: null,
     };
-  case REQUEST_PROFILE_UPDATE_SUCCESS:
+  case GET_PROFILE_REQUEST_UPDATE_SUCCESS:
     return {
       ...state,
       data: action.payload,
       loading: false,
       errors: false,
     };
-  case PROFILE_UPDATE_FAILURE:
+  case GET_PROFILE_UPDATE_FAILURE:
     return {
       ...state,
       loading: false,

@@ -1,15 +1,31 @@
 // react libraries
 import React from 'react';
+
+import { Provider } from 'react-redux';
 import axios from 'axios';
 
 // pages
+import mockStore from 'fixtures/store';
 import { ViewProfile } from './index';
+
+const store = mockStore({
+  profile: {
+    loading: false,
+    data: {
+      bio: 'Thats great',
+      firstName: 'James',
+      lastName: 'James',
+      avatarUrl: 'MyImage',
+    },
+    errors: null,
+  },
+});
 
 describe('Profile View', () => {
   let props;
   let wrapper;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     props = {
       profile: {
         loading: false,
@@ -22,13 +38,13 @@ describe('Profile View', () => {
         errors: null,
       },
       history: { push: jest.fn() },
-      requestProfileSuccess: jest.fn(),
+      getProfileRequest: jest.fn(),
     };
     const { data } = await axios.post(
       'https://vali-1kbideas-staging.herokuapp.com/api/v1/auth/signin',
       {
         password: 'lovem!588',
-        email: 'joy@gmail.com',
+        email: 'myjoy@gmail.com',
       },
     );
 
@@ -36,11 +52,16 @@ describe('Profile View', () => {
 
     localStorage.setItem('token', token);
     wrapper = mount(
-    /* eslint-disable react/jsx-props-no-spreading */
-      <ViewProfile {...props}>
-        <div className="profile-container" />
-      </ViewProfile>,
+      <Provider store={store}>
+        <ViewProfile {...props}>
+          <div className="profile-container" />
+        </ViewProfile>
+      </Provider>,
     );
+  });
+
+  it('should render properly', () => {
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should ascertain that all the divs are existing', () => {
@@ -48,7 +69,9 @@ describe('Profile View', () => {
     expect(wrapper.find('.profile-container__mini-header')).toHaveLength(1);
     expect(wrapper.find('.profile-container__image-update')).toHaveLength(0);
     expect(wrapper.find('.container__image-cover')).toHaveLength(0);
-    expect(wrapper.find('.profile-container__image-preview')).toHaveLength(1);
+    expect(wrapper.find('.profile-container__image-preview-view')).toHaveLength(
+      1,
+    );
     expect(wrapper.find('.profile-container__name')).toHaveLength(1);
     expect(wrapper.find('.profile-container__bio')).toHaveLength(1);
     expect(wrapper.find('.profile-container__social-detail')).toHaveLength(1);
@@ -69,5 +92,25 @@ describe('Profile View', () => {
     expect(userName.text()).toBe(' James James');
     expect(bio.text()).toBe('Thats great');
     expect(profileImage.text()).toBe('');
+  });
+
+  it('should check if the edit is clicked', () => {
+    const button = wrapper.find('.inverted');
+    button.simulate('click');
+  });
+
+  it('should check if the published is clicked', () => {
+    const button = wrapper.find('.profile-container-link__published');
+    button.simulate('click');
+  });
+
+  it('should check if the bookmark is clicked', () => {
+    const button = wrapper.find('.profile-container-link__bookmark');
+    button.simulate('click');
+  });
+
+  it('should check if the drafts is clicked', () => {
+    const button = wrapper.find('.profile-container-link__drafts');
+    button.simulate('click');
   });
 });

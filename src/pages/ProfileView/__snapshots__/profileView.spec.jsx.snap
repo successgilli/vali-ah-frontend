@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile View should render properly 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ViewProfile
+    getProfileRequest={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            "ab7055c5-f375-4ea2-a624-c98a3d0d33ff",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    history={
+      Object {
+        "push": [MockFunction],
+      }
+    }
+    profile={
+      Object {
+        "data": Object {
+          "avatarUrl": "MyImage",
+          "bio": "Thats great",
+          "firstName": "James",
+          "lastName": "James",
+        },
+        "errors": null,
+        "loading": false,
+      }
+    }
+  >
+    <div>
+      <div
+        className="profile-container"
+      >
+        <div
+          className="profile-container__header"
+        >
+          <div
+            className="profile-container__mini-header"
+          />
+          <div
+            className="profile-container__image "
+          >
+            <img
+              alt=""
+              className="profile-container__image-preview-view"
+              id="profileImg"
+              src="MyImage"
+            />
+          </div>
+          <div
+            className="profile-container__name"
+          >
+            <p
+              id="userName"
+            >
+               
+              James James
+            </p>
+          </div>
+          <div
+            className="profile-container__bio"
+            id="bio"
+          >
+            <p>
+              Thats great
+            </p>
+          </div>
+          <div
+            className="profile-container__social-detail"
+          >
+            <div
+              className="profile-container__edit"
+            >
+              <button
+                className="ui inverted orange button"
+                onClick={[Function]}
+                type="submit"
+              >
+                Edit Profile
+              </button>
+            </div>
+          </div>
+          <div
+            className="profile-container-link"
+          >
+            <button
+              className="profile-container-link__published  profile-active"
+              onClick={[Function]}
+              type="submit"
+            >
+              Published
+            </button>
+            <button
+              className="profile-container-link__bookmark false"
+              onClick={[Function]}
+              type="submit"
+            >
+              Bookmarks
+            </button>
+            <button
+              className="profile-container-link__drafts false"
+              onClick={[Function]}
+              type="submit"
+            >
+              Drafts
+            </button>
+          </div>
+        </div>
+        <div
+          className="profile-container__response"
+        >
+          Response from Bookmarks,
+        </div>
+      </div>
+    </div>
+  </ViewProfile>
+</Provider>
+`;

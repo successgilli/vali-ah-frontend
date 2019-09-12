@@ -1,11 +1,11 @@
 // actions
 import mainReducer, {
-  profileIsloading,
-  requestProfileSuccess,
+  getProfileRequest,
+  getProfileRequestSuccess,
   profileFailure,
-  requestProfileUpdateSuccess,
-  profileIsUpdating,
-  profileUpdateFailure,
+  getProfileRequestUpdate,
+  getProfileRequestUpdateSuccess,
+  updateProfileFailure,
 } from './index';
 
 describe('Reducers', () => {
@@ -15,7 +15,7 @@ describe('Reducers', () => {
       loading: false,
       errors: null,
     };
-    const newState = mainReducer(initialState, profileIsloading());
+    const newState = mainReducer(initialState, getProfileRequest());
     expect(newState.data).toEqual([]);
     expect(newState.loading).toEqual(true);
   });
@@ -29,7 +29,10 @@ describe('Reducers', () => {
       userName: 'chuckss',
       status: 200,
     };
-    const newState = mainReducer(initialState, requestProfileSuccess(payload));
+    const newState = mainReducer(
+      initialState,
+      getProfileRequestSuccess(payload),
+    );
     expect(newState.data.userName).toEqual('chuckss');
     expect(newState.data.status).toEqual(200);
     expect(newState.loading).toEqual(false);
@@ -59,7 +62,10 @@ describe('Update user profile', () => {
       data: [],
       loading: false,
     };
-    const newState = mainReducer(initialState, profileIsUpdating());
+    const newState = mainReducer(
+      initialState,
+      getProfileRequestUpdate(),
+    );
 
     expect(newState.data).toEqual([]);
     expect(newState.loading).toEqual(true);
@@ -77,7 +83,7 @@ describe('Update user profile', () => {
     };
     const newState = mainReducer(
       initialState,
-      requestProfileUpdateSuccess(payload),
+      getProfileRequestUpdateSuccess(payload),
     );
 
     expect(newState.data.userName).toEqual('chuckss');
@@ -98,7 +104,7 @@ describe('Update user profile', () => {
     };
     const newState = mainReducer(
       initialState,
-      profileUpdateFailure(errorPayload),
+      updateProfileFailure(errorPayload),
     );
     expect(newState.errors.userDetail).toEqual([]);
     expect(newState.errors.error).toEqual('wrong id');

@@ -13,7 +13,7 @@ describe('Profile update', () => {
       errors: null,
     },
     history: { push: jest.fn() },
-    requestProfileUpdateSuccess: jest.fn(),
+    getProfileRequestUpdateSuccess: jest.fn(),
   };
 
   let wrapper;
@@ -24,7 +24,7 @@ describe('Profile update', () => {
       'https://vali-1kbideas-staging.herokuapp.com/api/v1/auth/signin',
       {
         password: 'lovem!588',
-        email: 'joy@gmail.com',
+        email: 'myjoy@gmail.com',
       },
     );
 
@@ -32,12 +32,15 @@ describe('Profile update', () => {
 
     localStorage.setItem('token', token);
     wrapper = mount(
-      // eslint-disable-next-line react/jsx-props-no-spreading
       <ProfileUpdate {...props}>
         <div className="profile-container" />
       </ProfileUpdate>,
     );
     label = wrapper.find('label');
+  });
+
+  it('should render properly', () => {
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should ascertain that all the divs are existing', () => {
@@ -53,36 +56,35 @@ describe('Profile update', () => {
     const inputFirstName = wrapper.find('input').at(1);
     const inputLastname = wrapper.find('#lastname');
     const inputUsername = wrapper.find('input').at(3);
-    const inputBio = wrapper.find('.updateBio');
-    const form = wrapper.find('#updateForm');
+    const inputBio = wrapper.find('.update-bio');
+    const form = wrapper.find('#updateform');
     const file = new File(['(⌐□_□)'], 'peter.png', { type: 'image/png' });
     const selectImage = wrapper.find('input').at(0);
 
     selectImage.simulate('change', {
       target: { files: [file], name: 'image' },
     });
-    form.simulate('submit');
 
     inputFirstName.simulate('change', {
-      target: { value: 'Well', name: 'firstName' },
+      target: { value: 'Welliams', name: 'firstName' },
     });
     inputLastname.simulate('change', {
-      target: { value: 'let', name: 'lastName' },
+      target: { value: 'Lotsfor', name: 'lastName' },
     });
     inputUsername.simulate('change', {
-      target: { value: 'Billz', name: 'userName' },
+      target: { value: 'Billillsz', name: 'userName' },
     });
     inputBio.simulate('change', {
-      target: { value: 'in this life', name: 'bio' },
+      target: { value: 'in this life just think', name: 'bio' },
     });
     form.simulate('submit');
     const newState = wrapper.state();
 
     expect(label).toHaveLength(5);
-    expect(newState.data.firstName).toEqual('Well');
-    expect(newState.data.lastName).toEqual('let');
-    expect(newState.data.userName).toEqual('Billz');
-    expect(newState.data.bio).toEqual('in this life');
+    expect(newState.data.firstName).toEqual('Welliams');
+    expect(newState.data.lastName).toEqual('Lotsfor');
+    expect(newState.data.userName).toEqual('Billillsz');
+    expect(newState.data.bio).toEqual('in this life just think');
     expect(newState.data.image).toBeInstanceOf(File);
   });
 });

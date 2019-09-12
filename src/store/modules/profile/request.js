@@ -6,7 +6,7 @@ const updateProfileUrl = '/users/profile';
 
 export default {
   viewProfile: async (id) => {
-    const response = await http.get(`${getProfileUrl}/${id}`);
+    const response = await http.get(`${getProfileUrl}/${id.id || id}`);
 
     return response;
   },
