@@ -9,7 +9,7 @@ const Input = ({
   type,
   name,
   placeholder,
-  onChange
+  onChange,
 }) => (
   <label htmlFor={name} className="input__label">
     <input
@@ -18,6 +18,7 @@ const Input = ({
       placeholder={placeholder}
       onChange={onChange}
       className="input__field"
+      required={'required' || false}
     />
   </label>
 );

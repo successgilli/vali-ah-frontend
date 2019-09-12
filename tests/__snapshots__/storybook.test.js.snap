@@ -76,6 +76,7 @@ exports[`Storyshots Input field with email name 1`] = `
     name="email"
     onChange={[Function]}
     placeholder="Email"
+    required="required"
     type="text"
   />
 </label>
@@ -91,6 +92,7 @@ exports[`Storyshots Input password field 1`] = `
     name="email"
     onChange={[Function]}
     placeholder="Password"
+    required="required"
     type="password"
   />
 </label>
@@ -155,7 +157,174 @@ exports[`Storyshots Modal click closed modal button 1`] = `
         <div
           className="modal__social-login"
         >
-          JONATUS COMPONENT
+          <div>
+            <form
+              className="form-wrapper"
+              onSubmit={[Function]}
+            >
+              <div
+                className="input-fields-row"
+              >
+                <label
+                  className="form__label"
+                  htmlFor="firstName"
+                >
+                  <label
+                    className="input__label"
+                    htmlFor="firstName"
+                  >
+                    <input
+                      className="input__field"
+                      name="firstName"
+                      onChange={[Function]}
+                      placeholder="First Name"
+                      required="required"
+                      type="text"
+                    />
+                  </label>
+                  <span
+                    className="form__errors"
+                  >
+                    
+                  </span>
+                </label>
+                <label
+                  className="form__label"
+                  htmlFor="lastName"
+                >
+                  <label
+                    className="input__label"
+                    htmlFor="lastName"
+                  >
+                    <input
+                      className="input__field"
+                      name="lastName"
+                      onChange={[Function]}
+                      placeholder="Last Name"
+                      required="required"
+                      type="text"
+                    />
+                  </label>
+                  <span
+                    className="form__errors"
+                  >
+                    
+                  </span>
+                </label>
+              </div>
+              <div
+                className="input-fields-row"
+              >
+                <label
+                  className="form__label"
+                  htmlFor="userName"
+                >
+                  <label
+                    className="input__label"
+                    htmlFor="userName"
+                  >
+                    <input
+                      className="input__field"
+                      name="userName"
+                      onChange={[Function]}
+                      placeholder="Username"
+                      required="required"
+                      type="text"
+                    />
+                  </label>
+                  <span
+                    className="form__errors"
+                  >
+                    
+                  </span>
+                </label>
+                <label
+                  className="form__label"
+                  htmlFor="email"
+                >
+                  <label
+                    className="input__label"
+                    htmlFor="email"
+                  >
+                    <input
+                      className="input__field"
+                      name="email"
+                      onChange={[Function]}
+                      placeholder="Email"
+                      required="required"
+                      type="text"
+                    />
+                  </label>
+                  <span
+                    className="form__errors"
+                  >
+                    
+                  </span>
+                </label>
+              </div>
+              <div
+                className="input-fields-row"
+              >
+                <label
+                  className="form__label"
+                  htmlFor="password"
+                >
+                  <label
+                    className="input__label"
+                    htmlFor="password"
+                  >
+                    <input
+                      className="input__field"
+                      name="password"
+                      onChange={[Function]}
+                      placeholder="Password"
+                      required="required"
+                      type="password"
+                    />
+                  </label>
+                  <span
+                    className="form__errors"
+                  >
+                    
+                  </span>
+                </label>
+                <label
+                  className="form__label"
+                  htmlFor="password"
+                >
+                  <label
+                    className="input__label"
+                    htmlFor="confirmPassword"
+                  >
+                    <input
+                      className="input__field"
+                      name="confirmPassword"
+                      onChange={[Function]}
+                      placeholder="Confirm Password"
+                      required="required"
+                      type="password"
+                    />
+                  </label>
+                  <span
+                    className="form__errors"
+                    id="shwMessage"
+                  >
+                    
+                  </span>
+                </label>
+              </div>
+              <div
+                className="btn-section"
+              >
+                <button
+                  className="button__primary"
+                  type="submit"
+                >
+                  Signup
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
         <div
           className="modal__setup-tag"
@@ -251,6 +420,7 @@ exports[`Storyshots Modal click sign in 1`] = `
               name="email"
               onChange={[Function]}
               placeholder="Email Address"
+              required="required"
               type="text"
             />
           </label>
@@ -263,6 +433,7 @@ exports[`Storyshots Modal click sign in 1`] = `
               name="password"
               onChange={[Function]}
               placeholder="Password"
+              required="required"
               type="password"
             />
           </label>
@@ -367,7 +538,174 @@ exports[`Storyshots Modal default signup view 1`] = `
         <div
           className="modal__social-login"
         >
-          JONATUS COMPONENT
+          <div>
+            <form
+              className="form-wrapper"
+              onSubmit={[Function]}
+            >
+              <div
+                className="input-fields-row"
+              >
+                <label
+                  className="form__label"
+                  htmlFor="firstName"
+                >
+                  <label
+                    className="input__label"
+                    htmlFor="firstName"
+                  >
+                    <input
+                      className="input__field"
+                      name="firstName"
+                      onChange={[Function]}
+                      placeholder="First Name"
+                      required="required"
+                      type="text"
+                    />
+                  </label>
+                  <span
+                    className="form__errors"
+                  >
+                    
+                  </span>
+                </label>
+                <label
+                  className="form__label"
+                  htmlFor="lastName"
+                >
+                  <label
+                    className="input__label"
+                    htmlFor="lastName"
+                  >
+                    <input
+                      className="input__field"
+                      name="lastName"
+                      onChange={[Function]}
+                      placeholder="Last Name"
+                      required="required"
+                      type="text"
+                    />
+                  </label>
+                  <span
+                    className="form__errors"
+                  >
+                    
+                  </span>
+                </label>
+              </div>
+              <div
+                className="input-fields-row"
+              >
+                <label
+                  className="form__label"
+                  htmlFor="userName"
+                >
+                  <label
+                    className="input__label"
+                    htmlFor="userName"
+                  >
+                    <input
+                      className="input__field"
+                      name="userName"
+                      onChange={[Function]}
+                      placeholder="Username"
+                      required="required"
+                      type="text"
+                    />
+                  </label>
+                  <span
+                    className="form__errors"
+                  >
+                    
+                  </span>
+                </label>
+                <label
+                  className="form__label"
+                  htmlFor="email"
+                >
+                  <label
+                    className="input__label"
+                    htmlFor="email"
+                  >
+                    <input
+                      className="input__field"
+                      name="email"
+                      onChange={[Function]}
+                      placeholder="Email"
+                      required="required"
+                      type="text"
+                    />
+                  </label>
+                  <span
+                    className="form__errors"
+                  >
+                    
+                  </span>
+                </label>
+              </div>
+              <div
+                className="input-fields-row"
+              >
+                <label
+                  className="form__label"
+                  htmlFor="password"
+                >
+                  <label
+                    className="input__label"
+                    htmlFor="password"
+                  >
+                    <input
+                      className="input__field"
+                      name="password"
+                      onChange={[Function]}
+                      placeholder="Password"
+                      required="required"
+                      type="password"
+                    />
+                  </label>
+                  <span
+                    className="form__errors"
+                  >
+                    
+                  </span>
+                </label>
+                <label
+                  className="form__label"
+                  htmlFor="password"
+                >
+                  <label
+                    className="input__label"
+                    htmlFor="confirmPassword"
+                  >
+                    <input
+                      className="input__field"
+                      name="confirmPassword"
+                      onChange={[Function]}
+                      placeholder="Confirm Password"
+                      required="required"
+                      type="password"
+                    />
+                  </label>
+                  <span
+                    className="form__errors"
+                    id="shwMessage"
+                  >
+                    
+                  </span>
+                </label>
+              </div>
+              <div
+                className="btn-section"
+              >
+                <button
+                  className="button__primary"
+                  type="submit"
+                >
+                  Signup
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
         <div
           className="modal__setup-tag"
@@ -408,6 +746,7 @@ exports[`Storyshots Signin sign in form 1`] = `
       name="email"
       onChange={[Function]}
       placeholder="Email Address"
+      required="required"
       type="text"
     />
   </label>
@@ -420,6 +759,7 @@ exports[`Storyshots Signin sign in form 1`] = `
       name="password"
       onChange={[Function]}
       placeholder="Password"
+      required="required"
       type="password"
     />
   </label>

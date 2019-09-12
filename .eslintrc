@@ -47,7 +47,8 @@
         "pages": "src/pages",
         "modules": "src/store/modules",
         "utils": "src/utils",
-        "fixtures": "src/tests/fixtures"
+        "fixtures": "src/tests/fixtures",
+        "validations": "src/validations"
       }
     }
   },

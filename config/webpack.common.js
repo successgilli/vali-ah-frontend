@@ -1,6 +1,9 @@
 const path = require('path');
 const {
-  htmlWebpackPlugin, extractTextPlugin, ExtractTextPlugin, definePlugin
+  htmlWebpackPlugin,
+  extractTextPlugin,
+  ExtractTextPlugin,
+  definePlugin
 } = require('./webpack.plugins.js');
 
 module.exports = {
@@ -9,7 +12,7 @@ module.exports = {
     path: path.resolve(__dirname, '../build'),
     filename: '[name].js',
     sourceMapFilename: '[name].map',
-    publicPath: '/',
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.jsx', '.css', '.scss'],
@@ -21,7 +24,8 @@ module.exports = {
       utils: path.resolve(__dirname, '../src/utils'),
       'react-dom': '@hot-loader/react-dom',
       scss: path.resolve(__dirname, '../src/assets/scss'),
-      fixtures: path.resolve(__dirname, '../tests/fixtures')
+      fixtures: path.resolve(__dirname, '../tests/fixtures'),
+      validations: path.resolve(__dirname, '../src/validations')
     },
     modules: [path.resolve(__dirname, 'src'), 'node_modules']
   },
@@ -46,13 +50,9 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|jpeg)$/,
-        loader: 'file-loader',
+        loader: 'file-loader'
       }
     ]
   },
-  plugins: [
-    htmlWebpackPlugin,
-    extractTextPlugin,
-    definePlugin
-  ],
+  plugins: [htmlWebpackPlugin, extractTextPlugin, definePlugin]
 };

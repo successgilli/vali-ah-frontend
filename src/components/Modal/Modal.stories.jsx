@@ -21,4 +21,8 @@ storiesOf('Modal', module)
       <Modal show formType />
     </Provider>
   ))
-  .add('click closed modal button', () => <Modal show={false} />);
+  .add('click closed modal button', () => (
+    <Provider store={store}>
+      <Modal show={false} />
+    </Provider>
+  ));

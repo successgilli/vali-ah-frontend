@@ -27,7 +27,6 @@ it('should render not found for invalid route', () => {
       <App />
     </MemoryRouter>
   );
-
   expect(wrapper.contains(<h3>This page is not found.</h3>)).toBe(true);
 });
 

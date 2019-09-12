@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 // components
 import Signin from 'components/Signin';
+import Signup from 'components/Signup';
 
 import './Modal.scss';
 
@@ -22,6 +23,12 @@ export class ModalComponent extends React.Component {
     formType: PropTypes.bool.isRequired,
     show: PropTypes.bool.isRequired
   };
+
+  static getDerivedStateFromProps(props, { close }) {
+    const { show } = props;
+
+    return { show: (show && !close), close: false };
+  }
 
   constructor(props) {
     super(props);
@@ -50,13 +57,13 @@ export class ModalComponent extends React.Component {
     * @return {void}
     */
   handleClose = () => {
-    this.setState({ show: false });
+    this.setState({ show: false, close: true });
   }
 
   render() {
-    const { signin, show } = this.state;
+    const { signin, show, close } = this.state;
     return (
-      <div className={(show) ? 'modal modal--show' : 'modal modal--hide'}>
+      <div className={(show && !close) ? 'modal modal--show' : 'modal modal--hide'}>
         <div className="modal__modal-content">
           <button className="modal__close" type="button" onClick={this.handleClose}>&#x2715;</button>
           {
@@ -91,7 +98,7 @@ export class ModalComponent extends React.Component {
               {
                 !signin && (
                   <div className="modal__social-login">
-                JONATUS COMPONENT
+                    <Signup />
                   </div>
                 )
               }
