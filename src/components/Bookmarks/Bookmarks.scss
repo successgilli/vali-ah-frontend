@@ -1,0 +1,23 @@
+.bookmark {
+  &__feed {
+    position: relative;
+    top: 1.25rem;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 3.75rem;
+    font-family: Rubik;
+    font-size: 1.5rem;
+    font-weight: normal;
+    line-height: 1.75rem;
+    text-align: center;
+    color: #000;
+    font-style: normal;
+  }
+
+  &__content {
+    max-width: 56.25rem;
+    min-height: 100vh;
+    margin: auto;
+    margin-top: 9.375rem;
+  }
+}

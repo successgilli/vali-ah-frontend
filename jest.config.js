@@ -8,7 +8,7 @@ module.exports = {
   collectCoverage: true,
   snapshotSerializers: ['enzyme-to-json/serializer'],
   moduleNameMapper: {
-    '\\.(css|less|sass|scss)$': '<rootDir>/tests/__mocks__/style.js',
+    '\\.(css|less|sass|scss|png|jpg|gif|jpeg|svg|woff|eot|woff2|ttf)$': '<rootDir>/tests/__mocks__/style.js',
     '^fixtures/(.*)$': '<rootDir>/tests/fixtures/$1'
   }
 };

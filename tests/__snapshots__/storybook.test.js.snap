@@ -1,5 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Bookmark card card design 1`] = `
+<div
+  className="bookmark-card"
+>
+  <div
+    className="bookmark-card__image-div"
+  >
+    <img
+      alt="card"
+      className="bookmark-card__image"
+      src="https://picsum.photos/300"
+    />
+  </div>
+  <div
+    className="bookmark-card__details"
+  >
+    <div
+      className="bookmark-card__info"
+    >
+      <p
+        className="bookmark-card__tag"
+      >
+        emotion
+      </p>
+      <a
+        href="/articles/null"
+        onClick={[Function]}
+      >
+        <h3
+          className="bookmark-card__title"
+        >
+          Repudiandae debitis ratione officia quae repellendus.
+        </h3>
+      </a>
+      <p
+        className="bookmark-card__date"
+      >
+        Sep 13, 2019
+      </p>
+      <img
+        alt="user avatar"
+        className="bookmark-card__profile-image"
+        src={Object {}}
+      />
+    </div>
+    <div
+      className="bookmark-card__icons"
+    >
+      <img
+        alt="BI"
+        className="bookmark-card__component"
+        src={Object {}}
+      />
+      <img
+        alt="VW"
+        className="bookmark-card__component"
+        src={Object {}}
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Button add custom class 1`] = `
 <button
   className="button__round"

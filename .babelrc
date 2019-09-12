@@ -22,7 +22,7 @@
         "modules": "./src/store/modules/",
         "utils": "./src/utils/"
       }
-    }],
+    }]
   ],
   "sourceMap" : "inline"
 }
