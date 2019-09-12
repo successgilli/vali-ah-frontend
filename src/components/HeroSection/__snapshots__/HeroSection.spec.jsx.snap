@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeroSection Component should renders properly without card data 1`] = `
+<HeroSection>
+  <section
+    className="app-container hero-section"
+  >
+    <div
+      className="hero-section__hero-content"
+    >
+      <h1
+        className="hero-section__hero-content__text"
+      >
+         The one-stop shop for all the self-help ideas you need 
+      </h1>
+      <p
+        className="hero-section__herocontent__subtext"
+      >
+         Write and share your stories 
+      </p>
+      <div
+        className="hero-section__hero-content__button-wrapper"
+      >
+        <button
+          className="hero-section__hero-content__button-wrapper__cta-button"
+          type="button"
+        >
+          Join 1kbIdeas
+        </button>
+        <button
+          className="hero-section__hero-content__button-wrapper__cta-button hero-section__hero-content__button-wrapper--signin-button"
+          type="button"
+        >
+          Sign in
+        </button>
+      </div>
+      <div
+        className="hero-section__kicker-wrapper"
+      >
+        <p
+          className="hero-section__kicker-wrapper__kicker-text"
+        >
+          Explore amazing topics
+        </p>
+        <img
+          alt="Scrolldown Icon"
+          className="hero-section__kicker-wrapper__scrolldown"
+          src="test-file-stub"
+        />
+      </div>
+    </div>
+    <div
+      className="hero-section__hero-image"
+    >
+      <img
+        alt="1kbIdeas community"
+        className="hero-section__hero-image__image-width"
+        src="test-file-stub"
+      />
+    </div>
+  </section>
+</HeroSection>
+`;

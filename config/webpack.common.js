@@ -1,9 +1,6 @@
 const path = require('path');
 const {
-  htmlWebpackPlugin,
-  extractTextPlugin,
-  ExtractTextPlugin,
-  definePlugin
+  htmlWebpackPlugin, extractTextPlugin, ExtractTextPlugin, definePlugin, FaviconsWebpackPlugin
 } = require('./webpack.plugins.js');
 
 module.exports = {
@@ -25,7 +22,8 @@ module.exports = {
       'react-dom': '@hot-loader/react-dom',
       scss: path.resolve(__dirname, '../src/assets/scss'),
       fixtures: path.resolve(__dirname, '../tests/fixtures'),
-      validations: path.resolve(__dirname, '../src/validations')
+      validations: path.resolve(__dirname, '../src/validations'),
+      assets: path.resolve(__dirname, '../src/assets')
     },
     modules: [path.resolve(__dirname, 'src'), 'node_modules']
   },
@@ -49,10 +47,24 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'postcss-loader']
       },
       {
-        test: /\.(png|jpg|gif|jpeg)$/,
-        loader: 'file-loader'
+        test: /\.(png|jpg|gif|jpeg|svg)|.eot|woff|woff2|ttf$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8000,
+              name: 'images/[hash]-[name].[ext]',
+              useRelativePath: true
+            }
+          }
+        ]
       }
     ]
   },
-  plugins: [htmlWebpackPlugin, extractTextPlugin, definePlugin]
+  plugins: [
+    htmlWebpackPlugin,
+    extractTextPlugin,
+    definePlugin,
+    new FaviconsWebpackPlugin(path.resolve(__dirname, '../src/assets/images/1Kb.png'))
+  ],
 };

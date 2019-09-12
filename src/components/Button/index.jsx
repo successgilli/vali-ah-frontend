@@ -7,26 +7,32 @@ import './Button.scss';
 
 
 const Button = ({
-  text,
-  type,
-  onClick,
-  classname
+  children, id, className, onClick, type = 'button'
 }) => (
   // eslint-disable-next-line react/button-has-type
   <button
     type={type}
+    id={id}
+    className={className || 'button__primary'}
     onClick={onClick}
-    className={classname ? `button__${classname}` : 'button__primary'}
   >
-    {text}
+    {children}
   </button>
 );
 
 Button.propTypes = {
   type: PropTypes.string.isRequired,
-  classname: PropTypes.isRequired,
   onClick: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired,
+  id: PropTypes.string,
+  className: PropTypes.string.isRequired
+};
+
+Button.defaultProps = {
+  id: ''
 };
 
 export default Button;

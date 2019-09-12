@@ -1,0 +1,22 @@
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+  flex-wrap: wrap;
+
+  &__amazing-topics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .card-container {
+    justify-content: center;
+    width: 100%;
+  }
+}

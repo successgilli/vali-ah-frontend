@@ -1,0 +1,125 @@
+@import '~scss/variables';
+
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  &__hero-content {
+    width: 45%;
+
+    &__text {
+      font-size: 2.5rem;
+      line-height: 4rem;
+    }
+
+    &__subtext {
+      font-size: 1.5rem;
+      font-weight: 100;
+    }
+
+    &__button-wrapper {
+      margin: 2rem 0;
+
+      &__cta-button {
+        background: $primarycolor;
+        width: 10rem;
+        padding: 1rem;
+        border: 0.0625rem solid $primarycolor;
+        border-radius: 0.5rem;
+        font-family: 'Rubik', sans-serif;
+        font-size: 1rem;
+        text-align: center;
+        box-shadow: 0 0.625rem 2rem rgba(0, 0, 0, 0.22);
+        cursor: pointer;
+        color: $whitecolor;
+        transition: 0.3s;
+      }
+
+      &--signin-button {
+        background: none;
+        margin-left: 2rem;
+        border: 0.0625rem solid $primarycolor;
+        border-radius: 0.5rem;
+        box-shadow: none;
+        color: $primarycolor;
+      }
+
+      &--signin-button:hover {
+        background: $hovercolor;
+        color: $whitecolor;
+      }
+
+      &__cta-button:hover {
+        background: $hovercolor;
+        box-shadow: 0 0.625rem 2rem rgba(0, 0, 0, 0.22);
+        opacity: 1;
+      }
+    }
+  }
+
+  &__hero-image {
+    width: 37.5rem;
+
+    &__image-width {
+      width: 100%;
+    }
+  }
+
+  &__kicker-wrapper {
+    display: flex;
+    align-items: end;
+
+    &__kicker-text {
+      margin-right: 1rem;
+      color: $primarycolor;
+    }
+
+    &__scrolldown {
+      width: 4%;
+    }
+  }
+}
+
+@media (max-width: 48.0625rem) {
+  .hero-section {
+    flex-direction: column;
+    padding: 1rem;
+
+    &__hero-content {
+      width: 100%;
+      text-align: center;
+  
+      &__text {
+        font-size: 1.2rem;
+        line-height: 2rem;
+      }
+  
+      &__subtext {
+        font-size: 1rem;
+      }
+  
+      &__button-wrapper {
+        display: flex;
+        justify-content: center;
+
+        &__cta-button {
+          font-size: 0.9rem;
+        }
+
+        &--signin-button {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    &__kicker-wrapper {
+      display: block;
+    }
+
+    &__hero-image {
+      width: 16rem;
+    }
+  }
+}

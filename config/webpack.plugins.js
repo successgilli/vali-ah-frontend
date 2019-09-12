@@ -5,6 +5,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 dotenv.config();
 
@@ -36,5 +37,6 @@ module.exports = {
   cleanWebpackPlugin,
   extractTextPlugin,
   ExtractTextPlugin,
-  definePlugin
+  definePlugin,
+  FaviconsWebpackPlugin
 };

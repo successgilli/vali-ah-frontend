@@ -1,0 +1,35 @@
+@import '~scss/variables';
+
+.discover-section {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(131.9deg, #DB6115 10.3%, #E326DC 80.57%);
+  margin-bottom: 5rem;
+  padding: 3rem 6rem;
+  color: $whitecolor;
+
+  &__community-content {
+    width: 40%;
+    margin-left: 0;
+
+    &__title {
+      font-size: 2.5rem;
+    }
+
+    &__text {
+      font-size: 1.3rem;
+    }
+  }
+
+  &__community-image {
+    width: 60%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 29.9375rem) {
+  .discover-section {
+    display: none;
+  }
+}

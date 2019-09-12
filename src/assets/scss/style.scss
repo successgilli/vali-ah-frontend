@@ -1,11 +1,12 @@
 @import '~sass-rem';
-@import url('https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap');
-@import 'variables';
-@import 'mixins';
+@import '~scss/variables';
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,700&display=swap');
 
 body {
-  @include body-reset();
+  height: 100%;
+  margin: 0;
   font-family: 'Rubik', sans-serif;
+  scroll-behavior: smooth;
 }
 
 .active {
@@ -14,4 +15,40 @@ body {
 
 .hover {
   color: $hovercolor;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 81.25rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.ui.inline.loader.active,
+.ui.inline.loader.visible {
+  display: flex !important;
+  align-items: center;
+}
+
+.ui.inverted.dimmer .ui.loader,
+.ui.loader {
+  font-size: 1.4rem !important;
+}
+
+.ui.loader::after,
+.ui.loader::before {
+  margin-left: 4rem !important;
 }

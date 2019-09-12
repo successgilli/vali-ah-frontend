@@ -1,0 +1,43 @@
+.selection-options {
+  text-align: left;
+
+  @media (max-width: 61.9375rem) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    font-weight: 100;
+    cursor: pointer;
+
+    @media (max-width: 29.9375rem) {
+      font-size: 0.875rem;
+    }
+  }
+
+  &__label:nth-child(even) {
+    margin-right: 2rem;
+
+    @media (max-width: 61.9375rem) {
+      margin-right: 0;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__label:nth-child(odd) {
+    display: inline-block;
+    width: 40%;
+    margin-right: 5rem;
+    margin-bottom: 2rem;
+
+    @media (max-width: 61.9375rem) {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__radio {
+    margin-right: 1rem;
+  }
+}

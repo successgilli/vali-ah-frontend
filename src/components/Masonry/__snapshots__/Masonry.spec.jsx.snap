@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Masonry Component should renders properly without card data 1`] = `
+<Masonry
+  gap=""
+  minWidth={300}
+>
+  <styled.div
+    gap=""
+  >
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": false,
+            "lastClassName": "keyKcu",
+            "rules": Array [
+              "
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: ",
+              [Function],
+              ";
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={
+        Object {
+          "current": <div
+            class="sc-bdVaJa keyKcu"
+          >
+            <div
+              class="sc-bwzfXH itrbwG"
+            />
+            <div
+              class="sc-bwzfXH itrbwG"
+            />
+            <div
+              class="sc-bwzfXH itrbwG"
+            />
+          </div>,
+        }
+      }
+      gap=""
+    >
+      <div
+        className="sc-bdVaJa keyKcu"
+      >
+        <styled.div
+          gap=""
+          key="0"
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bwzfXH",
+                  "isStatic": false,
+                  "lastClassName": "itrbwG",
+                  "rules": Array [
+                    "
+  display: grid;
+  grid-gap: ",
+                    [Function],
+                    ";
+  grid-auto-rows: unset;
+",
+                  ],
+                },
+                "displayName": "styled.div",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-bwzfXH",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            gap=""
+          >
+            <div
+              className="sc-bwzfXH itrbwG"
+            />
+          </StyledComponent>
+        </styled.div>
+        <styled.div
+          gap=""
+          key="1"
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bwzfXH",
+                  "isStatic": false,
+                  "lastClassName": "itrbwG",
+                  "rules": Array [
+                    "
+  display: grid;
+  grid-gap: ",
+                    [Function],
+                    ";
+  grid-auto-rows: unset;
+",
+                  ],
+                },
+                "displayName": "styled.div",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-bwzfXH",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            gap=""
+          >
+            <div
+              className="sc-bwzfXH itrbwG"
+            />
+          </StyledComponent>
+        </styled.div>
+        <styled.div
+          gap=""
+          key="2"
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bwzfXH",
+                  "isStatic": false,
+                  "lastClassName": "itrbwG",
+                  "rules": Array [
+                    "
+  display: grid;
+  grid-gap: ",
+                    [Function],
+                    ";
+  grid-auto-rows: unset;
+",
+                  ],
+                },
+                "displayName": "styled.div",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-bwzfXH",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            gap=""
+          >
+            <div
+              className="sc-bwzfXH itrbwG"
+            />
+          </StyledComponent>
+        </styled.div>
+      </div>
+    </StyledComponent>
+  </styled.div>
+</Masonry>
+`;

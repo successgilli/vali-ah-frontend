@@ -33,7 +33,7 @@
       "**/*.spec.{js,jsx}",
       "**/*.stories.{js,jsx}",
       "config/**/*.js",
-      "tests/**/*.js",
+      "tests/**/*.js"
     ]}],
     "react/static-property-placement": [1, "static public field"],
     "react/state-in-constructor": 0
@@ -48,13 +48,14 @@
         "modules": "src/store/modules",
         "utils": "src/utils",
         "fixtures": "src/tests/fixtures",
-        "validations": "src/validations"
+        "validations": "src/validations",
+        "assets": "src/assets"
       }
     }
   },
   "overrides": [
     {
-      "files": ["*.stories.jsx",],
+      "files": ["*.stories.jsx"],
       "rules": {
         "react/jsx-props-no-spreading": "off"
       }

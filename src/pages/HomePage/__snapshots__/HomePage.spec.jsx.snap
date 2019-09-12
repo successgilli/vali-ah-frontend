@@ -1,0 +1,911 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Page should renders properly when is loading is false 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(HomePage)
+    header={
+      Object {
+        "activateModal": "",
+      }
+    }
+    signup={
+      Object {
+        "error": "",
+        "success": "",
+      }
+    }
+    userSelection={
+      Object {
+        "isLoading": false,
+        "userSelection": null,
+      }
+    }
+  >
+    <HomePage
+      header={
+        Object {
+          "activateModal": "",
+        }
+      }
+      signup={
+        Object {
+          "error": "",
+          "success": "",
+        }
+      }
+      userSelection={
+        Object {
+          "isLoading": false,
+          "userSelection": null,
+        }
+      }
+    >
+      <div>
+        <ModalComponent
+          show={false}
+        >
+          <div
+            className="modal modal--hide"
+          >
+            <div
+              className="modal__modal-content"
+            >
+              <button
+                className="modal__close"
+                onClick={[Function]}
+                type="button"
+              >
+                ✕
+              </button>
+              <div
+                className="modal__left"
+              >
+                <h2
+                  className="modal__head"
+                >
+                  Share your stories
+                </h2>
+                <h1
+                  className="modal__welcome"
+                >
+                  Create your free account
+                </h1>
+                <p
+                  className="modal__text"
+                >
+                  Sign into your account to serve you more personalised stories from creatives
+                </p>
+              </div>
+              <div
+                className="modal__right"
+              >
+                <h4
+                  className="modal__heading"
+                >
+                  Select one to get started
+                </h4>
+                <div
+                  className="modal__social-login"
+                >
+                  IBUKUN COMPONENT
+                </div>
+                <div
+                  className="modal__seperator"
+                >
+                  <p>
+                    or
+                  </p>
+                </div>
+                <div
+                  className="modal__auth-component"
+                >
+                  <div
+                    className="modal__social-login"
+                  >
+                    <Connect(Signup)>
+                      <Signup
+                        createUserRequest={[Function]}
+                        header={
+                          Object {
+                            "activateModal": "",
+                          }
+                        }
+                        signup={
+                          Object {
+                            "error": "",
+                            "success": "",
+                          }
+                        }
+                        userSelection={
+                          Object {
+                            "isLoading": false,
+                            "userSelection": null,
+                          }
+                        }
+                      >
+                        <div>
+                          <form
+                            className="form-wrapper"
+                            onSubmit={[Function]}
+                          >
+                            <div
+                              className="input-fields-row"
+                            >
+                              <label
+                                className="form__label"
+                                htmlFor="firstName"
+                              >
+                                <Input
+                                  className="label__input-element"
+                                  name="firstName"
+                                  onChange={[Function]}
+                                  placeholder="First Name"
+                                  required={true}
+                                  value=""
+                                >
+                                  <label
+                                    className="input__label"
+                                    htmlFor="firstName"
+                                  >
+                                    <input
+                                      className="input__field"
+                                      name="firstName"
+                                      onChange={[Function]}
+                                      placeholder="First Name"
+                                      required="required"
+                                      type="text"
+                                    />
+                                  </label>
+                                </Input>
+                                <span
+                                  className="form__errors"
+                                />
+                              </label>
+                              <label
+                                className="form__label"
+                                htmlFor="lastName"
+                              >
+                                <Input
+                                  className="label__input-element"
+                                  name="lastName"
+                                  onChange={[Function]}
+                                  placeholder="Last Name"
+                                  required={true}
+                                  value=""
+                                >
+                                  <label
+                                    className="input__label"
+                                    htmlFor="lastName"
+                                  >
+                                    <input
+                                      className="input__field"
+                                      name="lastName"
+                                      onChange={[Function]}
+                                      placeholder="Last Name"
+                                      required="required"
+                                      type="text"
+                                    />
+                                  </label>
+                                </Input>
+                                <span
+                                  className="form__errors"
+                                />
+                              </label>
+                            </div>
+                            <div
+                              className="input-fields-row"
+                            >
+                              <label
+                                className="form__label"
+                                htmlFor="userName"
+                              >
+                                <Input
+                                  className="label__input-element"
+                                  name="userName"
+                                  onChange={[Function]}
+                                  placeholder="Username"
+                                  required={true}
+                                  type="text"
+                                  value=""
+                                >
+                                  <label
+                                    className="input__label"
+                                    htmlFor="userName"
+                                  >
+                                    <input
+                                      className="input__field"
+                                      name="userName"
+                                      onChange={[Function]}
+                                      placeholder="Username"
+                                      required="required"
+                                      type="text"
+                                    />
+                                  </label>
+                                </Input>
+                                <span
+                                  className="form__errors"
+                                />
+                              </label>
+                              <label
+                                className="form__label"
+                                htmlFor="email"
+                              >
+                                <Input
+                                  className="label__input-element"
+                                  name="email"
+                                  onChange={[Function]}
+                                  placeholder="Email"
+                                  required={true}
+                                  value=""
+                                >
+                                  <label
+                                    className="input__label"
+                                    htmlFor="email"
+                                  >
+                                    <input
+                                      className="input__field"
+                                      name="email"
+                                      onChange={[Function]}
+                                      placeholder="Email"
+                                      required="required"
+                                      type="text"
+                                    />
+                                  </label>
+                                </Input>
+                                <span
+                                  className="form__errors"
+                                />
+                              </label>
+                            </div>
+                            <div
+                              className="input-fields-row"
+                            >
+                              <label
+                                className="form__label"
+                                htmlFor="password"
+                              >
+                                <Input
+                                  className="label__input-element"
+                                  name="password"
+                                  onChange={[Function]}
+                                  placeholder="Password"
+                                  required={true}
+                                  type="password"
+                                  value=""
+                                >
+                                  <label
+                                    className="input__label"
+                                    htmlFor="password"
+                                  >
+                                    <input
+                                      className="input__field"
+                                      name="password"
+                                      onChange={[Function]}
+                                      placeholder="Password"
+                                      required="required"
+                                      type="password"
+                                    />
+                                  </label>
+                                </Input>
+                                <span
+                                  className="form__errors"
+                                />
+                              </label>
+                              <label
+                                className="form__label"
+                                htmlFor="password"
+                              >
+                                <Input
+                                  className="label__input-element"
+                                  name="confirmPassword"
+                                  onChange={[Function]}
+                                  placeholder="Confirm Password"
+                                  required={true}
+                                  type="password"
+                                  value=""
+                                >
+                                  <label
+                                    className="input__label"
+                                    htmlFor="confirmPassword"
+                                  >
+                                    <input
+                                      className="input__field"
+                                      name="confirmPassword"
+                                      onChange={[Function]}
+                                      placeholder="Confirm Password"
+                                      required="required"
+                                      type="password"
+                                    />
+                                  </label>
+                                </Input>
+                                <span
+                                  className="form__errors"
+                                  id="shwMessage"
+                                />
+                              </label>
+                            </div>
+                            <div
+                              className="btn-section"
+                            >
+                              <Button
+                                className="form__submit-btn"
+                                id=""
+                                text="Signup"
+                                type="submit"
+                              >
+                                <button
+                                  className="form__submit-btn"
+                                  id=""
+                                  type="submit"
+                                >
+                                  Signup
+                                </button>
+                              </Button>
+                            </div>
+                          </form>
+                        </div>
+                      </Signup>
+                    </Connect(Signup)>
+                  </div>
+                  <div
+                    className="modal__setup-tag"
+                  >
+                    <p>
+                      Already have an account ? 
+                      <button
+                        className="modal__create-account"
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Sign in
+                      </button>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ModalComponent>
+        <HeroSection>
+          <section
+            className="app-container hero-section"
+          >
+            <div
+              className="hero-section__hero-content"
+            >
+              <h1
+                className="hero-section__hero-content__text"
+              >
+                 The one-stop shop for all the self-help ideas you need 
+              </h1>
+              <p
+                className="hero-section__herocontent__subtext"
+              >
+                 Write and share your stories 
+              </p>
+              <div
+                className="hero-section__hero-content__button-wrapper"
+              >
+                <button
+                  className="hero-section__hero-content__button-wrapper__cta-button"
+                  type="button"
+                >
+                  Join 1kbIdeas
+                </button>
+                <button
+                  className="hero-section__hero-content__button-wrapper__cta-button hero-section__hero-content__button-wrapper--signin-button"
+                  type="button"
+                >
+                  Sign in
+                </button>
+              </div>
+              <div
+                className="hero-section__kicker-wrapper"
+              >
+                <p
+                  className="hero-section__kicker-wrapper__kicker-text"
+                >
+                  Explore amazing topics
+                </p>
+                <img
+                  alt="Scrolldown Icon"
+                  className="hero-section__kicker-wrapper__scrolldown"
+                  src="test-file-stub"
+                />
+              </div>
+            </div>
+            <div
+              className="hero-section__hero-image"
+            >
+              <img
+                alt="1kbIdeas community"
+                className="hero-section__hero-image__image-width"
+                src="test-file-stub"
+              />
+            </div>
+          </section>
+        </HeroSection>
+        <Connect(ModalSectionComponent)>
+          <ModalSectionComponent
+            header={
+              Object {
+                "activateModal": "",
+              }
+            }
+            signup={
+              Object {
+                "error": "",
+                "success": "",
+              }
+            }
+            userSelection={
+              Object {
+                "isLoading": false,
+                "userSelection": null,
+              }
+            }
+          >
+            <section
+              className="modal-background"
+            >
+              <div
+                className="modal-background__selection-background"
+              >
+                <h3
+                  className="modal-background__selection-background__header"
+                >
+                  If theres one thing you feel you badly need to cultivate in your life at the moment, what would that be?
+                </h3>
+                <Connect(UserSelectionForm)
+                  selectionOptions={
+                    Array [
+                      Object {
+                        "copy": "Managing my time effectively",
+                        "id": "management",
+                      },
+                      Object {
+                        "copy": "Staying motivated to complete projects",
+                        "id": "motivation",
+                      },
+                      Object {
+                        "copy": "Learning to save and invest",
+                        "id": "finance",
+                      },
+                      Object {
+                        "copy": "Managing my time effectively",
+                        "id": "love",
+                      },
+                      Object {
+                        "copy": "Talking to someone I find attractive",
+                        "id": "dating",
+                      },
+                      Object {
+                        "copy": "Making my relationships last longer",
+                        "id": "relationship",
+                      },
+                      Object {
+                        "copy": "Managing my emotions",
+                        "id": "emotion",
+                      },
+                      Object {
+                        "copy": "Getting started on my business ideas",
+                        "id": "business",
+                      },
+                    ]
+                  }
+                >
+                  <UserSelectionForm
+                    getSelectionRequest={[Function]}
+                    header={
+                      Object {
+                        "activateModal": "",
+                      }
+                    }
+                    selectionOptions={
+                      Array [
+                        Object {
+                          "copy": "Managing my time effectively",
+                          "id": "management",
+                        },
+                        Object {
+                          "copy": "Staying motivated to complete projects",
+                          "id": "motivation",
+                        },
+                        Object {
+                          "copy": "Learning to save and invest",
+                          "id": "finance",
+                        },
+                        Object {
+                          "copy": "Managing my time effectively",
+                          "id": "love",
+                        },
+                        Object {
+                          "copy": "Talking to someone I find attractive",
+                          "id": "dating",
+                        },
+                        Object {
+                          "copy": "Making my relationships last longer",
+                          "id": "relationship",
+                        },
+                        Object {
+                          "copy": "Managing my emotions",
+                          "id": "emotion",
+                        },
+                        Object {
+                          "copy": "Getting started on my business ideas",
+                          "id": "business",
+                        },
+                      ]
+                    }
+                    signup={
+                      Object {
+                        "error": "",
+                        "success": "",
+                      }
+                    }
+                    userSelection={
+                      Object {
+                        "isLoading": false,
+                        "userSelection": null,
+                      }
+                    }
+                  >
+                    <form
+                      className="selection-options"
+                    >
+                      <label
+                        className="selection-options__label"
+                        htmlFor="management"
+                        key="management"
+                      >
+                        <input
+                          className="selection-options__radio"
+                          id="management"
+                          name="selected"
+                          onClick={[Function]}
+                          type="radio"
+                        />
+                        Managing my time effectively
+                      </label>
+                      <label
+                        className="selection-options__label"
+                        htmlFor="motivation"
+                        key="motivation"
+                      >
+                        <input
+                          className="selection-options__radio"
+                          id="motivation"
+                          name="selected"
+                          onClick={[Function]}
+                          type="radio"
+                        />
+                        Staying motivated to complete projects
+                      </label>
+                      <label
+                        className="selection-options__label"
+                        htmlFor="finance"
+                        key="finance"
+                      >
+                        <input
+                          className="selection-options__radio"
+                          id="finance"
+                          name="selected"
+                          onClick={[Function]}
+                          type="radio"
+                        />
+                        Learning to save and invest
+                      </label>
+                      <label
+                        className="selection-options__label"
+                        htmlFor="love"
+                        key="love"
+                      >
+                        <input
+                          className="selection-options__radio"
+                          id="love"
+                          name="selected"
+                          onClick={[Function]}
+                          type="radio"
+                        />
+                        Managing my time effectively
+                      </label>
+                      <label
+                        className="selection-options__label"
+                        htmlFor="dating"
+                        key="dating"
+                      >
+                        <input
+                          className="selection-options__radio"
+                          id="dating"
+                          name="selected"
+                          onClick={[Function]}
+                          type="radio"
+                        />
+                        Talking to someone I find attractive
+                      </label>
+                      <label
+                        className="selection-options__label"
+                        htmlFor="relationship"
+                        key="relationship"
+                      >
+                        <input
+                          className="selection-options__radio"
+                          id="relationship"
+                          name="selected"
+                          onClick={[Function]}
+                          type="radio"
+                        />
+                        Making my relationships last longer
+                      </label>
+                      <label
+                        className="selection-options__label"
+                        htmlFor="emotion"
+                        key="emotion"
+                      >
+                        <input
+                          className="selection-options__radio"
+                          id="emotion"
+                          name="selected"
+                          onClick={[Function]}
+                          type="radio"
+                        />
+                        Managing my emotions
+                      </label>
+                      <label
+                        className="selection-options__label"
+                        htmlFor="business"
+                        key="business"
+                      >
+                        <input
+                          className="selection-options__radio"
+                          id="business"
+                          name="selected"
+                          onClick={[Function]}
+                          type="radio"
+                        />
+                        Getting started on my business ideas
+                      </label>
+                    </form>
+                  </UserSelectionForm>
+                </Connect(UserSelectionForm)>
+                <div
+                  className="hide"
+                >
+                  <div
+                    className="ui active inline loader"
+                  >
+                     Loading 
+                  </div>
+                </div>
+              </div>
+            </section>
+          </ModalSectionComponent>
+        </Connect(ModalSectionComponent)>
+        <CardContainer
+          CardComponent={[Function]}
+          cardData={Array []}
+        >
+          <div
+            className="app-container card-container"
+          >
+            <div
+              className="card-container card-container__amazing-topics"
+            >
+              <h1>
+                Explore Amazing Topics
+              </h1>
+              <p>
+                Curated stories based on your preference
+              </p>
+            </div>
+            <Masonry
+              gap=""
+              minWidth={300}
+            >
+              <styled.div
+                gap=""
+              >
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-bdVaJa",
+                        "isStatic": false,
+                        "lastClassName": "keyKcu",
+                        "rules": Array [
+                          "
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: ",
+                          [Function],
+                          ";
+",
+                        ],
+                      },
+                      "displayName": "styled.div",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "sc-bdVaJa",
+                      "target": "div",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={
+                    Object {
+                      "current": <div
+                        class="sc-bdVaJa keyKcu"
+                      >
+                        <div
+                          class="sc-bwzfXH itrbwG"
+                        />
+                        <div
+                          class="sc-bwzfXH itrbwG"
+                        />
+                        <div
+                          class="sc-bwzfXH itrbwG"
+                        />
+                      </div>,
+                    }
+                  }
+                  gap=""
+                >
+                  <div
+                    className="sc-bdVaJa keyKcu"
+                  >
+                    <styled.div
+                      gap=""
+                      key="0"
+                    >
+                      <StyledComponent
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "sc-bwzfXH",
+                              "isStatic": false,
+                              "lastClassName": "itrbwG",
+                              "rules": Array [
+                                "
+  display: grid;
+  grid-gap: ",
+                                [Function],
+                                ";
+  grid-auto-rows: unset;
+",
+                              ],
+                            },
+                            "displayName": "styled.div",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "sc-bwzfXH",
+                            "target": "div",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                        gap=""
+                      >
+                        <div
+                          className="sc-bwzfXH itrbwG"
+                        />
+                      </StyledComponent>
+                    </styled.div>
+                    <styled.div
+                      gap=""
+                      key="1"
+                    >
+                      <StyledComponent
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "sc-bwzfXH",
+                              "isStatic": false,
+                              "lastClassName": "itrbwG",
+                              "rules": Array [
+                                "
+  display: grid;
+  grid-gap: ",
+                                [Function],
+                                ";
+  grid-auto-rows: unset;
+",
+                              ],
+                            },
+                            "displayName": "styled.div",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "sc-bwzfXH",
+                            "target": "div",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                        gap=""
+                      >
+                        <div
+                          className="sc-bwzfXH itrbwG"
+                        />
+                      </StyledComponent>
+                    </styled.div>
+                    <styled.div
+                      gap=""
+                      key="2"
+                    >
+                      <StyledComponent
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "sc-bwzfXH",
+                              "isStatic": false,
+                              "lastClassName": "itrbwG",
+                              "rules": Array [
+                                "
+  display: grid;
+  grid-gap: ",
+                                [Function],
+                                ";
+  grid-auto-rows: unset;
+",
+                              ],
+                            },
+                            "displayName": "styled.div",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "sc-bwzfXH",
+                            "target": "div",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                        gap=""
+                      >
+                        <div
+                          className="sc-bwzfXH itrbwG"
+                        />
+                      </StyledComponent>
+                    </styled.div>
+                  </div>
+                </StyledComponent>
+              </styled.div>
+            </Masonry>
+          </div>
+        </CardContainer>
+        <ScrollToTopButton
+          loaded={false}
+          modalShow={false}
+        >
+          <footer
+            className="scroll-up-wrapper"
+          />
+        </ScrollToTopButton>
+      </div>
+    </HomePage>
+  </Connect(HomePage)>
+</Provider>
+`;

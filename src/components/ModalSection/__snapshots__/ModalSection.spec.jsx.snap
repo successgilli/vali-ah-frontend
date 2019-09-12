@@ -1,0 +1,499 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalSectionComponent Component should renders properly when is loading is false 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(ModalSectionComponent)
+    userSelection={
+      Object {
+        "isLoading": false,
+      }
+    }
+  >
+    <ModalSectionComponent
+      userSelection={
+        Object {
+          "isLoading": false,
+        }
+      }
+    >
+      <section
+        className="modal-background"
+      >
+        <div
+          className="modal-background__selection-background"
+        >
+          <h3
+            className="modal-background__selection-background__header"
+          >
+            If theres one thing you feel you badly need to cultivate in your life at the moment, what would that be?
+          </h3>
+          <Connect(UserSelectionForm)
+            selectionOptions={
+              Array [
+                Object {
+                  "copy": "Managing my time effectively",
+                  "id": "management",
+                },
+                Object {
+                  "copy": "Staying motivated to complete projects",
+                  "id": "motivation",
+                },
+                Object {
+                  "copy": "Learning to save and invest",
+                  "id": "finance",
+                },
+                Object {
+                  "copy": "Managing my time effectively",
+                  "id": "love",
+                },
+                Object {
+                  "copy": "Talking to someone I find attractive",
+                  "id": "dating",
+                },
+                Object {
+                  "copy": "Making my relationships last longer",
+                  "id": "relationship",
+                },
+                Object {
+                  "copy": "Managing my emotions",
+                  "id": "emotion",
+                },
+                Object {
+                  "copy": "Getting started on my business ideas",
+                  "id": "business",
+                },
+              ]
+            }
+          >
+            <UserSelectionForm
+              getSelectionRequest={[Function]}
+              selectionOptions={
+                Array [
+                  Object {
+                    "copy": "Managing my time effectively",
+                    "id": "management",
+                  },
+                  Object {
+                    "copy": "Staying motivated to complete projects",
+                    "id": "motivation",
+                  },
+                  Object {
+                    "copy": "Learning to save and invest",
+                    "id": "finance",
+                  },
+                  Object {
+                    "copy": "Managing my time effectively",
+                    "id": "love",
+                  },
+                  Object {
+                    "copy": "Talking to someone I find attractive",
+                    "id": "dating",
+                  },
+                  Object {
+                    "copy": "Making my relationships last longer",
+                    "id": "relationship",
+                  },
+                  Object {
+                    "copy": "Managing my emotions",
+                    "id": "emotion",
+                  },
+                  Object {
+                    "copy": "Getting started on my business ideas",
+                    "id": "business",
+                  },
+                ]
+              }
+            >
+              <form
+                className="selection-options"
+              >
+                <label
+                  className="selection-options__label"
+                  htmlFor="management"
+                  key="management"
+                >
+                  <input
+                    className="selection-options__radio"
+                    id="management"
+                    name="selected"
+                    onClick={[Function]}
+                    type="radio"
+                  />
+                  Managing my time effectively
+                </label>
+                <label
+                  className="selection-options__label"
+                  htmlFor="motivation"
+                  key="motivation"
+                >
+                  <input
+                    className="selection-options__radio"
+                    id="motivation"
+                    name="selected"
+                    onClick={[Function]}
+                    type="radio"
+                  />
+                  Staying motivated to complete projects
+                </label>
+                <label
+                  className="selection-options__label"
+                  htmlFor="finance"
+                  key="finance"
+                >
+                  <input
+                    className="selection-options__radio"
+                    id="finance"
+                    name="selected"
+                    onClick={[Function]}
+                    type="radio"
+                  />
+                  Learning to save and invest
+                </label>
+                <label
+                  className="selection-options__label"
+                  htmlFor="love"
+                  key="love"
+                >
+                  <input
+                    className="selection-options__radio"
+                    id="love"
+                    name="selected"
+                    onClick={[Function]}
+                    type="radio"
+                  />
+                  Managing my time effectively
+                </label>
+                <label
+                  className="selection-options__label"
+                  htmlFor="dating"
+                  key="dating"
+                >
+                  <input
+                    className="selection-options__radio"
+                    id="dating"
+                    name="selected"
+                    onClick={[Function]}
+                    type="radio"
+                  />
+                  Talking to someone I find attractive
+                </label>
+                <label
+                  className="selection-options__label"
+                  htmlFor="relationship"
+                  key="relationship"
+                >
+                  <input
+                    className="selection-options__radio"
+                    id="relationship"
+                    name="selected"
+                    onClick={[Function]}
+                    type="radio"
+                  />
+                  Making my relationships last longer
+                </label>
+                <label
+                  className="selection-options__label"
+                  htmlFor="emotion"
+                  key="emotion"
+                >
+                  <input
+                    className="selection-options__radio"
+                    id="emotion"
+                    name="selected"
+                    onClick={[Function]}
+                    type="radio"
+                  />
+                  Managing my emotions
+                </label>
+                <label
+                  className="selection-options__label"
+                  htmlFor="business"
+                  key="business"
+                >
+                  <input
+                    className="selection-options__radio"
+                    id="business"
+                    name="selected"
+                    onClick={[Function]}
+                    type="radio"
+                  />
+                  Getting started on my business ideas
+                </label>
+              </form>
+            </UserSelectionForm>
+          </Connect(UserSelectionForm)>
+          <div
+            className="hide"
+          >
+            <div
+              className="ui active inline loader"
+            >
+               Loading 
+            </div>
+          </div>
+        </div>
+      </section>
+    </ModalSectionComponent>
+  </Connect(ModalSectionComponent)>
+</Provider>
+`;
+
+exports[`ModalSectionComponent Component should renders properly when is loading is true 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(ModalSectionComponent)
+    userSelection={
+      Object {
+        "isLoading": true,
+      }
+    }
+  >
+    <ModalSectionComponent
+      userSelection={
+        Object {
+          "isLoading": true,
+        }
+      }
+    >
+      <section
+        className="modal-background"
+      >
+        <div
+          className="modal-background__selection-background"
+        >
+          <h3
+            className="modal-background__selection-background__header"
+          >
+            If theres one thing you feel you badly need to cultivate in your life at the moment, what would that be?
+          </h3>
+          <Connect(UserSelectionForm)
+            selectionOptions={
+              Array [
+                Object {
+                  "copy": "Managing my time effectively",
+                  "id": "management",
+                },
+                Object {
+                  "copy": "Staying motivated to complete projects",
+                  "id": "motivation",
+                },
+                Object {
+                  "copy": "Learning to save and invest",
+                  "id": "finance",
+                },
+                Object {
+                  "copy": "Managing my time effectively",
+                  "id": "love",
+                },
+                Object {
+                  "copy": "Talking to someone I find attractive",
+                  "id": "dating",
+                },
+                Object {
+                  "copy": "Making my relationships last longer",
+                  "id": "relationship",
+                },
+                Object {
+                  "copy": "Managing my emotions",
+                  "id": "emotion",
+                },
+                Object {
+                  "copy": "Getting started on my business ideas",
+                  "id": "business",
+                },
+              ]
+            }
+          >
+            <UserSelectionForm
+              getSelectionRequest={[Function]}
+              selectionOptions={
+                Array [
+                  Object {
+                    "copy": "Managing my time effectively",
+                    "id": "management",
+                  },
+                  Object {
+                    "copy": "Staying motivated to complete projects",
+                    "id": "motivation",
+                  },
+                  Object {
+                    "copy": "Learning to save and invest",
+                    "id": "finance",
+                  },
+                  Object {
+                    "copy": "Managing my time effectively",
+                    "id": "love",
+                  },
+                  Object {
+                    "copy": "Talking to someone I find attractive",
+                    "id": "dating",
+                  },
+                  Object {
+                    "copy": "Making my relationships last longer",
+                    "id": "relationship",
+                  },
+                  Object {
+                    "copy": "Managing my emotions",
+                    "id": "emotion",
+                  },
+                  Object {
+                    "copy": "Getting started on my business ideas",
+                    "id": "business",
+                  },
+                ]
+              }
+            >
+              <form
+                className="selection-options"
+              >
+                <label
+                  className="selection-options__label"
+                  htmlFor="management"
+                  key="management"
+                >
+                  <input
+                    className="selection-options__radio"
+                    id="management"
+                    name="selected"
+                    onClick={[Function]}
+                    type="radio"
+                  />
+                  Managing my time effectively
+                </label>
+                <label
+                  className="selection-options__label"
+                  htmlFor="motivation"
+                  key="motivation"
+                >
+                  <input
+                    className="selection-options__radio"
+                    id="motivation"
+                    name="selected"
+                    onClick={[Function]}
+                    type="radio"
+                  />
+                  Staying motivated to complete projects
+                </label>
+                <label
+                  className="selection-options__label"
+                  htmlFor="finance"
+                  key="finance"
+                >
+                  <input
+                    className="selection-options__radio"
+                    id="finance"
+                    name="selected"
+                    onClick={[Function]}
+                    type="radio"
+                  />
+                  Learning to save and invest
+                </label>
+                <label
+                  className="selection-options__label"
+                  htmlFor="love"
+                  key="love"
+                >
+                  <input
+                    className="selection-options__radio"
+                    id="love"
+                    name="selected"
+                    onClick={[Function]}
+                    type="radio"
+                  />
+                  Managing my time effectively
+                </label>
+                <label
+                  className="selection-options__label"
+                  htmlFor="dating"
+                  key="dating"
+                >
+                  <input
+                    className="selection-options__radio"
+                    id="dating"
+                    name="selected"
+                    onClick={[Function]}
+                    type="radio"
+                  />
+                  Talking to someone I find attractive
+                </label>
+                <label
+                  className="selection-options__label"
+                  htmlFor="relationship"
+                  key="relationship"
+                >
+                  <input
+                    className="selection-options__radio"
+                    id="relationship"
+                    name="selected"
+                    onClick={[Function]}
+                    type="radio"
+                  />
+                  Making my relationships last longer
+                </label>
+                <label
+                  className="selection-options__label"
+                  htmlFor="emotion"
+                  key="emotion"
+                >
+                  <input
+                    className="selection-options__radio"
+                    id="emotion"
+                    name="selected"
+                    onClick={[Function]}
+                    type="radio"
+                  />
+                  Managing my emotions
+                </label>
+                <label
+                  className="selection-options__label"
+                  htmlFor="business"
+                  key="business"
+                >
+                  <input
+                    className="selection-options__radio"
+                    id="business"
+                    name="selected"
+                    onClick={[Function]}
+                    type="radio"
+                  />
+                  Getting started on my business ideas
+                </label>
+              </form>
+            </UserSelectionForm>
+          </Connect(UserSelectionForm)>
+          <div
+            className="show"
+          >
+            <div
+              className="ui active inline loader"
+            >
+               Loading 
+            </div>
+          </div>
+        </div>
+      </section>
+    </ModalSectionComponent>
+  </Connect(ModalSectionComponent)>
+</Provider>
+`;

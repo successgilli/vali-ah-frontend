@@ -5,7 +5,7 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Provider } from 'react-redux';
 
-import store from '../../store/index';
+import store from 'store/index';
 
 // components
 import Signin from './index';

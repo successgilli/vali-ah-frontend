@@ -1,39 +1,157 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots ArticleCard default view 1`] = `
+<div
+  className="card-wrapper"
+>
+  <div
+    className="card"
+  >
+    <img
+      alt="Article cover"
+      className="card__thumbnail"
+      src="https://i.postimg.cc/HnL9DLBq/gymnastics-1284656-1920.jpg"
+    />
+    <div
+      className="card__body"
+    >
+      <h4
+        className="card__body__category"
+      >
+        
+      </h4>
+      <h2
+        className="card__body__title"
+      >
+        
+      </h2>
+      <div
+        className="card__body__summary"
+      >
+        <p>
+          
+        </p>
+      </div>
+    </div>
+    <div
+      className="card__footer"
+    >
+      <img
+        alt="loading..."
+        className="card__footer__user-avatar"
+        src="https://randomuser.me/api/portraits/men/32.jpg"
+      />
+      <div
+        className="card__footer__views-holder"
+      >
+        <img
+          alt="loading..."
+          src="test-file-stub"
+        />
+        <span
+          className="card__footer__total-views"
+        >
+          50
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ArticleCard with some props 1`] = `
+<div
+  className="card-wrapper"
+>
+  <div
+    className="card"
+  >
+    <img
+      alt="Article cover"
+      className="card__thumbnail"
+      src="https://i.postimg.cc/HnL9DLBq/gymnastics-1284656-1920.jpg"
+    />
+    <div
+      className="card__body"
+    >
+      <h4
+        className="card__body__category"
+      >
+        History
+      </h4>
+      <h2
+        className="card__body__title"
+      >
+        This is the Card title.
+      </h2>
+      <div
+        className="card__body__summary"
+      >
+        <p>
+          The summary of the article is displayed on the card body.
+        </p>
+      </div>
+    </div>
+    <div
+      className="card__footer"
+    >
+      <img
+        alt="loading..."
+        className="card__footer__user-avatar"
+        src="https://randomuser.me/api/portraits/men/32.jpg"
+      />
+      <div
+        className="card__footer__views-holder"
+      >
+        <img
+          alt="loading..."
+          src="test-file-stub"
+        />
+        <span
+          className="card__footer__total-views"
+        >
+          50
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Button add custom class 1`] = `
 <button
-  className="button__round"
+  className="button__primary"
+  id=""
   onClick={[Function]}
->
-  auth
-</button>
+  type="button"
+/>
 `;
 
 exports[`Storyshots Button with Login text 1`] = `
 <button
   className="button__primary"
+  id=""
   onClick={[Function]}
->
-  Sign In
-</button>
+  type="button"
+/>
 `;
 
 exports[`Storyshots Button with submit text 1`] = `
 <button
   className="button__primary"
+  id=""
   onClick={[Function]}
->
-  Submit
-</button>
+  type="button"
+/>
 `;
 
 exports[`Storyshots Button without classname prop 1`] = `
 <button
   className="button__primary"
+  id=""
   onClick={[Function]}
->
-  no class
-</button>
+  type="button"
+/>
 `;
 
 exports[`Storyshots Icon active 1`] = `
@@ -317,7 +435,8 @@ exports[`Storyshots Modal click closed modal button 1`] = `
                 className="btn-section"
               >
                 <button
-                  className="button__primary"
+                  className="form__submit-btn"
+                  id=""
                   type="submit"
                 >
                   Signup
@@ -445,10 +564,9 @@ exports[`Storyshots Modal click sign in 1`] = `
           >
             <button
               className="button__primary"
+              id=""
               type="submit"
-            >
-              Sign in
-            </button>
+            />
           </section>
         </form>
         <div
@@ -698,7 +816,8 @@ exports[`Storyshots Modal default signup view 1`] = `
                 className="btn-section"
               >
                 <button
-                  className="button__primary"
+                  className="form__submit-btn"
+                  id=""
                   type="submit"
                 >
                   Signup
@@ -771,10 +890,9 @@ exports[`Storyshots Signin sign in form 1`] = `
   >
     <button
       className="button__primary"
+      id=""
       type="submit"
-    >
-      Sign in
-    </button>
+    />
   </section>
 </form>
 `;

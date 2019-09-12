@@ -11,16 +11,6 @@ it('renders properly', () => {
   expect(wrapper.find('Header')).toBeTruthy();
 });
 
-it('should test the home route', () => {
-  const wrapper = mount(
-    <MemoryRouter initialEntries={['/']} initialIndex={0}>
-      <App />
-    </MemoryRouter>
-  );
-
-  expect(wrapper.contains(<h1>Welcome to 1kbIdeas</h1>)).toBe(true);
-});
-
 it('should render not found for invalid route', () => {
   const wrapper = mount(
     <MemoryRouter initialEntries={['/notFound']} initialIndex={0}>

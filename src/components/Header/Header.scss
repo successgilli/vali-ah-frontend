@@ -1,0 +1,75 @@
+@import '~scss/variables';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  box-shadow: 0 0.3125rem 1.25rem rgba(0, 0, 0, 0.1);
+
+  &__logo {
+    width: 4.6875rem;
+  }
+
+  &__search {
+    align-items: center;
+    background: url('../../assets/images/search_icon.svg') no-repeat;
+    background-size: 1.25rem;
+    background-position: 1rem;
+    width: 25rem;
+    padding: 0.6rem;
+    padding-left: 3.5rem;
+    border: $searchborder;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    font-weight: 100;
+    box-shadow: 0 0 0.6875rem 0.0625rem $boxshadow;
+  }
+
+  &__nav-link {
+    border: 0;
+    font-size: 1rem;
+    font-weight: 100;
+    text-decoration: none;
+    cursor: pointer;
+    color: $blackcolor;
+    outline: none;
+
+    &--right-margin {
+      margin-right: 2rem;
+    } 
+  }
+
+  &__nav-link:hover {
+    color: $primarycolor;
+  }
+}
+
+@media (max-width: 29.9375rem) {
+  body {
+    margin: 0;
+  }
+
+  .header {
+    display: block;
+    padding-right: 1.25rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.25rem;
+
+    &__logo { 
+      display: inline-block;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    &__search {
+      width: 100%;
+    }
+    
+    &__nav-link { 
+      display: none;
+    }
+  }
+  
+}

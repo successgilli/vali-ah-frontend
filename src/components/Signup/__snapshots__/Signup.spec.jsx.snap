@@ -123,6 +123,7 @@ exports[`Signup should match snapshot 1`] = `
     >
       <Button
         className="form__submit-btn"
+        id=""
         text="Signup"
         type="submit"
       >

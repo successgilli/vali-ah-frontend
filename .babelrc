@@ -20,9 +20,10 @@
         "components": "./src/components/",
         "pages": "./src/pages/",
         "modules": "./src/store/modules/",
-        "utils": "./src/utils/"
+        "utils": "./src/utils/",
+        "assets": "./src/assets/"
       }
-    }],
+    }]
   ],
   "sourceMap" : "inline"
 }

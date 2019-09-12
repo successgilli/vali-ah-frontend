@@ -5,12 +5,15 @@ import { all } from 'redux-saga/effects';
 import { watchVoteRequest } from 'modules/articleVote';
 import { watchLoginRequests } from 'modules/login';
 import { watchSignupRequest } from 'modules/signUp';
+import { watchSelectionRequest } from 'modules/userSelection';
 
 export default function* rootSaga() {
   yield all([
     watchVoteRequest(),
     watchSignupRequest(),
     watchVoteRequest(),
-    watchLoginRequests()
+    watchLoginRequests(),
+    watchSelectionRequest(),
+    watchVoteRequest()
   ]);
 }
