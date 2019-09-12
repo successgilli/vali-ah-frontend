@@ -1,0 +1,24 @@
+@import '~scss/style';
+
+.comment-form {
+  display:inline-block;
+  position:relative;
+  textarea {
+    resize: none !important;
+    width: 35rem !important;
+    display: block !important;
+    border: 0.15rem solid $primarycolor !important;
+  }
+
+  button{
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    height: 2rem;
+    font-size: 1rem;
+    align-content: center;
+    width: 6rem;
+    text-align: center;
+    padding: 0.5rem;
+  }
+}

@@ -3,7 +3,9 @@
 exports[`Storyshots Button add custom class 1`] = `
 <button
   className="button__round"
+  id=""
   onClick={[Function]}
+  type="button"
 >
   auth
 </button>
@@ -12,7 +14,9 @@ exports[`Storyshots Button add custom class 1`] = `
 exports[`Storyshots Button with Login text 1`] = `
 <button
   className="button__primary"
+  id=""
   onClick={[Function]}
+  type="button"
 >
   Sign In
 </button>
@@ -21,7 +25,9 @@ exports[`Storyshots Button with Login text 1`] = `
 exports[`Storyshots Button with submit text 1`] = `
 <button
   className="button__primary"
+  id=""
   onClick={[Function]}
+  type="button"
 >
   Submit
 </button>
@@ -30,10 +36,23 @@ exports[`Storyshots Button with submit text 1`] = `
 exports[`Storyshots Button without classname prop 1`] = `
 <button
   className="button__primary"
+  id=""
   onClick={[Function]}
+  type="button"
 >
   no class
 </button>
+`;
+
+exports[`Storyshots CreateInlineComment createInlineComment 1`] = `
+<div
+  className="ui orange labeled icon button"
+>
+  Add Comment
+  <i
+    className="add icon"
+  />
+</div>
 `;
 
 exports[`Storyshots Icon active 1`] = `
@@ -64,6 +83,31 @@ exports[`Storyshots Icon upvote 1`] = `
   onKeyDown={[Function]}
   type="button"
 />
+`;
+
+exports[`Storyshots InlineCommentForm InlineCommentForm 1`] = `
+<div
+  className="comment-form"
+>
+  <div
+    className="ui form"
+  >
+    <div
+      className="field"
+    >
+      <textarea
+        rows="6"
+      />
+      <button
+        className="button__primary"
+        id=""
+        type="button"
+      >
+        Comment
+      </button>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Input field with email name 1`] = `
@@ -274,10 +318,9 @@ exports[`Storyshots Modal click sign in 1`] = `
           >
             <button
               className="button__primary"
+              id=""
               type="submit"
-            >
-              Sign in
-            </button>
+            />
           </section>
         </form>
         <div
@@ -431,10 +474,9 @@ exports[`Storyshots Signin sign in form 1`] = `
   >
     <button
       className="button__primary"
+      id=""
       type="submit"
-    >
-      Sign in
-    </button>
+    />
   </section>
 </form>
 `;

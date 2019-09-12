@@ -3,7 +3,11 @@
 @import 'scss/mixins';
 
 .icon {
-  @include icon;
+  &:not(div) {
+    &:not(.add) {
+      @include icon;
+    }
+  }
 
   &--upvote {
     background-image: icon(upvote);
