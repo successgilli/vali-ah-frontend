@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&display=swap');
 @import 'variables';
 @import 'mixins';
+@import '~semantic-ui-css/semantic.min.css';
 
 html {
   @include body-reset();

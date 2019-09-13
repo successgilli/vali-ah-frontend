@@ -5,6 +5,10 @@ import { MemoryRouter } from 'react-router-dom';
 // components
 import App from './index';
 
+global.FB = {};
+global.gapi = {};
+global.gapi.load = jest.fn();
+
 it('renders properly', () => {
   const wrapper = shallow(<MemoryRouter><App /></MemoryRouter>);
 

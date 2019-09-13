@@ -1,10 +1,9 @@
-// react libraries
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+
+import * as PropTypes from 'prop-types';
 
 // styles
 import './Button.scss';
-
 
 const Button = ({
   children, id, className, onClick, type = 'button'

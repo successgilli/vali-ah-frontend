@@ -125,6 +125,13 @@ exports[`Storyshots Button add custom class 1`] = `
   onClick={[Function]}
   type="button"
 />
+  className="button__round"
+  id=""
+  onClick={[Function]}
+  type="button"
+>
+  auth
+</button>
 `;
 
 exports[`Storyshots Button with Login text 1`] = `
@@ -134,6 +141,9 @@ exports[`Storyshots Button with Login text 1`] = `
   onClick={[Function]}
   type="button"
 />
+>
+  Sign In
+</button>
 `;
 
 exports[`Storyshots Button with submit text 1`] = `
@@ -143,6 +153,9 @@ exports[`Storyshots Button with submit text 1`] = `
   onClick={[Function]}
   type="button"
 />
+>
+  Submit
+</button>
 `;
 
 exports[`Storyshots Button without classname prop 1`] = `
@@ -215,6 +228,29 @@ exports[`Storyshots Feed card card design 1`] = `
     </div>
   </div>
 </div>
+`;
+
+exports[`Storyshots CreateInlineComment createInlineComment 1`] = `
+<div
+  className="ui orange labeled icon button"
+>
+  Add Comment
+  <i
+    className="add icon"
+  />
+</div>
+exports[`Storyshots FacebookLoginButton default 1`] = `
+<button
+  className="social-login-button"
+  id=""
+  onClick={[Function]}
+  type="button"
+>
+  <img
+    alt="facebook Logo"
+    src="test-file-stub"
+  />
+</button>
 `;
 
 exports[`Storyshots Icon active 1`] = `
@@ -323,7 +359,32 @@ exports[`Storyshots Modal click closed modal button 1`] = `
       <div
         className="modal__social-login"
       >
-        IBUKUN COMPONENT
+        <div
+          className="social-login-button-row"
+        >
+          <button
+            className="social-login-button"
+            id="custom-btn"
+            onClick={[Function]}
+            type="button"
+          >
+            <img
+              alt="google Logo"
+              src="test-file-stub"
+            />
+          </button>
+          <button
+            className="social-login-button"
+            id=""
+            onClick={[Function]}
+            type="button"
+          >
+            <img
+              alt="facebook Logo"
+              src="test-file-stub"
+            />
+          </button>
+        </div>
       </div>
       <div
         className="modal__seperator"
@@ -512,7 +573,7 @@ exports[`Storyshots Modal click closed modal button 1`] = `
           className="modal__setup-tag"
         >
           <p>
-            Already have an account ? 
+            Already have an account ?
             <button
               className="modal__create-account"
               onClick={[Function]}
@@ -572,7 +633,32 @@ exports[`Storyshots Modal click sign in 1`] = `
       <div
         className="modal__social-login"
       >
-        IBUKUN COMPONENT
+        <div
+          className="social-login-button-row"
+        >
+          <button
+            className="social-login-button"
+            id="custom-btn"
+            onClick={[Function]}
+            type="button"
+          >
+            <img
+              alt="google Logo"
+              src="test-file-stub"
+            />
+          </button>
+          <button
+            className="social-login-button"
+            id=""
+            onClick={[Function]}
+            type="button"
+          >
+            <img
+              alt="facebook Logo"
+              src="test-file-stub"
+            />
+          </button>
+        </div>
       </div>
       <div
         className="modal__seperator"
@@ -630,13 +716,16 @@ exports[`Storyshots Modal click sign in 1`] = `
               id=""
               type="submit"
             />
+            >
+              Sign In
+            </button>
           </section>
         </form>
         <div
           className="modal__setup-tag"
         >
           <p>
-            Don't have an account ? 
+            Don't have an account ?
             <button
               className="modal__create-account"
               onClick={[Function]}
@@ -704,7 +793,32 @@ exports[`Storyshots Modal default signup view 1`] = `
       <div
         className="modal__social-login"
       >
-        IBUKUN COMPONENT
+        <div
+          className="social-login-button-row"
+        >
+          <button
+            className="social-login-button"
+            id="custom-btn"
+            onClick={[Function]}
+            type="button"
+          >
+            <img
+              alt="google Logo"
+              src="test-file-stub"
+            />
+          </button>
+          <button
+            className="social-login-button"
+            id=""
+            onClick={[Function]}
+            type="button"
+          >
+            <img
+              alt="facebook Logo"
+              src="test-file-stub"
+            />
+          </button>
+        </div>
       </div>
       <div
         className="modal__seperator"
@@ -893,7 +1007,7 @@ exports[`Storyshots Modal default signup view 1`] = `
           className="modal__setup-tag"
         >
           <p>
-            Already have an account ? 
+            Already have an account ?
             <button
               className="modal__create-account"
               onClick={[Function]}
@@ -975,6 +1089,9 @@ exports[`Storyshots Signin sign in form 1`] = `
       id=""
       type="submit"
     />
+    >
+      Sign In
+    </button>
   </section>
 </form>
 `;
