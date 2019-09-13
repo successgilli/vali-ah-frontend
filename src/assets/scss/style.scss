@@ -1,12 +1,26 @@
 @import '~sass-rem';
 @import '~scss/variables';
-@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&display=swap');
+@import 'variables';
+@import 'mixins';
+
+html {
+  @include body-reset();
+  height: 100%;
+  font-family: 'Rubik', sans-serif;
+}
 
 body {
   height: 100%;
   margin: 0;
+  @include body-reset();
+  height: 100%;
   font-family: 'Rubik', sans-serif;
   scroll-behavior: smooth;
+}
+
+#root {
+  height: 100%;
 }
 
 .active {

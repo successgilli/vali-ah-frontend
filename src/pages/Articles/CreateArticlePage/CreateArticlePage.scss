@@ -1,0 +1,107 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  margin: 5rem 0;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.article-publish {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 94%;
+  max-width: 60rem;
+
+  &__count {
+    margin-right: 2rem;
+    font-size: 1.3rem;
+    color: #808080;
+  }
+
+  button {
+    background: #FD8234;
+    padding: 0.8rem 1.3rem;
+    border-radius: 0.5rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #FFF;
+    outline: none;
+
+    &:disabled,
+    &[disabled] {
+      background-color: #CCC;
+      cursor: not-allowed;
+      color: #666;
+    }
+  }
+}
+
+.article-editor {
+  width: 94%;
+  max-width: 60rem;
+  margin-top: 1.25rem;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.6;
+  font-style: normal;
+
+  // Editor JS classes
+  .codex-editor__redactor {
+    background: #FFF;
+    padding: 0.75rem;
+  }
+
+  .ce-toolbar__content {
+    max-width: 100%;
+  }
+
+  .ce-block__content {
+    min-width: 100%;
+  }
+
+  .ce-paragraph {
+    font-size: 1.3rem;
+    line-height: 1.58;
+    letter-spacing: -0.003rem;
+  }
+
+  .ce-paragraph.cdx-block {
+    margin-bottom: 1.25rem;
+    padding: 0;
+  }
+
+  #1kbideas-editor {
+    background: #FFF;
+    width: 100%;
+  }
+
+  .article-title {
+    background: none;
+    width: 100%;
+    max-width: 58.7rem;
+    height: 3rem;
+    margin-bottom: 0.625rem;
+    padding: 0.625rem;
+    border: 0;
+    border-left: 0.125rem solid rgba(0, 0, 0, 0.5);
+    font-size: 2.25rem;
+    font-weight: 500;
+    color: #000;
+    outline: none;
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.4);
+    }
+
+    &:focus {
+      border-left: 0.125rem solid rgba(0, 0, 0, 0.4);
+    }
+  }
+}
