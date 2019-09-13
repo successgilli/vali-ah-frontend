@@ -9,6 +9,9 @@
   "env": {
     "API_ROUTE": {
       "required": true
+    },
+    "GOOGLE_CLIENT_ID": {
+      "required": true
     }
   },
   "formation": {

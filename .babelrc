@@ -17,7 +17,6 @@
     "@babel/plugin-transform-destructuring",
     "@babel/plugin-transform-regenerator",
     "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-transform-destructuring",
     "@babel/plugin-proposal-optional-chaining",
     ["module-resolver", {
       "root": ["./src"],
