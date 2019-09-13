@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 import connect from 'utils/connect';
 import Modal from 'components/Modal';
 
+import FollowComponent from '../components/Follow';
+
 /**
  * @exports
  * @class HomePage
@@ -30,6 +32,7 @@ class HomePage extends Component {
       <>
         <Modal show={!!activateModal} />
         <h1>Welcome to 1kbIdeas</h1>
+        <FollowComponent />
       </>
     );
   }

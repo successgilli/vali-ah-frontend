@@ -6,10 +6,12 @@ import login from 'modules/login';
 import articleVote from 'modules/articleVote';
 import signup from 'modules/signUp';
 import header from 'modules/header';
+import followUser from 'modules/followUser';
 
 export default combineReducers({
   login,
   articleVote,
   signup,
-  header
+  header,
+  followUser
 });
