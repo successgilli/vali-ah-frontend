@@ -52,12 +52,13 @@ class HomePage extends Component {
   }
 
   render() {
-    const { userSelection: { userSelection }, header: { activateModal } } = this.props;
+    const { userSelection: { userSelection }, header: { activateModal, formType } } = this.props;
     const { userArticles, loaded } = this.state;
     const renderModal = !localStorage.getItem('userCategory') && !userSelection;
+    console.log(formType);
     return (
       <div>
-        <Modal show={!!activateModal} />
+        <Modal show={!!activateModal} formType={formType} />
         <HeroSection />
         {renderModal && <ModalSection /> }
         <CardContainer

@@ -25,16 +25,16 @@ export class ModalComponent extends React.Component {
   };
 
   static getDerivedStateFromProps(props, { close }) {
-    const { show } = props;
+    const { show, formType } = props;
 
-    return { show: (show && !close), close: false };
+    return { show: (show && !close), close: false, signin: formType === 'login' };
   }
 
   constructor(props) {
     super(props);
     const { formType, show } = this.props;
     this.state = {
-      signin: formType,
+      signin: formType === 'login',
       show
     };
   }
@@ -46,8 +46,9 @@ export class ModalComponent extends React.Component {
     * @return {void}
     */
   handleFormChange = () => {
+    const { formType } = this.props;
     const { signin } = this.state;
-    this.setState({ signin: !signin });
+    this.setState({ signin: !signin && formType === 'login' });
   }
 
   /**
