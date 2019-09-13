@@ -12,7 +12,7 @@ import { getProfileRequest } from 'modules/profile';
 
 // assets
 import './ProfileView.scss';
-import imageplaceholder from '../../assets/images/image-placeholder.svg';
+import imageplaceholder from 'assets/images/image-placeholder.svg';
 
 /**
  * View profile page for individual Icon

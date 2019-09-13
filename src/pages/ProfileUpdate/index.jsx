@@ -14,12 +14,12 @@ import connect from 'utils/connect';
 import Validator from 'utils/validator';
 import isAuthenticated from 'utils/auth';
 
-// validation rules
-import profileValidation from '../../validations/updateValidator';
-
 // assets
-import imageplaceholder from '../../assets/images/image-placeholder.svg';
-import imageCamera from '../../assets/images/camera.svg';
+import imageplaceholder from 'assets/images/image-placeholder.svg';
+import imagecamera from 'assets/images/camera.svg';
+
+// validation rules
+import profileValidation from 'validations/updateValidator';
 import './ProfileUpdate.scss';
 
 const { updateProfileValidation } = profileValidation;
@@ -195,14 +195,14 @@ export class ProfileUpdate extends Component {
                 {' '}
                 <img
                   className="profile-container__image-camera"
-                  src={imageCamera}
+                  src={imagecamera}
                   alt=""
                 />
               </label>
             </div>
             <div className="profile-container__image-placeholder-update">
               <img
-                id="profileImg"
+                id="profile-img"
                 className="profile-container__image-preview"
                 src={displayImg || imageplaceholder}
                 alt={`Profile avatar of ${data.firstName}`}
@@ -311,7 +311,7 @@ export class ProfileUpdate extends Component {
               type="submit"
               disabled={loading}
             >
-              {loading && <span className="ui active centered inline loader" />}
+              {loading && <span className="ui small text loader" />}
               {!loading ? 'Update' : ''}
             </button>
           </form>

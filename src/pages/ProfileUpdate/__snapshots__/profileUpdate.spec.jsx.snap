@@ -55,7 +55,7 @@ exports[`Profile update should render properly 1`] = `
             <img
               alt="Profile avatar of "
               className="profile-container__image-preview"
-              id="profileImg"
+              id="profile-img"
               src="test-file-stub"
             />
           </div>
