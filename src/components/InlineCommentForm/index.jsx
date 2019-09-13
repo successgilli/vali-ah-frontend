@@ -21,7 +21,7 @@ const CommentForm = (props) => {
   const onFormChange = (event) => setContent(event.target.value);
 
   const {
-    isCreating, style, createComment, isLoading
+    isCreating, style, createComment, isLoading, ValidationErrors
   } = props;
 
   const icon = formOpen ? 'minus' : 'add';
@@ -31,7 +31,6 @@ const CommentForm = (props) => {
       <div className="ui small text loader" />
     </div>
   );
-
   return (
     <div className="comment-form" style={style}>
       <ButtonWithIcon icon={icon} onClick={openForm} className="comment-form__create-comment">{formOpen ? 'Cancel' : 'Create' }</ButtonWithIcon>
@@ -39,6 +38,13 @@ const CommentForm = (props) => {
         <div className="ui form">
           <div className="field">
             <textarea rows="6" content={content} onChange={onFormChange} />
+            <p>
+              {ValidationErrors && ValidationErrors.content && (
+                <span className="comment-form__error">
+                  {ValidationErrors.content}
+                </span>
+              )}
+            </p>
             {isCreating && (
               <Button onClick={() => createComment(content)}>
               Comment
@@ -68,7 +74,8 @@ CommentForm.propTypes = {
   isCreating: PropTypes.bool,
   style: PropTypes.isRequired,
   createComment: PropTypes.func.isRequired,
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool,
+  ValidationErrors: PropTypes.arrayOf(Array).isRequired
 };
 
 CommentForm.defaultProps = {
