@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap');
+@import 'scss/variables';
+
+.subscription-card {
+  display: flex;
+  width: 90%;
+  height: 100px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 10px;
+  border-radius: 5px;
+
+  &__image-div {
+    margin-right: 30px;
+    padding-top: 5px;
+  }
+
+  &__image {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__details {
+    height: 100%;
+  }
+
+  &__summary {
+    position: relative;
+    display: -webkit-box;
+    max-height: 52px;
+    margin-right: 1em;
+    padding-right: 1em;
+    overflow: hidden;
+    overflow: hidden;
+    font-family: Rubik;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 24px;
+    line-height: 17px;
+    text-align: justify;
+
+    color: #676767;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    font-style: normal;
+    
+    &::before {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      content: '...';
+    }
+    
+    &::after {
+      position: absolute;
+      right: 0;
+      background: white;
+      width: 1em;
+      height: 1em;
+      margin-top: 0.2em;
+      content: '';
+    }
+  }
+
+  &__title {
+    position: relative;
+    display: -webkit-box;
+    max-height: 52px;
+    margin-right: 1em;
+    margin-bottom: 10px;
+    padding-right: 1em;
+    overflow: hidden;
+    overflow: hidden;
+    font-family: Rubik;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    line-height: 24px;
+    text-align: justify;
+
+    color: #000;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    font-style: normal;
+    
+    &::before {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      content: '...';
+    }
+    
+    &::after {
+      position: absolute;
+      right: 0;
+      background: white;
+      width: 1em;
+      height: 1em;
+      margin-top: 0.2em;
+      content: '';
+    }
+  }
+
+  & a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap');
+@import 'scss/variables';
+
+.feed-page {
+  &__main-content {
+    flex-basis: 75%;
+    height: 100%;
+
+    @media (max-width: 768px) {
+      flex-basis: 100%;
+    }
+  }
+
+  &__suggested {
+    position: fixed;
+    right: 0;
+    width: 25%;
+    height: 100%;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__feed {
+    position: relative;
+    top: 20px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 60px;
+    font-family: Rubik;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 28px;
+    color: #000;
+    font-style: normal;
+  }
+
+  &__share-div {
+    position: unset;
+    z-index: 1000;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    height: 100px;
+    padding-bottom: 10px;
+  }
+
+  &__share-container {
+    flex-basis: 75%;
+
+    @media (max-width: 768px) {
+      flex-basis: 100%;
+    }
+  }
+
+  &__aside-offset {
+    flex-basis: 25%;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__suggested-stories {
+    position: relative;
+    top: 20px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 25px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #C4C4C4;
+    font-family: Rubik;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 28px;
+    color: #000;
+    font-style: normal;
+  }
+
+  &__top-stories {
+    max-height: 100%;
+    margin: auto;
+    overflow-y: scroll;
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    min-height: 100vh;
+    margin-top: 130px;
+  }
+
+  &__aside-offset {
+    width: 30%;
+  }
+
+  &__bottom-offset {
+    width: 100%;
+    height: 250px;
+  }
+}
