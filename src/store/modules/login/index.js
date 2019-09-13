@@ -1,6 +1,8 @@
 // third-party libraries
 import { call, takeLatest, put } from 'redux-saga/effects';
 
+import { authenticateUser } from 'modules/auth';
+
 // types
 import {
   LOGIN_USER, LOGIN_IN_PROGRESS, LOGIN_RESET,
@@ -34,6 +36,7 @@ export function* fetchLogin(action) {
       return;
     case 'success':
       localStorage.setItem('token', loginResult.data.token);
+      yield put(authenticateUser(loginResult.data));
       yield put({ type: ERROR_RESET });
       yield put(loginUser(loginResult.data.user));
       return;

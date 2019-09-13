@@ -2,6 +2,7 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 
 // types
+import { authenticateUser } from 'modules/auth';
 import { CREATE_USER_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILURE } from 'modules/signUp/types';
 
 // requests
@@ -15,6 +16,7 @@ export const signUpFailure = (error) => ({ type: SIGNUP_FAILURE, payload: error 
 export function* getSignupRequest({ payload }) {
   try {
     const authUser = yield call(API.signupUser, payload);
+    yield put(authenticateUser(authUser.data));
     yield put(signUpSuccess(authUser));
   } catch (error) {
     yield put(signUpFailure({ ...error }));

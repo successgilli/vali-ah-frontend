@@ -1,0 +1,7 @@
+const GET_ARTICLE_REQUEST = 'vali-ah-frontend/Article/GET_ARTICLE_REQUEST';
+const GET_ARTICLE_SUCCESS = 'vali-ah-frontend/Article/GET_ARTICLE_SUCCESS';
+const GET_ARTICLE_FAILURE = 'vali-ah-frontend/Article/GET_ARTICLE_FAILURE';
+
+export {
+  GET_ARTICLE_REQUEST, GET_ARTICLE_SUCCESS, GET_ARTICLE_FAILURE
+};

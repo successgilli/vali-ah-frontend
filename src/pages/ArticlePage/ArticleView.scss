@@ -1,0 +1,87 @@
+@import '~scss/style';
+@import 'scss/mixins';
+
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-top: 5rem;
+
+  &__img-cover {
+    width: 51.875rem;
+    object-fit: cover;
+  }
+
+  &__info {
+    width: 56%;
+    margin-top: 2.5rem;
+  }
+
+  &__title {
+    display: block;
+    margin-top: 0;
+    font-family: 'Rubik', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 4.7rem;
+    text-align: justify;
+    font-style: normal;
+  }
+
+  &__date{
+    margin-left: 16.875rem;
+    color: #C4C4C4;
+    font-size: 0.9375rem;
+    line-height: 1.75rem;
+  }
+
+  &__bookmark{
+    margin-left: 0.8rem;
+  }
+
+  &__divider{
+    border: 0.025rem solid #C4C4C4;
+    margin: 2.1rem 0 2rem 0;
+  }
+
+  &__vote-social-holder{
+    display: flex;
+    justify-content: space-between;
+    margin-top:2rem;
+  }
+
+  &__comments{
+    margin-bottom: 2rem;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+    
+    &__img {
+      vertical-align: middle;
+      width: 4.2rem;
+      height: 4.2rem;
+      border-radius: 50%;
+    }
+
+    &__name {
+      margin-left: 1.9rem;
+      font-size: 1.5rem;
+      font-weight: 450;
+      text-transform: capitalize;
+    }
+  }
+
+  &__content{
+    line-height: 2rem;
+  }
+	
+}
+
+.loader {
+  margin-top: 15rem;
+}
