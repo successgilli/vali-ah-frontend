@@ -2,6 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Redirect } from 'react-router-dom';
+
 // utils
 import connect from 'utils/connect';
 
@@ -78,6 +80,7 @@ export class SigninComponent extends React.Component {
 
     return ((
       <form className="login-form" onSubmit={this.handleSubmit}>
+        {login.isLoggedIn === 'true' && <Redirect to="/feed" />}
         <div className={(login.isLoggedIn === 'true') ? 'login-form__success login-form__success--show' : 'login-form__success login-form__success--hide'}>SIGNIN SUCCESSFUL !</div>
         <Input name="email" placeholder="Email Address" onChange={this.handleInput} />
         <Input name="password" type="password" placeholder="Password" onChange={this.handleInput} />

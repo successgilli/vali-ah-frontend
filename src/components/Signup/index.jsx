@@ -1,5 +1,6 @@
 // react libraries
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // helper functions
@@ -122,6 +123,7 @@ class Signup extends Component {
 
     return ((
       <div>
+        {success && <Redirect to="/feed" />}
         <form className="form-wrapper" onSubmit={this.handleSubmit}>
 
           { showMessage && <div className={classList}>{userMessage}</div>}
