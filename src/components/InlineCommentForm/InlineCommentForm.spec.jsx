@@ -17,4 +17,27 @@ describe('Create Component', () => {
     expect(comment.find('textarea')).toBeDefined();
     expect(comment.find('button').exists()).toBe(false);
   });
+
+  it('should call the createComment handler on click', () => {
+    const createComment = jest.fn();
+    const comment = mount(<InlineCommentForm isCreating createComment={createComment} />);
+
+    comment.find('ButtonWithIcon').simulate('click');
+    comment.update();
+    comment.find('button').simulate('click');
+
+    expect(createComment).toBeCalled();
+  });
+
+  it('should display loader is isLoading is true', () => {
+    const createComment = jest.fn();
+    const comment = mount(<InlineCommentForm isCreating isLoading createComment={createComment} />);
+
+    comment.find('ButtonWithIcon').simulate('click');
+    comment.update();
+    comment.find('button').simulate('click');
+
+    expect(createComment).toBeCalled();
+    expect(comment.find('.loader')).toBeDefined();
+  });
 });

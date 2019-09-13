@@ -1,5 +1,7 @@
 // react libraries
-import React, { Component, createRef, useRef, useEffect, useState } from 'react';
+import React, {
+  Component, useRef, useEffect, useState
+} from 'react';
 
 // utils
 import connect from 'utils/connect';
@@ -7,12 +9,15 @@ import connect from 'utils/connect';
 
 import ParentComponent from 'fixtures/inlineCommentParent';
 // component
-import { InlineComment } from 'components/InlineComment';
+import InlineCommentConnected from 'components/InlineComment';
 
 const BaseComponent = () => {
   const parentRef = useRef();
   const [isMounted, setIsMounted] = useState(false);
-  const getParentRef = () => parentRef;
+  const [ArticleComponent, setArticleContent] = useState(<ParentComponent />);
+
+  const updateArticleContent = (Article) => setArticleContent(Article);
+
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -21,9 +26,10 @@ const BaseComponent = () => {
     <>
       <h4>Hi</h4>
       <div ref={parentRef}>
-        <ParentComponent />
+        {ArticleComponent}
       </div>
-      {isMounted && <InlineComment parentRef={parentRef} />}
+      {isMounted && (
+        <InlineCommentConnected parentRef={parentRef} updateArticle={updateArticleContent} />)}
     </>
   );
 };

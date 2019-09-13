@@ -4,11 +4,13 @@
   background-color: $primarycolor;
 }
 
-.ui.labeled.icon.button, .ui.labeled.icon.buttons .button {
-  padding-left: 3.011429em !important;
-  padding-right: 0.5em !important;
+.ui.labeled.icon.button,
+.ui.labeled.icon.buttons .button {
+  padding-right: 0.5rem !important;
+  padding-left: 3.011429rem !important;
 }
 
-.ui.icon.button, .ui.icon.buttons .button {
-  padding: 0.485714em .48571429em .48571429em;
+.ui.icon.button,
+.ui.icon.buttons .button {
+  padding: 0.485714rem 0.48571429rem 0.48571429rem;
 }

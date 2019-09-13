@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create Component should match snapshot 1`] = `
+<InlineComment
+  createInlineCommentDispatch={[MockFunction]}
+  inlineComment={Object {}}
+  parentRef={
+    Object {
+      "current": Object {
+        "innerHTML": "",
+        "onmouseup": [Function],
+      },
+    }
+  }
+  resetCommentState={[MockFunction]}
+  updateArticle={[MockFunction]}
+>
+  <Message
+    active={false}
+    delay={4}
+    error={false}
+    heading=""
+    messages={Array []}
+  />
+</InlineComment>
+`;

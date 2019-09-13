@@ -44,11 +44,12 @@ exports[`Storyshots Button without classname prop 1`] = `
 </button>
 `;
 
-exports[`Storyshots CreateInlineComment createInlineComment 1`] = `
+exports[`Storyshots ButtonWithIcon ButtonWithIcon 1`] = `
 <div
-  className="ui orange labeled icon button"
+  className="ui orange labeled icon button "
+  role="presentation"
 >
-  Add Comment
+  
   <i
     className="add icon"
   />
@@ -85,27 +86,40 @@ exports[`Storyshots Icon upvote 1`] = `
 />
 `;
 
+exports[`Storyshots InlineComment InlineComment 1`] = `
+Array [
+  <h4>
+    Hi
+  </h4>,
+  <div>
+    <div
+      id="article-content"
+    >
+      <h1>
+        A Guide to Solving Web Development Problems
+      </h1>
+      <p>
+        If not then you'll need to verify it on another computer. If it proves impossible to replicate then you often don't have a real error and the problem will take care of itself.
+      </p>
+    </div>
+  </div>,
+]
+`;
+
 exports[`Storyshots InlineCommentForm InlineCommentForm 1`] = `
 <div
   className="comment-form"
 >
   <div
-    className="ui form"
+    className="ui orange labeled icon button comment-form__create-comment"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="presentation"
   >
-    <div
-      className="field"
-    >
-      <textarea
-        rows="6"
-      />
-      <button
-        className="button__primary"
-        id=""
-        type="button"
-      >
-        Comment
-      </button>
-    </div>
+    Create
+    <i
+      className="add icon"
+    />
   </div>
 </div>
 `;
@@ -139,6 +153,85 @@ exports[`Storyshots Input password field 1`] = `
   />
 </label>
 `;
+
+exports[`Storyshots Message Error 1`] = `
+<div
+  className="ui error message"
+>
+  <i
+    className="close icon"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="presentation"
+  />
+  <div
+    className="header"
+  >
+    There were some errors with your submission
+  </div>
+  <ul
+    className="list"
+  >
+    <li>
+      message 1
+    </li>
+    <li>
+      message 2
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Message With Heading 1`] = `
+<div
+  className="ui  message"
+>
+  <i
+    className="close icon"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="presentation"
+  />
+  <div
+    className="header"
+  >
+    There were some errors with your submission
+  </div>
+  <ul
+    className="list"
+  />
+</div>
+`;
+
+exports[`Storyshots Message With messages 1`] = `
+<div
+  className="ui  message"
+>
+  <i
+    className="close icon"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="presentation"
+  />
+  <div
+    className="header"
+  >
+    There were some errors with your submission
+  </div>
+  <ul
+    className="list"
+  >
+    <li>
+      message 1
+    </li>
+    <li>
+      message 2
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Message Without Heading 1`] = `null`;
 
 exports[`Storyshots Modal click closed modal button 1`] = `
 <div

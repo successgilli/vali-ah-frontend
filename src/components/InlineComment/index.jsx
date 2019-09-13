@@ -1,48 +1,97 @@
-/* eslint-disable class-methods-use-this */
-/* eslint-disable no-unused-vars */
 // react libraries
-import React, { cloneElement, createRef } from 'react';
-
+import React from 'react';
 import PropTypes from 'prop-types';
 
-import CreateInlineComment from 'components/ButtonWithIcon';
+// third party libraries
+import { Parser } from 'html-to-react';
+
+// components
 import InlineCommentForm from 'components/InlineCommentForm';
+import Message from 'components/Message';
 
 // utils
 import connect from 'utils/connect';
 
+// modules
+import { createInlineComment, clearInlineCommentState } from 'modules/inlineComment';
+
 import './InlineComment.scss';
 
+/**
+ * Component for Inline Comment
+ * @summary base component that handles all inline comment related activities.
+ * It handles comment creation and reading
+ */
 export class InlineComment extends React.Component {
+  /**
+    * @name InlineComment propTypes
+    * @type {propTypes}
+    *
+    * @param {Object} props - React PropTypes
+    *
+    * @property {Object} parentRef - reference of the parent component
+    * @property {Function} updateArticle - callback to update the parent dom
+    * @property {string} articleId - id of the article to comment on
+    * @property {Function} resetCommentState - dispatch action to reset the comment state
+    * @property {Function} createInlineCommentDispatch - dispatch action to create inline comment
+    * @property {Object} inlineComment - object that holds the store state
+    *
+    */
+  static propTypes = {
+    parentRef: PropTypes.isRequired,
+    updateArticle: PropTypes.func.isRequired,
+    articleId: PropTypes.string.isRequired,
+    resetCommentState: PropTypes.func.isRequired,
+    createInlineCommentDispatch: PropTypes.func.isRequired,
+    inlineComment: PropTypes.isRequired
+
+  }
 
   constructor(props) {
     super(props);
     this.parentRef = props.parentRef;
-    this.state = { highlightIndex: {}, formOpen: false, currentRange: null };
+    this.state = {
+      currentRange: null, showForm: false
+    };
   }
 
   componentDidMount() {
     this.clonedElement = this.parentRef.current.innerHTML;
-    window.onmouseup = this.handleTextHightlight.bind(this);
+
+    this.parentRef.current.onmouseup = this.handleTextHightlight.bind(this);
   }
 
+  /**
+   * Gets the index of the highlighted text
+   *
+   * @method
+   * @param {Node} nodeToSearch - node of highlighted text
+   *
+   * @returns {Object} - object containing the startIndex and endIndex
+   */
   getHighlightTextIndex(nodeToSearch) {
     const replaceRegex = new RegExp(/<section.*>(.*)<\/section>/, 'g');
     const wrapper = document.createElement('div');
     wrapper.appendChild(nodeToSearch.cloneNode(true));
 
     const textToSearch = wrapper.innerHTML.replace(replaceRegex, '$1');
-
-    const container = document.getElementById('article-content');
-    const containerContent = container.innerHTML.replace(replaceRegex, '$1');
-
+    const containerContent = this.parentRef.current.innerHTML.replace(replaceRegex, '$1');
     const textStartIndex = containerContent.indexOf(textToSearch);
 
-    return { start: textStartIndex, end: textStartIndex + textToSearch.length };
+    return { startIndex: textStartIndex, endIndex: textStartIndex + textToSearch.length };
   }
 
+  /**
+   * Gets the position of the highlighted text using range
+   *
+   * @method
+   * @param {Object} range - range of highlighted text. an instance of Range
+   *
+   * @returns {Object} - object containing the clientRect positions
+   */
+
   getCommentPosition = (range) => {
-    const rect = range.getClientRects()[0];
+    const [rect] = range.getClientRects();
     return {
       top: rect.top,
       right: rect.right,
@@ -55,62 +104,137 @@ export class InlineComment extends React.Component {
     };
   };
 
-  restoreParentDom() {
-    this.parentRef.current.innerHTML = this.clonedElement;
-    this.setState({currentRange: null});
+  /**
+   * Restores the parent article dom using the parentRef
+   *
+   * @returns {void}
+   */
+  restoreParentDom = () => {
+    const { updateArticle } = this.props;
+
+    this.setState({ currentRange: null, showForm: false });
+    // console.log(this.state.currentRange, this.clonedElement, this.parentRef.current.innerHTML);
+
+    const htmlToReactParser = new Parser();
+    const reactElement = htmlToReactParser.parse(this.clonedElement);
+    // console.log(reactElement);
+    updateArticle(reactElement, this.clonedElement);
   }
-  positionCommentComponent(range) {
+
+  /**
+   * Sets the state for the position of the commit form
+   * @param {Object} range - range of highlighted text. an instance of Range
+   *
+   * @returns {void}
+   */
+  positionCommentComponent = (range) => {
     const rangePosition = this.getCommentPosition(range);
     const { top, x } = rangePosition;
 
     const windowTop = (window.pageYOffset || document.scrollTop || 0) - (document.clientTop || 0);
     const positionTop = windowTop + top;
 
-    this.setState({ createCommentTop: `${positionTop}px`, createCommentLeft: `${x + (x / 2)}px` });
+    this.setState({ createCommentTop: `${positionTop}px`, createCommentLeft: `${x * 5}px` });
   }
 
-  handleTextHightlight(evt) {
+  /**
+   * Event handler to listen for mouse event for highlight
+   *
+   * @returns {void}
+   */
+  handleTextHightlight = () => {
     const { currentRange } = this.state;
-    console.log(evt.target);
-    if (currentRange) this.restoreParentDom();
+    if (currentRange) this.setState({ showForm: false });
     if (!window.getSelection) return;
 
     const selection = window.getSelection();
-    if (Math.abs(selection.focusOffset - selection.anchorOffset) < 30) return;
-    const contentHighlighted = selection.getRangeAt(0).extractContents();
+
+    if (Math.abs(selection.focusOffset - selection.anchorOffset) < 20) return;
+
+    const contentHighlighted = selection.getRangeAt(0).cloneContents();
     const cloneRange = selection.getRangeAt(0).cloneRange();
 
-    cloneRange.collapse();
-
-    const spanNode = document.createElement('section');
-    spanNode.appendChild(contentHighlighted);
-    spanNode.style.cssText = 'background-color:red;display:inline';
-
-    cloneRange.insertNode(spanNode);
-
-    const highlightIndex = this.getHighlightTextIndex(spanNode);
-
-    this.setState({ highlightIndex, currentRange: cloneRange });
-
+    this.setState({ contentHighlighted, currentRange: cloneRange, showForm: true });
     this.positionCommentComponent(cloneRange);
   }
 
-  openCommentForm = () => {
-    this.setState(({ formOpen }) => ({
-      formOpen: !formOpen
-    }));
+  /**
+   * Creates the comment
+   *
+   * @param {string} content - the content of the comment
+   *
+   * @returns {void}
+   */
+  createComment = (content) => {
+    const { currentRange: r, contentHighlighted } = this.state;
+    const { articleId, createInlineCommentDispatch } = this.props;
+
+    const currentRange = r.cloneRange();
+    const markerNode = document.createElement('section');
+    markerNode.appendChild(contentHighlighted);
+    markerNode.style.cssText = 'background-color:red;display:inline';
+
+    this.extractedContent = currentRange.extractContents();
+    currentRange.insertNode(markerNode);
+
+    this.setState({ currentRange });
+    this.currentRange = currentRange;
+
+    const highlightIndex = this.getHighlightTextIndex(markerNode);
+    const commentDetails = { articleId, content, ...highlightIndex };
+
+    createInlineCommentDispatch(commentDetails);
+  }
+
+  /**
+   * Updates the parent dom after a comment action
+   *
+   * @returns {void}
+   */
+  updateParentDom = () => {
+    const { inlineComment: { error } } = this.props;
+    const { currentRange } = this.state;
+
+    if (error) {
+      currentRange.deleteContents();
+      currentRange.insertNode(this.extractedContent);
+    }
+
+    this.clonedElement = this.parentRef.current.innerHTML;
+    const { resetCommentState } = this.props;
+
+    this.restoreParentDom();
+    resetCommentState();
   }
 
   render() {
-    const { createCommentLeft, createCommentTop } = this.state;
+    const {
+      createCommentLeft, createCommentTop, showForm, currentRange
+    } = this.state;
+    const { inlineComment } = this.props;
+    const {
+      isLoading, error, errors, message, commented
+    } = inlineComment;
     const style = { position: 'absolute', top: createCommentTop, left: createCommentLeft };
+
+    if ((commented || error) && currentRange) this.updateParentDom();
 
     return (
       <>
-        <InlineCommentForm style={style} />
+        <Message active={error} heading={message} messages={Object.values(errors || [])} />
+        {showForm
+          && (
+            <InlineCommentForm
+              isLoading={isLoading}
+              style={style}
+              createComment={this.createComment}
+            />
+          )}
       </>
     );
   }
 }
 
-export default connect({ })(InlineComment);
+export default connect({
+  createInlineCommentDispatch: createInlineComment, resetCommentState: clearInlineCommentState
+})(InlineComment);
