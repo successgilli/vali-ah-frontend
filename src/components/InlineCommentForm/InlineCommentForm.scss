@@ -1,4 +1,4 @@
-@import '~scss/style';
+@import 'scss/style';
 
 .comment-form {
   position: relative;
@@ -25,5 +25,8 @@
     font-size: 1rem;
     text-align: center;
     align-content: center;
+  }
+  &__error{
+  color: $red;
   }
 }

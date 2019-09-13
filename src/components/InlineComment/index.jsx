@@ -16,6 +16,10 @@ import connect from 'utils/connect';
 // modules
 import { createInlineComment, clearInlineCommentState, getInlineComments } from 'modules/inlineComment';
 
+// validation
+import Validator from 'utils/validator';
+import validationRule from '../../validation/inlineComment';
+
 import './InlineComment.scss';
 
 /**
@@ -170,6 +174,16 @@ export class InlineComment extends React.Component {
    * @returns {void}
    */
   createComment = (content) => {
+    const { inlineCommentValidation } = validationRule;
+    const inlineCommentValidator = new Validator(inlineCommentValidation);
+
+    const { isValid, ...errors } = inlineCommentValidator.validate({ content });
+    const newErrors = errors;
+    // this.setState({ ValidationErrors: newErrors });
+    // console.log(isValid);
+
+    // if (!isValid) return;
+
     const { currentRange: r, contentHighlighted } = this.state;
     const { articleId, createInlineCommentDispatch } = this.props;
 
@@ -238,7 +252,7 @@ export class InlineComment extends React.Component {
 
   render() {
     const {
-      createCommentLeft, createCommentTop, showForm, currentRange
+      createCommentLeft, createCommentTop, showForm, currentRange, ValidationErrors
     } = this.state;
     const { inlineComment } = this.props;
     const {
@@ -259,6 +273,7 @@ export class InlineComment extends React.Component {
               isLoading={isLoading}
               style={style}
               createComment={this.createComment}
+              ValidationErrors={ValidationErrors}
             />
           )}
       </>
@@ -267,6 +282,7 @@ export class InlineComment extends React.Component {
 }
 
 export default connect({
-  createInlineCommentDispatch: createInlineComment, resetCommentState: clearInlineCommentState,
+  createInlineCommentDispatch: createInlineComment,
+  resetCommentState: clearInlineCommentState,
   getInlineCommentsDispatch: getInlineComments
 })(InlineComment);
