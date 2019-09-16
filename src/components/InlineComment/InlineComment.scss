@@ -1,0 +1,8 @@
+@import '~scss/style';
+
+.inline-comment {
+  &__marker-node {
+    display: inline;
+    background-color: $highlightcolor;
+  }
+}

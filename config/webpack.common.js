@@ -1,6 +1,6 @@
 const path = require('path');
 const {
-  htmlWebpackPlugin, extractTextPlugin, ExtractTextPlugin, definePlugin, FaviconsWebpackPlugin
+  htmlWebpackPlugin, extractTextPlugin, ExtractTextPlugin, definePlugin
 } = require('./webpack.plugins.js');
 
 module.exports = {
@@ -9,7 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, '../build'),
     filename: '[name].js',
     sourceMapFilename: '[name].map',
-    publicPath: '/'
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.css', '.scss'],
@@ -22,6 +22,7 @@ module.exports = {
       'react-dom': '@hot-loader/react-dom',
       scss: path.resolve(__dirname, '../src/assets/scss'),
       fixtures: path.resolve(__dirname, '../tests/fixtures'),
+      mocks: path.resolve(__dirname, '../tests/__mocks__'),
       validations: path.resolve(__dirname, '../src/validations'),
       assets: path.resolve(__dirname, '../src/assets')
     },
@@ -33,7 +34,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
-        use: ['babel-loader', 'eslint-loader']
+        use: ['babel-loader']
       },
       {
         test: /\.s?css$/i,
@@ -47,24 +48,14 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'postcss-loader']
       },
       {
-        test: /\.(png|jpg|gif|jpeg|svg)|.eot|woff|woff2|ttf$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8000,
-              name: 'images/[hash]-[name].[ext]',
-              useRelativePath: true
-            }
-          }
-        ]
+        test: /\.(png|jpg|gif|jpeg|svg|ttf|eot|woff2?)$/,
+        loader: 'file-loader',
       }
     ]
   },
   plugins: [
     htmlWebpackPlugin,
     extractTextPlugin,
-    definePlugin,
-    new FaviconsWebpackPlugin(path.resolve(__dirname, '../src/assets/images/1Kb.png'))
+    definePlugin
   ],
 };

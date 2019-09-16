@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create Component should match snapshot 1`] = `
+<InlineComment
+  createInlineCommentDispatch={[MockFunction]}
+  getInlineCommentsDispatch={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          undefined,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  inlineComment={
+    Object {
+      "comments": Array [
+        Object {
+          "content": "Check the spelling",
+          "highlightIndex": "31:50",
+          "highlightedText": "Top noch",
+          "user": Object {
+            "userName": "JohnDoe",
+          },
+          "valid": true,
+        },
+        Object {
+          "content": "Check the spelling",
+          "highlightIndex": "31:50",
+          "highlightedText": "Top noch",
+          "user": Object {
+            "userName": "JohnDoe",
+          },
+          "valid": false,
+        },
+      ],
+    }
+  }
+  parentRef={
+    Object {
+      "current": Object {
+        "innerHTML": "",
+        "onmouseup": [Function],
+      },
+    }
+  }
+  resetCommentState={[MockFunction]}
+  updateArticle={[MockFunction]}
+>
+  <Message
+    active={false}
+    delay={4}
+    error={false}
+    heading=""
+    messages={Array []}
+  />
+</InlineComment>
+`;

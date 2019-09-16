@@ -11,12 +11,21 @@ it('renders properly', () => {
   expect(wrapper.find('Header')).toBeTruthy();
 });
 
+it('should test the home route', () => {
+  mount(
+    <MemoryRouter initialEntries={['/']} initialIndex={0}>
+      <App />
+    </MemoryRouter>
+  );
+});
+
 it('should render not found for invalid route', () => {
   const wrapper = mount(
     <MemoryRouter initialEntries={['/notFound']} initialIndex={0}>
       <App />
     </MemoryRouter>
   );
+
   expect(wrapper.contains(<h3>This page is not found.</h3>)).toBe(true);
 });
 

@@ -8,11 +8,13 @@ import login from 'modules/login';
 import articleVote from 'modules/articleVote';
 import signup from 'modules/signUp';
 import header from 'modules/header';
+import inlineComment from 'modules/inlineComment';
 
 export default combineReducers({
   login,
   articleVote,
   signup,
   header,
-  userSelection
+  userSelection,
+  inlineComment
 });

@@ -4,10 +4,8 @@ import React from 'react';
 // components
 import Button from './index';
 
-const text = 'Signup';
-
 it('renders properly', () => {
-  const wrapper = shallow(<Button>{text}</Button>);
+  const wrapper = shallow(<Button>Good</Button>);
 
-  expect(wrapper.find('button').text()).toEqual('Signup');
+  expect(wrapper.find('button').text()).toEqual('Good');
 });

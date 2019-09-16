@@ -4,6 +4,15 @@
  */
 import axios from 'axios';
 
+class ResponseError extends Error {
+  constructor({ status, message, errors = [] }) {
+    super();
+    this.message = message;
+    this.status = status;
+    this.errors = errors;
+  }
+}
+
 const http = axios.create({
   baseURL: process.env.API_ROUTE
 });
@@ -14,6 +23,15 @@ http.interceptors.request.use((config) => {
   return config;
 });
 
-http.interceptors.response.use((response) => response?.data);
+http.interceptors.response.use(
+  (response) => response?.data,
+  (error) => {
+    const { response } = error;
+    const { error: err } = response?.data;
+    return Promise.reject(
+      new ResponseError({ ...err, status: response?.status })
+    );
+  }
+);
 
 export default http;
