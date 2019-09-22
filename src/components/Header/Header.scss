@@ -28,12 +28,14 @@
   }
 
   &__nav-link {
+    background-color: inherit;
     border: 0;
     font-size: 1rem;
     font-weight: 100;
     text-decoration: none;
     cursor: pointer;
     color: $blackcolor;
+
     outline: none;
 
     &--right-margin {

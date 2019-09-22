@@ -5,7 +5,7 @@ const articleUrl = '/articles';
 
 export default {
   fetchSelection: async ({ query }) => {
-    const response = await http.get(`${articleUrl}?tag=${query}`);
+    const response = await http.get(`${articleUrl}?page=1&&tag=${query}`);
     return response.data;
   }
 };

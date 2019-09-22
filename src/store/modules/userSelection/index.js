@@ -20,13 +20,13 @@ export const fallBack = (query) => {
     return 'love';
   case 'finance':
   case 'motivation':
-  case 'management':
-    return 'business';
+  case 'politics':
+    return 'politics';
   case 'love':
   case 'dating':
-    return 'relationship';
+    return 'travel';
   case 'business':
-    return 'management';
+    return 'travel';
   default:
     return 'emotion';
   }

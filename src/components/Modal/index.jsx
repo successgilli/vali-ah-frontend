@@ -3,11 +3,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // components
-import Signin from 'components/Signin';
-import Signup from 'components/Signup';
+import ModalContentComponent from 'components/ModalContent';
 
+// styles
 import './Modal.scss';
 
+/**
+ * Component to render modal popup
+ */
 export class ModalComponent extends React.Component {
   /**
     * @name Modal propTypes
@@ -15,39 +18,26 @@ export class ModalComponent extends React.Component {
     *
     * @param {Object} props - React PropTypes
     *
-    * @property {Boolean} formTypes - toggles (false)signup or (true)signin form
     * @property {Boolean} show - determines if modal should show or not
+    * @property {Boolean} children - node wrapped in Modal component
     *
     */
   static propTypes = {
-    formType: PropTypes.bool.isRequired,
-    show: PropTypes.bool.isRequired
+    show: PropTypes.bool.isRequired,
+    children: PropTypes.node.isRequired
   };
-
-  static getDerivedStateFromProps(props, { close }) {
-    const { show } = props;
-
-    return { show: (show && !close), close: false };
-  }
 
   constructor(props) {
     super(props);
-    const { formType, show } = this.props;
+    const { show } = this.props;
     this.state = {
-      signin: formType,
       show
     };
   }
 
-  /**
-    * Handles change form display action
-    * @method
-    *
-    * @return {void}
-    */
-  handleFormChange = () => {
-    const { signin } = this.state;
-    this.setState({ signin: !signin });
+  componentWillReceiveProps(newProps) {
+    const { show } = newProps;
+    this.setState({ show });
   }
 
   /**
@@ -57,67 +47,15 @@ export class ModalComponent extends React.Component {
     * @return {void}
     */
   handleClose = () => {
-    this.setState({ show: false, close: true });
+    this.setState({ show: false });
   }
 
   render() {
-    const { signin, show, close } = this.state;
+    const { show } = this.state;
+    const { children } = this.props;
     return (
-      <div className={(show && !close) ? 'modal modal--show' : 'modal modal--hide'}>
-        <div className="modal__modal-content">
-          <button className="modal__close" type="button" onClick={this.handleClose}>&#x2715;</button>
-          {
-            signin && (
-              <div className="modal__left">
-                <h2 className="modal__head">Share your stories</h2>
-                <h1 className="modal__welcome">Welcome back</h1>
-                <p className="modal__text">Sign into your account to serve you more personalised stories from creatives</p>
-              </div>
-            )
-          }
-          {
-            !signin && (
-              <div className="modal__left">
-                <h2 className="modal__head">Share your stories</h2>
-                <h1 className="modal__welcome">Create your free account</h1>
-                <p className="modal__text">Sign into your account to serve you more personalised stories from creatives</p>
-              </div>
-            )
-          }
-          <div className="modal__right">
-            <h4 className="modal__heading">Select one to get started</h4>
-            <div className="modal__social-login">
-                IBUKUN COMPONENT
-            </div>
-            <div className="modal__seperator">
-              <p>or</p>
-            </div>
-            <div className="modal__auth-component">
-              { signin
-                && <Signin />}
-              {
-                !signin && (
-                  <div className="modal__social-login">
-                    <Signup />
-                  </div>
-                )
-              }
-              <div className="modal__setup-tag">
-                <p>
-                  {(signin) && 'Don\'t have an account ? '}
-                  {(!signin) && 'Already have an account ? '}
-                  <button type="button" className="modal__create-account" onClick={this.handleFormChange}>{(signin) ? 'Sign up' : 'Sign in'}</button>
-                </p>
-                { signin && (
-                  <p>
-                    Forgot your password ? &nbsp;
-                    <span className="modal__create-account">Reset password</span>
-                  </p>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className={(show) ? 'modal modal--show' : 'modal modal--hide'}>
+        <ModalContentComponent handleClose={this.handleClose} child={children} />
       </div>
     );
   }

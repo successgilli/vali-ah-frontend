@@ -5,7 +5,8 @@ import { ACTIVATE_MODAL } from 'modules/header/types';
 export const activateModal = (bool) => ({ type: ACTIVATE_MODAL, payload: bool });
 
 const initialState = {
-  activateModal: false
+  activateModal: false,
+  formType: 'signin'
 };
 
 export default (state = initialState, action) => {
@@ -14,7 +15,7 @@ export default (state = initialState, action) => {
   case ACTIVATE_MODAL:
     return {
       activateModal: true,
-      ...payload
+      formType: payload
     };
   default:
     return state;

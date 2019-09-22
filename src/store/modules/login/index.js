@@ -23,7 +23,7 @@ export function* fetchLogin(action) {
     switch (loginResult.status) {
     case 400:
       yield put({ type: LOGIN_RESET });
-      yield (typeof loginResult.data.error.message === 'object') ? put(handleLoginError({
+      yield (!loginResult.data.error.errors) ? put(handleLoginError({
         error: loginResult.data.error.message
       }))
         : put(handleLoginError(loginResult.data.error.errors));
@@ -38,8 +38,6 @@ export function* fetchLogin(action) {
       yield put(loginUser(loginResult.data.user));
       return;
     default:
-      // eslint-disable-next-line no-console
-      console.log(loginResult.status, 'checking');
       yield put({ type: LOGIN_RESET });
       yield put(handleLoginError({ message: 'error occured' }));
     }

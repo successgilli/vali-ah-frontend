@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap');
+@import 'scss/variables';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', sans-serif;
+}
+
+.auth-display {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  &__welcome {
+    font-family: Rubik;
+    font-size: 2.25rem;
+    font-weight: bold;
+    line-height: 2.688rem;
+    font-style: normal;
+  }
+
+  &__head {
+    top: 15.5rem;
+    left: 18.13rem;
+    height: 2.063rem;
+    margin-bottom: 5rem;
+    font-size: 1.75rem;
+    font-weight: 300;
+    line-height: 2.063rem;
+    color: rgba(36, 41, 44, 0.5);
+    font-style: normal;
+  }
+
+  &__text {
+    top: 30.31rem;
+    left: 18.13rem;
+    height: 6.125rem;
+    margin-top: 3.125rem;
+    font-family: Rubik;
+    font-size: 1;
+    font-weight: normal;
+    line-height: 1.563rem;
+    color: rgba(36, 41, 44, 0.8);
+    font-style: normal;
+    opacity: 0.5;
+  }
+
+  &__left {
+    flex-basis: 45%;
+    background-color: rgba(253, 130, 52, 0.6);
+    margin: 0;
+    padding: 4.375rem;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+
+    @media (max-width: 63.94rem) {
+      display: none;
+    }
+  }
+
+  &__social-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 7rem;
+    margin-bottom: 1.5rem;
+    padding: 0.625rem;
+    box-sizing: border-box;
+  }
+  
+  &__heading {
+    margin: 0;
+    margin-bottom: 0.625rem;
+    font-size: 1.563rem;
+    font-weight: 100;
+    text-align: center;
+  }
+
+  &__seperator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    font-family: Rubik;
+    font-size: 1.25rem;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  &__seperator::before {
+    background-color: $black;
+    width: 2.5rem;
+    height: 0.0625rem;
+    margin-right: 0.625rem;
+    content: '';
+  }
+  
+  &__seperator::after {
+    background-color: $black;
+    width: 2.5rem;
+    height: 0.0625rem;
+    margin-left: 0.625rem;
+    content: '';
+  }
+
+  &__setup-tag {
+    min-height: 2.5rem;
+    margin-bottom: 0.25rem;
+    text-align: center;
+  }
+
+  &__create-account {
+    background: inherit;
+    border: 0;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    color: $darkorangecolor;
+    outline: 0;
+  }
+
+  &__auth-component {
+    min-height: 18.75rem;
+    margin-bottom: -3.125rem;
+  }
+
+  &__modal-content {
+    position: relative;
+    z-index: 500;
+    display: flex;
+    background-color: $white;
+    width: 80%;
+    min-height: 38.44rem;
+
+    @media (max-width: 63.94rem) {
+      width: 90%;
+      min-height: 38.5rem;
+    }
+  }
+
+  &__right {
+    flex-basis: 55%;
+    background-color: rgb(238, 235, 235);
+    min-height: 3.125rem;
+    margin: 0;
+    padding: 4.375rem;
+    padding-top: 3.125rem;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+
+    @media (max-width: 63.94rem) {
+      flex-basis: 100%;
+      padding: 1.375rem;
+    }
+  }
+}

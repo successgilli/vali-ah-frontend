@@ -21,8 +21,14 @@ const Header = ({ activateModal: activateModalDispatch }) => (
       <input type="text" className="header__search" placeholder="Search for articles" />
     </div>
     <nav className="header__nav-link">
-      <Link to="/login" className="header__nav-link header__nav-link--right-margin">Sign in</Link>
-      <Button type="button" id="signup" className="header__nav-link" onClick={() => activateModalDispatch('login')}>
+      <Button
+        to="/login"
+        className="header__nav-link header__nav-link--right-margin"
+        onClick={() => activateModalDispatch('signin')}
+      >
+        Sign in
+      </Button>
+      <Button type="button" id="signup" className="header__nav-link" onClick={() => activateModalDispatch('signup')}>
        Signup
       </Button>
     </nav>

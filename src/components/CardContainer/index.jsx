@@ -3,8 +3,6 @@ import React from 'react';
 
 import Proptypes from 'prop-types';
 
-import Masonry from 'components/Masonry';
-
 import './CardContainer.scss';
 
 const CardContainer = (props) => {
@@ -15,9 +13,7 @@ const CardContainer = (props) => {
         <h1>Explore Amazing Topics</h1>
         <p>Curated stories based on your preference</p>
       </div>
-      <Masonry>
-        {(cardData || []).map((data) => <CardComponent {...data} />)}
-      </Masonry>
+      {(cardData || []).map((data) => <CardComponent {...data} />)}
     </div>
   );
 };
