@@ -28,7 +28,7 @@
     "quotes": [2, "single"],
     "comma-dangle": 0,
     "indent": [2, 2],
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": 0,
     "import/no-extraneous-dependencies": ["error", {"devDependencies": [
       "**/*.test.{js,jsx}",
       "**/*.spec.{js,jsx}",
