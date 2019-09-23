@@ -3,6 +3,8 @@ import React from 'react';
 
 // components
 import Signin from 'components/Signin';
+import SocialLoginButtons from 'components/SocialLoginButtonRow';
+
 
 // styles
 import './AuthDisplay.scss';
@@ -107,7 +109,7 @@ export class AuthDisplay extends React.Component {
         <div className="auth-display__right">
           <h4 className="auth-display__heading">Select one to get started</h4>
           <div className="auth-display__social-login">
-            IBUKUN COMPONENT
+            <SocialLoginButtons />
           </div>
           <div className="auth-display__seperator">
             <p>or</p>

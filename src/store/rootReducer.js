@@ -5,6 +5,7 @@ import userSelection from 'modules/userSelection';
 
 // modules
 import login from 'modules/login';
+import socialLogin from 'modules/socialLogin';
 import articleVote from 'modules/articleVote';
 import signup from 'modules/signUp';
 import header from 'modules/header';
@@ -14,5 +15,6 @@ export default combineReducers({
   articleVote,
   signup,
   header,
-  userSelection
+  userSelection,
+  socialLogin
 });
